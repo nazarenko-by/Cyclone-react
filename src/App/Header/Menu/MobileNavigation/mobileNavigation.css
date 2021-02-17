@@ -1,0 +1,30 @@
+.nav-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-mobile-menu span {
+    margin: 3px 0;
+    height: 2px;
+    background-color: #2a2928;
+    transition: 0.25s ease-in-out;
+}
+
+.nav-mobile-menu span:first-child {
+    width: 30px;
+}
+
+.nav-mobile-menu span:nth-child(2) {
+    width: 15px;
+}
+
+.nav-mobile-menu span:last-child {
+    width: 25px;
+}
+
+@media (min-width: 768px) {
+    .nav-mobile-menu {
+        display: none;
+    }
+}

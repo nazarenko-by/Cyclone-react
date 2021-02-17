@@ -1,0 +1,11 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0 30px;
+  align-items: center;
+  background-image: url("./header-bg.png");
+}
+
+.header .line {
+  grid-column: 1/4;
+}

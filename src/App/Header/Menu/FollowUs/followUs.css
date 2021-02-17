@@ -1,0 +1,34 @@
+.follow-us {
+    justify-content: space-between;
+    gap: 30px;
+    display: flex;
+    align-items: center
+}
+
+.follow-us button {
+    cursor: pointer;
+}
+
+.follow-us button:hover img {
+    filter: invert(50%);
+}
+
+.footer-menu .follow-us img {
+    filter: invert(50%);
+}
+
+.footer-menu .follow-us img:hover {
+    filter: none;
+}
+
+@media (max-width: 767px) {
+    .footer .follow-us {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .menu .follow-us {
+        display: none;
+    }
+}
