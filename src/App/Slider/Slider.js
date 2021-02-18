@@ -13,8 +13,17 @@ SwiperCore.use([Navigation, Autoplay ]);
 
 class Slider extends Component {
     state = {
-        swiperIndex: 0
-      };
+        swiperIndex: 0,
+        nextSwiperIndex:0,
+        prevSwiperIndex:0,
+    };
+
+    setSwiperIndex (newState)  {
+        this.setState(() => ({
+            swiperIndex:newState,
+        }))
+    }
+
     render(){
         return(
             <div className="slider">
@@ -22,14 +31,15 @@ class Slider extends Component {
                 <Swiper className ="slider-list"
                     slidesPerView={1}
                     loop={true}
+                    loopAdditionalSlides={0}
                     navigation={{
                         nextEl: '.slider-next',
                         prevEl: '.slider-prev',
                     }}
-                    // autoplay={{
-                    //     delay: 5000,
-                    // }}  
-                    onSlideChange={(virtualIndex) => {console.log(virtualIndex)}} 
+                    autoplay={{
+                        delay: 10000,
+                    }}  
+                    onSlideChange={(swiper) => {this.setSwiperIndex(swiper.realIndex)}} 
                                     
                 >
                     {
