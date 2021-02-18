@@ -26,6 +26,10 @@ body {
   text-underline-offset: 1px;
 }
 
+.yellow-text {
+  color: #fffc8f;
+}
+
 .yellow-text.text-line {
   text-decoration-color: #fffc8f;
 }
@@ -52,6 +56,36 @@ body {
   text-decoration-color: #918e8b;
 }
 
+.big-title {
+  grid-area: big-title;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.hot-topics .big-title {
+  margin-top: 30px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+@media (max-width: 767px) {
+  .main-article .big-title {
+    text-align: center;
+  }
+}
+
 @media (min-width: 1024px) {
   .title-line::after {
     content: "";
@@ -64,10 +98,18 @@ body {
     text-underline-offset: 3px;
   }
 
+  .big-title {
+    font-size: 70px;
+  }
+
 }
 
 @media (min-width: 1200px) {
   .text-line {
     text-underline-offset: 4px;
+  }
+
+  .big-title {
+    font-size: 89.9px;
   }
 }

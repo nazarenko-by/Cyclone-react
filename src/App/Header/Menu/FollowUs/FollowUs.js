@@ -8,7 +8,7 @@ import pinterest_icon from "./images/Pinterest.png"
 
 const FollowUs = () => {
     return (
-        <div className="follow-us">
+        <div className="follow-us unselectable">
             <div>Fullow us</div>
             <button><img src={facebook_icon} alt=""/></button>
             <button><img src={twiter_icon} alt=""/></button>

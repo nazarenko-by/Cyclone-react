@@ -1,0 +1,76 @@
+.slider-item-titel {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 25px 0;
+}
+
+.slider-item-titel {
+    justify-self: stretch;
+    text-align: center;
+}
+
+.events {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+    padding: 45px 0 85px;
+    color: white;
+}
+
+.event-name {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+}
+
+.event-date {
+    font-family: "Proza Libre", sans-serif;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+
+@media (min-width: 768px) {
+    .slider-item-titel {
+        padding: 30px 10px;
+    }
+
+    .event-name {
+        font-size: 20px;
+    }
+
+    .event-date {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider-item-titel {
+        padding: 35px 10px;
+    }
+
+    .event-name {
+        font-size: 25px;
+    }
+
+    .event-date {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider-item-titel {
+        padding: 45px 10px;
+    }
+
+    .event-name {
+        font-size: 30px;
+    }
+
+    .event-date {
+        font-size: 16px;
+    }
+}
