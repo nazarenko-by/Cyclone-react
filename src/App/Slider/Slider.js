@@ -13,15 +13,52 @@ SwiperCore.use([Navigation, Autoplay ]);
 
 class Slider extends Component {
     state = {
-        swiperIndex: 0,
-        nextSwiperIndex:0,
-        prevSwiperIndex:0,
+        swiperIndex: "",
+        nextSwiperIndex:"",
+        prevSwiperIndex:"",
     };
 
-    setSwiperIndex (newState)  {
+    setSwiperIndex (newState, length)  {
+        console.log(newState, length)
+        let index,next,prev;
+        if(newState >= 10){
+            index = `${newState}`
+        } else{
+            index = `0${newState}`
+        }
+        if(newState === length){
+            next = `01`;
+            if(newState >= 10){
+                prev = `${newState - 1}`;
+            } else{
+                prev = `0${newState - 1}`;
+            }
+        } else if(newState === 1){
+            next = `02`
+            if(length >= 10){
+                prev = `${length}`;
+            } else{
+                prev = `0${length}`;
+            }
+        } else{
+            if(newState >= 9){
+                next = `${newState + 1}`
+            } else{
+                next = `0${newState + 1}`
+            }
+            if(newState >= 11){
+                prev = `${newState - 1}`;
+            } else{
+                prev = `0${newState - 1}`;
+            }
+        }
+
         this.setState(() => ({
-            swiperIndex:newState,
+            swiperIndex:index,
+            nextSwiperIndex:next,
+            prevSwiperIndex:prev,
         }))
+        
     }
 
     render(){
@@ -31,7 +68,6 @@ class Slider extends Component {
                 <Swiper className ="slider-list"
                     slidesPerView={1}
                     loop={true}
-                    loopAdditionalSlides={0}
                     navigation={{
                         nextEl: '.slider-next',
                         prevEl: '.slider-prev',
@@ -39,8 +75,8 @@ class Slider extends Component {
                     autoplay={{
                         delay: 10000,
                     }}  
-                    onSlideChange={(swiper) => {this.setSwiperIndex(swiper.realIndex)}} 
-                                    
+                    onSlideChange={(swiper) => {this.setSwiperIndex(swiper.realIndex + 1, swiper.slides.length - 2)}}                    
+                    //onSlideChange={(swiper) => {console.log(swiper.slides.length - 2) }}                    
                 >
                     {
                         events.map(({
@@ -61,10 +97,10 @@ class Slider extends Component {
                     }
                 </Swiper>
                 
-                <div className="slider-number-prev unselectable">01</div>
-                <div className="slider-number-next unselectable">03</div>
-                <div className="slider-prev unselectable">01</div>
-                <div className="slider-next unselectable">03</div>
+                <div className="slider-number-prev unselectable">{this.state.prevSwiperIndex}</div>
+                <div className="slider-number-next unselectable">{this.state.nextSwiperIndex}</div>
+                <div className="slider-prev unselectable">{this.state.prevSwiperIndex}</div>
+                <div className="slider-next unselectable">{this.state.nextSwiperIndex}</div>
                 <button className="event-read-more unselectable"><img src={arrow} alt=""/></button>    
             </div>
         )
