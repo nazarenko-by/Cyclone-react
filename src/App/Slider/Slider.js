@@ -19,7 +19,6 @@ class Slider extends Component {
     };
 
     setSwiperIndex (newState, length)  {
-        console.log(newState, length)
         let index,next,prev;
         if(newState >= 10){
             index = `${newState}`
