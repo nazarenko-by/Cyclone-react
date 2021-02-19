@@ -71,18 +71,59 @@ body {
 }
 
 .unselectable {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;           /* Non-prefixed version, currently
-                                  not supported by any browser */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+
+.tag {
+  grid-area: "tag";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.comment-share-button {
+  display: flex;
+  gap: 15px;
+  grid-area: comment-share-button;
+}
+
+.comment:hover img,
+.share:hover img {
+  filter: blur(0.6px);
+  background: #000;
+  border-radius: 50%;
+}
+
+.title {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  grid-area: title;
+}
+
+.read-more {
+  color: #2a2928;
+  font-family: "Proza Libre", sans-serif;
+  font-size: 14px;
 }
 
 @media (max-width: 767px) {
   .main-article .big-title {
     text-align: center;
+  }
+
+  .comment-share-button {
+    flex-direction: column;
   }
 }
 
@@ -100,6 +141,22 @@ body {
 
   .big-title {
     font-size: 70px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-family: "Proza Libre", sans-serif;
+    font-size: 14px;
+    grid-area: text;
+  }
+
+  .text .text-line {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0px;
+    text-decoration-color: #918e8b;
   }
 
 }

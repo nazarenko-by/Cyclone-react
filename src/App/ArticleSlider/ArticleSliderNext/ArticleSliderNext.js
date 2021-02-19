@@ -1,4 +1,4 @@
-import eact from 'react'
+import React from 'react'
 
 import './articleSliderNext.css'
 

@@ -7,7 +7,7 @@ import 'swiper/swiper-bundle.css';
 
 import ArticleSliderPrev from './ArticleSliderPrev/ArticleSliderPrev'
 import ArticleSliderNext from './ArticleSliderNext/ArticleSliderNext'
-import SliderItem from '../Slider/SliderItem/SliderItem';
+import ArticleSliderItem from './ArticleSliderItem/ArticleSliderItem';
 
 const ArticleSlider = () => {
     return (
@@ -16,9 +16,7 @@ const ArticleSlider = () => {
             <ArticleSliderNext/>
             <Swiper className="article-slides">
                 <SwiperSlide>
-                    <SliderItem>
-                        
-                    </SliderItem>
+                    <ArticleSliderItem/>
                 </SwiperSlide>
             </Swiper>
         </div>

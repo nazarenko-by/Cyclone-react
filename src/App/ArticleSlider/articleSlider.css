@@ -27,6 +27,12 @@
     top: 15%;
 }
 
+.article-slides {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 40px 0;
+  }
+
 @media (min-width: 768px) {
 
     .article-slider-prev,
