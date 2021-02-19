@@ -74,8 +74,7 @@ class Slider extends Component {
                     autoplay={{
                         delay: 10000,
                     }}  
-                    onSlideChange={(swiper) => {this.setSwiperIndex(swiper.realIndex + 1, swiper.slides.length - 2)}}                    
-                    //onSlideChange={(swiper) => {console.log(swiper.slides.length - 2) }}                    
+                    onSlideChange={(swiper) => {this.setSwiperIndex(swiper.realIndex + 1, swiper.slides.length - 2)}}                                        
                 >
                     {
                         events.map(({
