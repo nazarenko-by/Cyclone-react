@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 
 import './sliderItem.css'
 
@@ -19,6 +20,16 @@ class SliderItem extends Component {
             </>   
         )
     }
+}
+
+SliderItem.propTypes ={
+    title: PropTypes.string.isRequired,
+    event: PropTypes.string.isRequired,
+    eventDate: PropTypes.string,
+}
+
+SliderItem.defaultProps = {
+    eventDate: "Date Not Specified"
 }
 
 export default SliderItem
