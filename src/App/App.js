@@ -5,12 +5,14 @@ import '../common/style/base.css'
 
 import Header from './Header/Header'
 import Slider from './Slider/Slider'
+import ArticleSlider from './ArticleSlider/ArticleSlider'
 
 const App = () => {
     return(
         <>
             <Header/>
             <Slider/>
+            <ArticleSlider/>
         </>
     )
 }
