@@ -1,0 +1,36 @@
+.article-slider {
+    display: grid;
+    grid-template-columns: auto minmax(auto, 1fr) auto;
+}
+
+.article-slider-prev,
+.article-slider-next {
+    writing-mode: vertical-rl;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: rotate(180deg);
+    padding: 30px 5px;
+    justify-content: space-between;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+}
+
+.article-slider-prev::after,
+.article-slider-next::after {
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background-color: #cfcbca;
+    top: 15%;
+}
+
+@media (min-width: 768px) {
+
+    .article-slider-prev,
+    .article-slider-next {
+        padding: 40px;
+    }
+}

@@ -1,0 +1,12 @@
+.article-slider-prev {
+    grid-column: 1/2;
+    justify-self: start;
+}
+
+.article-slider-prev::after {
+    left: 0px;
+}
+
+.article-slider-prev .arrow-prev-button {
+    transform: rotate(180deg);
+}

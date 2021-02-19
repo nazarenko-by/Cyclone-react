@@ -1,0 +1,7 @@
+.article-slider-next {
+    grid-column: 3/4;
+}
+
+.article-slider-next::after {
+    right: 0px;
+}
