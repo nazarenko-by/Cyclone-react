@@ -14,7 +14,7 @@ class SliderItem extends Component {
             <>
                 <div className="big-title slider-item-titel">{title}</div>
                 <div className="events">
-                    <div className="event-name"><span className="italic">Exhibition</span> {event}</div>
+                    <div className="event-name"><span className="italic">Exhibition</span> <span className="yellow-text">'{event}'</span></div>
                     <div className="event-date">{eventDate}</div>
                 </div>
             </>   
@@ -23,7 +23,7 @@ class SliderItem extends Component {
 }
 
 SliderItem.propTypes ={
-    title: PropTypes.string.isRequired,
+    title: PropTypes.object.isRequired,
     event: PropTypes.string.isRequired,
     eventDate: PropTypes.string,
 }

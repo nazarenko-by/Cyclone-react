@@ -12,6 +12,8 @@
     grid-column: 3/4;
     grid-row: 2/3;
     width: 100%;
+    min-width: 130px;
+    word-wrap: break-word;
 }
 
 .swiper-slide {
