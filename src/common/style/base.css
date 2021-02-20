@@ -92,8 +92,13 @@ button{
 
 .tag {
   grid-area: "tag";
+}
+
+.tag a {
   font-weight: bold;
   font-size: 16px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .comment-share-button {

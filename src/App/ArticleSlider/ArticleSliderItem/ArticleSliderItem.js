@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import './articleSliderItem.css'
 
+import Tag from "../../Tag/Tag"
+
 const ArticleSliderItem = ({
     slideNumber,
     tag,
@@ -15,7 +17,10 @@ const ArticleSliderItem = ({
             <img src={image} alt="" className="article-slide-img"/>
             <div className="article-slide-data">
                 <div className="article-slide-number">{slideNumber}</div>
-                <div className="tag italic">Art, Fashion</div>
+                {/* <div className="tag italic">Art, Fashion</div> */}
+                <Tag className="italic"
+                tag = {tag}
+                />
             </div>
             <div className="comment-share-button">
                 <button className="comment"><img src="images/comments.png" alt=""/></button>
