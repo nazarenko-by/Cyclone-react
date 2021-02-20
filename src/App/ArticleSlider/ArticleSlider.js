@@ -114,12 +114,14 @@ class ArticleSlider extends Component {
                     {
                         articleData.map(({
                             id,
+                            tag,
                             title,
                             text,
                             image,
                         },index) => (                            
                             <SwiperSlide key = {id}>
                                 <ArticleSliderItem
+                                    tag = {tag}
                                     slideNumber = {this.slideNumber(index + 1)}
                                     title = {title}
                                     text = {text}

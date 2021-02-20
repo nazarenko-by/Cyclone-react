@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 import './articleSliderItem.css'
 
@@ -25,6 +26,18 @@ const ArticleSliderItem = ({
             <a href="/" className="read-more">Read More</a>             
         </div>
     )
+}
+
+ArticleSliderItem.propTypes = {
+    slideNumber: PropTypes.string,
+    tag: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    image: PropTypes.string,  
+}
+
+ArticleSliderItem.defaultProps = {
+    image: "/images/default.png"
 }
 
 export default ArticleSliderItem
