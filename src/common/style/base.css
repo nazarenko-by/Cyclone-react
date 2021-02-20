@@ -8,6 +8,11 @@ body {
   font-family: "Cormorant Garamond", serif;
   color: #2a2928;
   background-color: #f8f4f3;
+  cursor: default;
+}
+
+button{
+  cursor: pointer;
 }
 
 .line {
@@ -115,6 +120,19 @@ body {
   color: #2a2928;
   font-family: "Proza Libre", sans-serif;
   font-size: 14px;
+}
+
+.arrow-next-button:hover img,
+.arrow-prev-button:hover img {
+  filter: invert(100%);
+}
+
+.arrow-prev-button {
+  grid-area: arrow-prev-button;
+}
+
+.arrow-next-button {
+  grid-area: arrow-next-button;
 }
 
 @media (max-width: 767px) {
