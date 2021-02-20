@@ -63,7 +63,7 @@ class ArticleSlider extends Component {
             prevNumber = realIndex >= 11? `${realIndex - 1}` : `0${realIndex - 1}`
         } else if(realIndex === 1){
             nextNumber = `0${realIndex + slideCount}`
-            prevNumber = length >= 10 ? slideCount === 2? `${length - 2}` :  `${length}` : slideCount === 2? `0${length - 2}` :  `0${length}`
+            prevNumber = length >= 10 ?  `${length}` : `0${length}`
         } else{
             nextNumber = realIndex + slideCount > length ? '01' : realIndex >= 9? `${realIndex + slideCount}` : `0${realIndex + slideCount}`
             prevNumber = realIndex >= 11? `${realIndex - 1}` : `0${realIndex - 1}`;
