@@ -102,6 +102,7 @@ class ArticleSlider extends Component {
                     slidesPerView = {this.slidesPerViewCounter()}
                     loop={true}
                     simulateTouch = {false}
+                    speed = {750}
                     navigation={{
                         nextEl: '#article-slider-next',
                         prevEl: '#article-slider-prev',

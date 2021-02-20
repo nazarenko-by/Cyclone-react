@@ -67,6 +67,7 @@ class Slider extends Component {
                 <Swiper className ="slider-list"
                     slidesPerView={1}
                     loop={true}
+                    speed = {750}
                     navigation={{
                         nextEl: '.slider-next',
                         prevEl: '.slider-prev',
