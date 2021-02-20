@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './articleSliderItem.css'
 
 import Tag from "../../Tag/Tag"
+import CommentShareButton from "../../CommentShareButton/CommentShareButton"
 
 const ArticleSliderItem = ({
     slideNumber,
@@ -17,15 +18,11 @@ const ArticleSliderItem = ({
             <img src={image} alt="" className="article-slide-img"/>
             <div className="article-slide-data">
                 <div className="article-slide-number">{slideNumber}</div>
-                {/* <div className="tag italic">Art, Fashion</div> */}
                 <Tag className="italic"
                 tag = {tag}
                 />
             </div>
-            <div className="comment-share-button">
-                <button className="comment"><img src="images/comments.png" alt=""/></button>
-                <button className="share"><img src="images/share.png" alt=""/></button>
-            </div>
+            <CommentShareButton/>
             <div className="title "><span className="title-line">{title}</span></div>
             <div className="text">{text}</div>      
             <a href="/" className="read-more">Read More</a>             
