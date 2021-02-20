@@ -23,6 +23,23 @@
     width: 25px;
 }
 
+.nav-mobile-menu.open span:first-child {
+    transform:rotatez(45deg) translate(-8px,9px);
+    width: 15px;
+    
+}
+
+.nav-mobile-menu.open span:nth-child(2) {
+    transform:rotatez(-45deg);
+    width: 30px;
+}
+
+.nav-mobile-menu.open span:last-child {
+    transform-origin:bottom;
+    transform:  rotatez(45deg) translate(-4px,-2px);
+    width: 15px;
+}
+
 @media (min-width: 768px) {
     .nav-mobile-menu {
         display: none;

@@ -15,3 +15,9 @@
 .menu a:hover {
     border-bottom: 2px solid #2a2928;
 }
+
+@media(max-width: 767px){
+    .menu{
+        flex-direction: row-reverse;
+    }
+}
