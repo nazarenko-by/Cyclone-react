@@ -15,7 +15,13 @@ SwiperCore.use([Navigation, Autoplay ]);
 
 class ArticleSlider extends Component {
     state = {
-        windowWidth:window.innerWidth
+        windowWidth:window.innerWidth,
+        nextNumber:'',
+        prevNumber:'',
+        nextTitle:'',
+        prevTitle:'',
+        nextTag:[],
+        prevTag:[],
     }
 
     updateWidth ()  {
@@ -40,14 +46,62 @@ class ArticleSlider extends Component {
         }
     }
 
+    slideNumber = (index) => {
+        if (index >= 10){
+            return (`${index}`)
+        } else {
+            return (`0${index}`) 
+        }
+    }
+
+    getNextPrevData = (realIndex, length) => {
+        let nextNumber, prevNumber, nextTitle, prevTitle, nextTag, prevTag
+        let slideCount = this.slidesPerViewCounter()
+        length = slideCount === 2? length - 2 : length
+        if(realIndex === length){
+            nextNumber = `0${slideCount}`;
+            prevNumber = realIndex >= 11? `${realIndex - 1}` : `0${realIndex - 1}`
+        } else if(realIndex === 1){
+            nextNumber = `0${realIndex + slideCount}`
+            prevNumber = length >= 10 ? slideCount === 2? `${length - 2}` :  `${length}` : slideCount === 2? `0${length - 2}` :  `0${length}`
+        } else{
+            nextNumber = realIndex + slideCount > length ? '01' : realIndex >= 9? `${realIndex + slideCount}` : `0${realIndex + slideCount}`
+            prevNumber = realIndex >= 11? `${realIndex - 1}` : `0${realIndex - 1}`;
+
+        }
+
+        nextTitle = articleData[+nextNumber - 1].title
+        prevTitle = articleData[+prevNumber - 1].title
+        nextTag = articleData[+nextNumber - 1].tag
+        prevTag = articleData[+prevNumber - 1].tag
+
+        this.setState({
+            nextNumber:nextNumber,
+            prevNumber:prevNumber,
+            nextTitle:nextTitle,
+            prevTitle:prevTitle,
+            nextTag:nextTag,
+            prevTag:prevTag,
+        })
+    }
+
     render() {
         return (
             <div className="article-slider">
-                <ArticleSliderPrev/>
-                <ArticleSliderNext/>
+                <ArticleSliderPrev
+                number = {this.state.prevNumber}
+                title = {this.state.prevTitle}
+                tag = {this.state.prevTag}
+                />
+                <ArticleSliderNext
+                number = {this.state.nextNumber}
+                title = {this.state.nextTitle}
+                tag = {this.state.nextTag}
+                />
                 <Swiper className="article-slides"
                     slidesPerView = {this.slidesPerViewCounter()}
                     loop={true}
+                    simulateTouch = {false}
                     navigation={{
                         nextEl: '#article-slider-next',
                         prevEl: '#article-slider-prev',
@@ -55,6 +109,7 @@ class ArticleSlider extends Component {
                     // autoplay={{
                     //     delay: 10000,
                     // }}  
+                    onSlideChange={(swiper) => {this.getNextPrevData(swiper.realIndex + 1, swiper.slides.length - 2)}}
                 >                
                     {
                         articleData.map(({
@@ -62,13 +117,15 @@ class ArticleSlider extends Component {
                             title,
                             text,
                             image,
-                        }) => (
+                        },index) => (                            
                             <SwiperSlide key = {id}>
                                 <ArticleSliderItem
+                                    slideNumber = {this.slideNumber(index + 1)}
                                     title = {title}
                                     text = {text}
                                     image = {image}/>
                             </SwiperSlide>
+                            
                         ))
                     }                
                 </Swiper>

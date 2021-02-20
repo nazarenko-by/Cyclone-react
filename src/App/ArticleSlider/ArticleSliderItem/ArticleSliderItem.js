@@ -3,6 +3,7 @@ import React from 'react'
 import './articleSliderItem.css'
 
 const ArticleSliderItem = ({
+    slideNumber,
     tag,
     title,
     text,
@@ -12,7 +13,7 @@ const ArticleSliderItem = ({
         <div className="article-slide">
             <img src={image} alt="" className="article-slide-img"/>
             <div className="article-slide-data">
-                <div className="article-slide-number">02</div>
+                <div className="article-slide-number">{slideNumber}</div>
                 <div className="tag italic">Art, Fashion</div>
             </div>
             <div className="comment-share-button">

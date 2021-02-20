@@ -27,7 +27,7 @@ class Slider extends Component {
         }
         if(newState === length){
             next = `01`;
-            if(newState >= 10){
+            if(newState >= 11){
                 prev = `${newState - 1}`;
             } else{
                 prev = `0${newState - 1}`;
