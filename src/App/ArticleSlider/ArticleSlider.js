@@ -106,9 +106,9 @@ class ArticleSlider extends Component {
                         nextEl: '#article-slider-next',
                         prevEl: '#article-slider-prev',
                     }}
-                    // autoplay={{
-                    //     delay: 10000,
-                    // }}  
+                    autoplay={{
+                        delay: 10000,
+                    }}  
                     onSlideChange={(swiper) => {this.getNextPrevData(swiper.realIndex + 1, swiper.slides.length - 2)}}
                 >                
                     {
