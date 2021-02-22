@@ -6,6 +6,25 @@ import playImg from './images/Play_Button.png'
 import pauseImg from './images/Pause_Button.png'
 
 class SoundPlayer extends Component {
+    state = {
+        playSound:false,
+    }
+
+    audio = new Audio (this.props.audio[0])
+
+    play = () => {
+        this.audio.play();
+        this.setState({
+            playSound:true,
+        })
+    }
+
+    pause = () => {
+        this.audio.pause();
+        this.setState({
+            playSound:false,
+        })
+    }
 
     getIndex = (index) => {
         return index >= 10 ? `${index +1}` : `0${index +1}`
@@ -14,7 +33,6 @@ class SoundPlayer extends Component {
     render() {
         const {
         image,
-        audio,
         soundName,
         autor,
         index,
@@ -24,8 +42,8 @@ class SoundPlayer extends Component {
             <div className="sound-player"> 
                 <div className="sound-player-img">
                     <button className="play-pause-sound"
-                        
-                        ><img src={playImg} alt=""/></button>
+                        onClick = {this.state.playSound? () => this.pause(): () => this.play()}
+                        ><img src={this.state.playSound? pauseImg : playImg} alt=""/></button>
                     <img src={image} alt=""/>
                 </div>
                 <div className="sound-number">{this.getIndex(index)}</div>
