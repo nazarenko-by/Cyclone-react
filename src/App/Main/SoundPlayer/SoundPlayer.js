@@ -1,22 +1,40 @@
 import React, { Component } from 'react'
 
 import './soundPlayer.css'
+import arrowImg from '../../../images/arrow-article-slider.png'
+import playImg from './images/Play_Button.png'
+import pauseImg from './images/Pause_Button.png'
 
 class SoundPlayer extends Component {
+
+    getIndex = (index) => {
+        return index >= 10 ? `${index +1}` : `0${index +1}`
+    }
+    
     render() {
-        return (
-            <div class="sound-player"> 
-                <div class="sound-player-img">
-                    <button class="play-pause-sound"><img src="images/Play_Button.png" alt=""/></button>
-                    <img src="images/sound.png" alt=""/>
+        const {
+        image,
+        audio,
+        soundName,
+        autor,
+        index,
+    } = this.props
+    
+        return (  
+            <div className="sound-player"> 
+                <div className="sound-player-img">
+                    <button className="play-pause-sound"
+                        
+                        ><img src={playImg} alt=""/></button>
+                    <img src={image} alt=""/>
                 </div>
-                <div class="sound-number">03</div>
-                <div class="sound-name">The Beautiful Temples Of Kyoto</div>
-                <div class="sound-autor">Jenuary 12, 2020</div>
-                <div class="sound-time-left">2:25</div>
-                <div class="sound-player-time-slider"><div class="elapsed"></div></div>
-                <button class="arrow-next-button"><img src="images/arrow-article-slider.png" alt=""/></button>
-                <button class="arrow-prev-button"><img src="images/arrow-article-slider.png" alt=""/></button>
+                <div className="sound-number">{this.getIndex(index)}</div>
+                <div className="sound-name">{soundName}</div>
+                <div className="sound-autor">{autor}</div>
+                <div className="sound-time-left">2:25</div>
+                <div className="sound-player-time-slider"><div className="elapsed"></div></div>
+                <button className="arrow-next-button"><img src={arrowImg} alt="" id="nextSound"/></button>
+                <button className="arrow-prev-button"><img src={arrowImg} alt="" id="prevSound"/></button>
             </div>
         )
     }

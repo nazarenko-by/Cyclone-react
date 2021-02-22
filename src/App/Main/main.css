@@ -3,6 +3,18 @@
     grid-template-areas: "main-article""full-sound-player-img""sound-player";
 }
 
+.sound-slider {
+    width: 100%;
+}
+
+.full-sound-player-img {
+    grid-area: full-sound-player-img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 600px;
+}
+
 @media (min-width: 768px) {
     .main {
         grid-template-columns: 4fr 3fr;
