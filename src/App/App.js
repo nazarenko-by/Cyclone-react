@@ -6,6 +6,7 @@ import '../common/style/base.css'
 import Header from './Header/Header'
 import Slider from './Slider/Slider'
 import ArticleSlider from './ArticleSlider/ArticleSlider'
+import Main from './Main/Main'
 
 const App = () => {
     return(
@@ -13,6 +14,7 @@ const App = () => {
             <Header/>
             <Slider/>
             <ArticleSlider/>
+            <Main/>
         </>
     )
 }
