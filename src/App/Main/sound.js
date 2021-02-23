@@ -8,10 +8,10 @@ const sound = [
     },
     {
         id: 2,
-        image: "/images/default.png",
-        audio: ["/audio/The_Sounds-Weekend.mp3", "The_Sounds-Weekend.webm"],
-        soundName: "Weekend",
-        autor: "The Sounds"
+        image: "/images/welcome_home.png",
+        audio: ["/audio/Radical_face-welcome_home(cover).mp3", "The_Sounds-Weekend.webm"],
+        soundName: "Welcome Home (cover)",
+        autor: "Radical Face"
     },
 ]
 
