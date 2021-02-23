@@ -9,8 +9,10 @@ class SoundPlayer extends Component {
     state = {
         playSound:false,
         currentTime: 0,
-        duration: 0,
+        duration: 0.1,
         currentTimeFormat:'00:00',
+        elapsedWidth:0,
+        mouseMove: false,
     }
 
     componentDidMount() {
@@ -20,7 +22,9 @@ class SoundPlayer extends Component {
             duration: e.target.duration,
             currentTimeFormat: this.getTime(Math.round(e.target.currentTime),  e.target.duration),
           });
+          this.getSoundPlayerSlider()
         });
+        
       }
     
       componentWillUnmount() {
@@ -51,24 +55,56 @@ class SoundPlayer extends Component {
     getSoundPlayerSlider = () => {
         let width
         width = (Math.round(this.state.currentTime) * 100) / Math.round(this.state.duration) + '%'
-        console.log(width)
-        return (width)
+        this.setState({
+            elapsedWidth: width,
+        })
     }
 
     getIndex = (index) => {
         return index >= 10 ? `${index +1}` : `0${index +1}`
     }
 
-    getTime = (time, duration) => {
+    getTime = (time, duration = this.state.duration) => {
         if (!isNaN(time, duration)) {
            return Math.round(duration/60) >= 60 ? 
             [Math.floor(time / 60 / 60).toString().padStart(2, '0'),
             (Math.floor(time / 60) - (Math.floor(time / 60 / 60) * 60)).toString().padStart(2, '0'),
             (time % 60).toString().padStart(2, '0'),].join(':') : 
-            [(Math.round(time / 60)).toString().padStart(2, '0'),
+            [(Math.floor(time / 60)).toString().padStart(2, '0'),
             (time % 60).toString().padStart(2, '0'),].join(':')
 
         }
+    }
+
+  
+
+    setNewCurentTime () {
+        let element = this.refs.Elapsed
+        let right = Math.round(element.getBoundingClientRect().right) 
+        let left = Math.round(element.getBoundingClientRect().left) 
+        this.setState({
+            mouseMove:true
+        })
+        this.pause()   
+        element.addEventListener('mousemove', (e) => {
+            if (this.state.mouseMove){
+                this.setState({
+                    elapsedWidth: (e.pageX - left)/(right-left)*100 + '%',
+                    currentTime: this.state.duration/100 * (e.pageX - left)/(right-left)*100,
+                    currentTimeFormat: this.getTime(Math.round((this.state.duration/100) * (e.pageX - left)/(right-left)*100))
+                })
+            }
+        })
+        
+    }
+
+    setCurentTime () {
+        this.setState({
+            mouseMove:false
+        })
+        this.audio.currentTime = this.state.currentTime;
+        this.play()
+        
     }
     
     render() {
@@ -91,7 +127,13 @@ class SoundPlayer extends Component {
                 <div className="sound-name">{soundName}</div>
                 <div className="sound-autor">{autor}</div>
                 <div className="sound-time-left">{this.state.currentTimeFormat}</div>
-                <div className="sound-player-time-slider"><div className="elapsed" style = {{width: this.getSoundPlayerSlider()}}></div></div>
+                <div className="sound-player-time-slider"
+                onMouseDown = {() => this.setNewCurentTime()}
+                onMouseUp = {() => this.setCurentTime()}
+                ref = "Elapsed"
+                ><div className="elapsed" style = {{width: this.state.elapsedWidth}}
+                    
+                ></div></div>
                 <button className="arrow-next-button"
                     onClick = {() => this.stop()}
                 ><img src={arrowImg} alt="" id="nextSound"/></button>
