@@ -1,11 +1,13 @@
 import React from 'react'
 
+import './hotTopics.css'
+
 import HotTopicList from './HotTopicList/HotTopicList'
 
 const HotTopics = () => {
     return (
-        <div class="hot-topics">
-            <div class="big-title">Hot <span class="text-line">Topics</span></div>
+        <div className="hot-topics">
+            <div className="big-title">Hot <span className="text-line">Topics</span></div>
             <HotTopicList/>
         </div>)
 }

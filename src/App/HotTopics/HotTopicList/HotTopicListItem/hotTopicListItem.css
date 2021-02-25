@@ -1,0 +1,46 @@
+.topic {
+    display: grid;
+    gap: 10px 0;
+    grid-template-areas: "img img img""tag . comment-share-button""title title title""text text text""topic-autor topic-autor .";
+}
+
+.topic>img {
+    grid-area: img;
+    width: 100%;
+    object-fit: cover;
+}
+
+.topic .comment-share-button {
+    justify-self: end;
+}
+
+.topic-autor {
+    grid-area: topic-autor;
+    color: #918e8b;
+    font-size: 16px;
+    font-style: italic;
+}
+
+@media (max-width: 767px) {
+    .topic .comment-share-button {
+        flex-direction: row;
+    }
+
+    .topic .title {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .topics-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .topics-list {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+}

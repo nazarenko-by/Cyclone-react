@@ -15,7 +15,7 @@ class SoundPlayer extends Component {
         mouseMove: false,
     }
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
         this.audio.addEventListener("timeupdate", e => {
           this.setState({
             currentTime: e.target.currentTime,
