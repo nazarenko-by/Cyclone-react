@@ -14,7 +14,7 @@ const HotTopicListItem = ({
 }) => {
     return (
         <div className="topic">
-            <img src={image} alt=""/>
+            <img src={image} alt="" className="topic-image"/>
             <Tag 
                 tag = {tag}
             />

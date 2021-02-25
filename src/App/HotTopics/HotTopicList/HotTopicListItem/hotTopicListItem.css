@@ -1,11 +1,11 @@
 .topic {
     display: grid;
     gap: 10px 0;
-    grid-template-areas: "img img img""tag . comment-share-button""title title title""text text text""topic-autor topic-autor .";
+    grid-template-areas: "topic-image topic-image topic-image" "tag . comment-share-button" "title title title""text text text" "topic-autor topic-autor .";
 }
 
-.topic>img {
-    grid-area: img;
+.topic-image {
+    grid-area: topic-image;
     width: 100%;
     object-fit: cover;
 }
@@ -28,19 +28,5 @@
 
     .topic .title {
         text-align: center;
-    }
-}
-
-@media (min-width: 768px) {
-    .topics-list {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .topics-list {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
     }
 }

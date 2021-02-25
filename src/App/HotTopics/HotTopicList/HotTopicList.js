@@ -32,6 +32,7 @@ class HotTopicList extends Component {
             columnWidth={this.state.windowWidth >= 1024 ? "33.333%" : this.state.windowWidth >= 768 ? "50%" : "100%"}
             gutterWidth = {30}
             gutterHeight = {30}
+            monitorImagesLoaded = {true}
             >
                 
                 {hotTopic.map(({id, image, tag, title, text, autor}) => (
