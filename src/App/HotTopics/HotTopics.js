@@ -9,7 +9,7 @@ import HotTopicList from './HotTopicList/HotTopicList'
 import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
 
 const HotTopics = () => {
-    const topicsCount = 4
+    const topicsCount = 8
     const length = topicList.length
     const [startList, setStartList] = useState(0);
     const [endList, setEndList] = useState(topicsCount);
@@ -47,7 +47,6 @@ function loadMore (length, topicsCount, endList, setEndList, setCurrentPage, cur
         setEndList(endList + topicsCount)
         setCurrentPage(currentPage + 1)
     }
-    console.log(currentPage, Math.ceil(length/topicsCount), endList)
 }
 
 export default HotTopics

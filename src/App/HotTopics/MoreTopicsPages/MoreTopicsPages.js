@@ -29,13 +29,21 @@ const MoreTopicsPages = ({
 
 function addPageNumber (length, currentPage, topicsCount, setStartList, setEndList, setCurrentPage) {
     let pages =[]
+    let separation
     for (let index = 1; index <= Math.ceil(length/topicsCount); index++) {
-        pages.push(<li key = {index} className = {currentPage !== index? "": "title-line"}
+        if (index === 1 || (index >= (currentPage - 2) && index <= (currentPage + 2)) || index === Math.ceil(length/topicsCount)){
+           pages.push(<li key = {index} className = {currentPage !== index? "": "title-line"}
         onClick = {() => 
             {setStartList(topicsCount*index-topicsCount);
              setEndList(topicsCount*index);
              setCurrentPage(index)}
-        }>{index>=10? index : `0${index}`}</li>)                
+        }>{index>=10? index : `0${index}`}</li>)  
+        separation = true
+        } else if (separation){
+            pages.push(<li key = {index}>...</li>)
+            separation = false
+        }
+                       
     }
     return pages
 }
