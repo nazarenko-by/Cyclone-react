@@ -1,27 +1,102 @@
 .hot-topics {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 30px;
-    justify-items: center;
-    grid-template-areas: ". big-title ."". topics-list ."". load-more ."". more-topics-pages ."". line .";
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 30px;
+  justify-items: center;
+  grid-template-areas: ". big-title ."". topics-list ."". load-more ."". more-topics-pages ."". line .";
 }
 
 .hot-topics .big-title {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .hot-topics .line {
-    margin: 0 0 30px;
+  margin: 0 0 30px;
+}
+
+.load-more {
+  grid-area: load-more;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  font-family: "Proza Libre", sans-serif;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.load-more button {
+  cursor: pointer;
+}
+
+.load-more button:hover {
+  color: #918e8b;
+}
+
+.more-topics-pages {
+  width: 100%;
+  grid-area: more-topics-pages;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "arrow-prev-button topics-pages arrow-next-button";
+}
+
+.more-topics-pages .arrow-next-button {
+  transform: rotate(180deg);
+}
+
+.topics-pages {
+  grid-area: topics-pages;
+  display: flex;
+  gap: 20px;
+  font-family: "Proza Libre", sans-serif;
+  font-size: 14px;
+  color: #918e8b;
+  justify-self: center;
+}
+
+.topics-pages li:last-child {
+  color: #2a2928;
+}
+
+.topics-pages .title-line {
+  color: #2a2928;
+}
+
+.topics-pages .title-line::after {
+  height: 15px;
+  top: 5px;
+}
+
+.topics-pages li {
+  cursor: pointer;
+}
+
+.topics-pages li:hover {
+  color: #2a2928;
+}
+
+.topics-pages div {
+  cursor: default;
 }
 
 @media (min-width: 1024px) {
-    .hot-topics line {
-        margin: 20px 0 50px;
-    }
+  .hot-topics line {
+    margin: 20px 0 50px;
+  }
+
+  .load-more {
+    margin: 50px 0 20px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .hot-topics line {
-        margin: 50px 0 70px;
-    }
+  .hot-topics line {
+    margin: 50px 0 70px;
+  }
+
+  .load-more {
+    margin: 70px 0 30px;
+  }
 }

@@ -27,6 +27,10 @@ class HotTopicList extends Component {
     }
 
     render() {
+        const {
+            startList,
+            endList,
+        } = this.props
         return (
             <StackGrid className="topics-list"
             columnWidth={this.state.windowWidth >= 1024 ? "33.333%" : this.state.windowWidth >= 768 ? "50%" : "100%"}
@@ -35,7 +39,7 @@ class HotTopicList extends Component {
             monitorImagesLoaded = {true}
             >
                 
-                {hotTopic.map(({id, image, tag, title, text, autor}) => (
+                {hotTopic.slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
                     <HotTopicListItem 
                     key = {id}
                     image = {image}
