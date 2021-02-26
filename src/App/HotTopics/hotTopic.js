@@ -64,6 +64,15 @@ const hotTopic = [
         Shops to visit`,
         text:'Even the most esteemed art institutions can have disappointing museum shops, stocked with posters and logo-emblazoned totes and refrigerator magnets. But the exit through the gift shop can also be a true delight.',
         autor:'By Adam Nagourney',
+    },
+    {
+        id: 9,
+        image: '/images/HotTopics/hot-topics-title-8.png',
+        tag: ["Fashion"],
+        title:`10 Best Museum
+        Shops to visit`,
+        text:'Even the most esteemed art institutions can have disappointing museum shops, stocked with posters and logo-emblazoned totes and refrigerator magnets. But the exit through the gift shop can also be a true delight.',
+        autor:'By Adam Nagourney',
     }
 ]
 

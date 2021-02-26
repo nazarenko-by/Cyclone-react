@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import './hotTopics.css'
 import loadMoreImg from "./load-more.png"
+import topicList from './hotTopic'
 
 
 import HotTopicList from './HotTopicList/HotTopicList'
@@ -9,9 +10,11 @@ import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
 
 const HotTopics = () => {
     const topicsCount = 4
+    const length = topicList.length
     const [startList, setStartList] = useState(0);
     const [endList, setEndList] = useState(topicsCount);
     const [currentPage, setCurrentPage] = useState(1);
+    
 
     return (
         <div className="hot-topics">
@@ -23,18 +26,29 @@ const HotTopics = () => {
             <div className="load-more">
                 <img src= {loadMoreImg} alt=""/>
                 <button 
-                    onClick = {() => {setEndList(endList + 8); setCurrentPage(currentPage + 1)}}
+                    onClick = {() => loadMore(length, topicsCount, endList, setEndList, setCurrentPage, currentPage)}
                 >Load More Topics</button>
             </div>
             <MoreTopicsPages
+            length = {length}
             topicsCount = {topicsCount}
             currentPage = {currentPage}
             startList = {startList}
             endList = {endList}
             setStartList = {setStartList}
-            setEndList = {setEndList}/>
+            setEndList = {setEndList}
+            setCurrentPage = {setCurrentPage}/>
             <div className="line"></div>
         </div>)
 }
 
+function loadMore (length, topicsCount, endList, setEndList, setCurrentPage, currentPage){
+    if (length > endList){
+        setEndList(endList + topicsCount)
+        setCurrentPage(currentPage + 1)
+    }
+    console.log(currentPage, Math.ceil(length/topicsCount), endList)
+}
+
 export default HotTopics
+
