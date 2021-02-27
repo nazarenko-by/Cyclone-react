@@ -14,13 +14,13 @@ const MoreTopicsPages = ({
 }) => {
     return (
         <div className="more-topics-pages">
-            <ul className="topics-pages">
+            <ul className="topics-pages unselectable">
                 {addPageNumber(length, currentPage, topicsCount, setStartList, setEndList, setCurrentPage)}
             </ul>
-            <button className="arrow-prev-button" 
+            <button className="arrow-prev-button unselectable" 
                 onClick = {() => prevPage(endList, startList, topicsCount, currentPage, setStartList, setEndList, setCurrentPage)}
             ><img src={arrowImg} alt=""/></button>
-            <button className="arrow-next-button"
+            <button className="arrow-next-button unselectable"
                 onClick = {() => nextPage(length ,endList, topicsCount, currentPage, setStartList, setEndList, setCurrentPage)} 
             ><img src={arrowImg} alt=""/></button>
         </div>

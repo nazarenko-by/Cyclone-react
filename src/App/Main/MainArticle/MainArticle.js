@@ -8,7 +8,7 @@ import Tag from '../../Tag/Tag'
 const MainArticle = () => {
     return(
         <div className="main-article">
-            <div className="paginator"><span>01</span> <span>05</span></div>
+            <div className="paginator unselectable"><span>01</span> <span>05</span></div>
             <Tag className = "italic"
                 tag = {["Fashion", "Art"]}
             />

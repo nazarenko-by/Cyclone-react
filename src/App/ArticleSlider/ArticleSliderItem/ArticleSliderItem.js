@@ -15,7 +15,7 @@ const ArticleSliderItem = ({
 }) => {
     return(
         <div className="article-slide">
-            <img src={image} alt="" className="article-slide-img"/>
+            <img src={image} alt="" className="article-slide-img unselectable"/>
             <div className="article-slide-data">
                 <div className="article-slide-number">{slideNumber}</div>
                 <Tag className="italic"

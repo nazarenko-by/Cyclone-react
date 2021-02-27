@@ -16,7 +16,7 @@ class SoundPlayer extends Component {
         mouseMove: false,
     }
 
-    UNSAFE_componentDidMount() {
+    componentDidMount() {
         this.audio.addEventListener("timeupdate", e => {
           this.setState({
             currentTime: e.target.currentTime,
@@ -127,7 +127,7 @@ class SoundPlayer extends Component {
                 <div className="sound-number">{this.getIndex(index)}</div>
                 <div className="sound-name">{soundName}</div>
                 <div className="sound-autor">{autor}</div>
-                <div className="sound-time-left">{this.state.currentTimeFormat}</div>
+                <div className="sound-time-left unselectable">{this.state.currentTimeFormat}</div>
                 <div className="sound-player-time-slider"
                 onMouseDown = {() => this.setNewCurentTime()}
                 onMouseUp = {() => this.setCurentTime()}
@@ -135,10 +135,10 @@ class SoundPlayer extends Component {
                 ><div className="elapsed" style = {{width: this.state.elapsedWidth}}
                     
                 ></div></div>
-                <button className="arrow-next-button"
+                <button className="arrow-next-button unselectable"
                     onClick = {() => this.stop()}
                 ><img src={arrowImg} alt="" id="nextSound"/></button>
-                <button className="arrow-prev-button"
+                <button className="arrow-prev-button unselectable"
                     onClick = {() => this.stop()}
                 ><img src={arrowImg} alt="" id="prevSound"/></button>
             </div>

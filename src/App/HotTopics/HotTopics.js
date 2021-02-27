@@ -23,7 +23,7 @@ const HotTopics = () => {
                 startList = {startList}
                 endList = {endList}
             />
-            <div className="load-more">
+            <div className="load-more unselectable">
                 <img src= {loadMoreImg} alt=""/>
                 <button 
                     onClick = {() => loadMore(length, topicsCount, endList, setEndList, setCurrentPage, currentPage)}
