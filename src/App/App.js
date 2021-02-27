@@ -9,6 +9,7 @@ import ArticleSlider from './ArticleSlider/ArticleSlider'
 import Main from './Main/Main'
 import HotTopics from './HotTopics/HotTopics'
 import MostRead from './MostRead/MostRead'
+import Subscribe from './Subscribe/Subscribe'
 
 const App = () => {
     return(
@@ -19,6 +20,7 @@ const App = () => {
             <Main/>
             <HotTopics/>
             <MostRead/>
+            <Subscribe/>
         </>
     )
 }
