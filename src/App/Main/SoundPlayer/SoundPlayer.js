@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 import './soundPlayer.css'
 import arrowImg from '../../../images/arrow-article-slider.png'
@@ -143,6 +144,18 @@ class SoundPlayer extends Component {
             </div>
         )
     }
+}
+
+SoundPlayer.propTypes = {
+    image: PropTypes.string,
+    soundName: PropTypes.string,
+    autor: PropTypes.string,
+    index: PropTypes.number,
+    audio: PropTypes.array.isRequired
+}
+
+SoundPlayer.defaultProps = {
+    image: "/images/default.png"
 }
 
 export default SoundPlayer
