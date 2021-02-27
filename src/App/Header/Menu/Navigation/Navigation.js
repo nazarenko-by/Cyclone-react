@@ -10,13 +10,15 @@ class Navigation extends Component{
     }
 
     openMobileMenu = () => {
-        console.log(this.state.className)
         this.setState((prevState) => {
             return prevState.className === "open" ? {className:""} : {className: "open"}
         })
     }
 
     render(){
+        const {
+            creatMobMenu,
+        } = this.props
         return (
             <>
                 <ul className={`navigation ${this.state.className}`}>
@@ -28,9 +30,9 @@ class Navigation extends Component{
                     <li><a href="/">Fashion</a></li>
                     <li><a href="/">Contacts</a></li>
                 </ul>
-                <MobileNavigation
+                {creatMobMenu? <MobileNavigation
                 className = {this.state.className}
-                openMobileMenu = {this.openMobileMenu}/>
+                openMobileMenu = {this.openMobileMenu}/> : <></>}
             </>
         )
     }

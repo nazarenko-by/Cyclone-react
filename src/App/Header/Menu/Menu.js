@@ -10,7 +10,8 @@ import FollowUs from './FollowUs/FollowUs'
 const Menu = () => {
     return(
         <div className="menu">
-            <Navigation/>
+            <Navigation
+            creatMobMenu = {true}/>
             <Search/>
             <FollowUs/>
         </div>
