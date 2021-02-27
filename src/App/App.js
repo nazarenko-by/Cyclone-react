@@ -8,6 +8,7 @@ import Slider from './Slider/Slider'
 import ArticleSlider from './ArticleSlider/ArticleSlider'
 import Main from './Main/Main'
 import HotTopics from './HotTopics/HotTopics'
+import MostRead from './MostRead/MostRead'
 
 const App = () => {
     return(
@@ -17,6 +18,7 @@ const App = () => {
             <ArticleSlider/>
             <Main/>
             <HotTopics/>
+            <MostRead/>
         </>
     )
 }

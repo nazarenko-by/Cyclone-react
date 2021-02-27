@@ -1,0 +1,19 @@
+.most-read-article {
+    grid-area: most-read-article;
+    display: grid;
+    gap: 30px;
+    grid-template-areas: "article""article""article""article";
+}
+
+@media (min-width: 768px) {
+
+    .most-read-article {
+        grid-template-areas: "article article""article article";
+    }
+}
+
+@media (min-width: 1200px) {
+    .most-read-article {
+        grid-template-areas: "article article article article";
+    }
+}
