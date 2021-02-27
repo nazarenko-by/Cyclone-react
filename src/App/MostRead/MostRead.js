@@ -9,7 +9,9 @@ const MostRead = () => {
         <div className="most-read">
             <div className="big-title">Most <span className="text-line">Read Article</span></div>
             <MostReadList/>
+            <div class="line"></div>
         </div>
+        
     )
 }
 
