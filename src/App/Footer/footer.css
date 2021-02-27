@@ -1,0 +1,27 @@
+.footer {
+    background-color: #f2eae6;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 30px;
+    grid-template-areas: ". footer-menu ."". line ."". copyright .";
+}
+
+.copyright {
+    grid-area: copyright;
+    margin: 30px 0;
+    color: #918e8b;
+    font-family: "Proza Libre", sans-serif;
+    font-size: 12px;
+  }
+
+@media (max-width: 767px) {
+    .footer .follow-us {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .footer .navigation {
+        display: none;
+    }
+}

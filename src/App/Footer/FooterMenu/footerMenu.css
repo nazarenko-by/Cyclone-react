@@ -1,0 +1,44 @@
+.footer-menu {
+    grid-area: footer-menu;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    font-family: "Proza Libre", sans-serif;
+    color: #918e8b;
+}
+
+.footer-menu .navigation a {
+    color: #918e8b;
+}
+
+.footer-menu .navigation a:hover {
+    color: #2a2928;
+}
+
+.footer-menu img,
+.footer-menu .follow-us img {
+    filter: invert(50%);
+}
+
+.footer-menu img:hover,
+.footer-menu .follow-us img:hover {
+    filter: none;
+}
+
+@media (min-width: 768px) {
+    .footer-menu {
+        margin: 45px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-menu {
+        margin: 65px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-menu {
+        margin: 85px 0;
+    }
+}

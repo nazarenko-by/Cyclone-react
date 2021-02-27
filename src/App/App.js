@@ -10,6 +10,7 @@ import Main from './Main/Main'
 import HotTopics from './HotTopics/HotTopics'
 import MostRead from './MostRead/MostRead'
 import Subscribe from './Subscribe/Subscribe'
+import Footer from './Footer/Footer'
 
 const App = () => {
     return(
@@ -21,6 +22,7 @@ const App = () => {
             <HotTopics/>
             <MostRead/>
             <Subscribe/>
+            <Footer/>
         </>
     )
 }

@@ -4,8 +4,8 @@ import './subscribe.css'
 
 const Subscribe = () => {
     return(
-        <div class="subscribe">
-            <div class="big-title">Subscribe</div>
+        <div className="subscribe">
+            <div className="big-title">Subscribe</div>
             <form action="">
                 <input type="email" placeholder="Your e-mail"/>
                 <button>Subscribe</button>
