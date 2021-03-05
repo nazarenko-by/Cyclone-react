@@ -13,6 +13,10 @@ import Subscribe from './Subscribe/Subscribe'
 import Footer from './Footer/Footer'
 import {Route} from 'react-router-dom'
 import DesignPage from './DesignPage/DesignPage'
+import LiveStylePage from './LiveStylePage/LiveStylePage'
+import TravelPage from './TravelPage/TravelPage'
+import ArtPage from './ArtPage/ArtPage'
+import FashionPage from './FashionPage/FashionPage'
 
 const App = () => {
     return(
@@ -24,6 +28,10 @@ const App = () => {
             <Route path = "/" exact component = {HotTopics}/>
             <Route path = "/" exact component = {MostRead}/>
             <Route path = "/design" component = {DesignPage}/>
+            <Route path = "/liveStyle" component = {LiveStylePage}/>
+            <Route path = "/travel" component = {TravelPage}/>
+            <Route path = "/art" component = {ArtPage}/>
+            <Route path = "/fashion" component = {FashionPage}/>
             <Subscribe/>
             <Footer/>
         </>
