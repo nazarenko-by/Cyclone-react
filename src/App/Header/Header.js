@@ -2,14 +2,14 @@ import React from 'react'
 
 import './header.css'
 
-import Logo from './Logo/Logo'
+import LogoDate from './LogoDate/LogoDate'
 import Menu from './Menu/Menu'
 
 
 const Header = () => {
     return(
         <header className="header">
-            <Logo/>
+            <LogoDate/>
             <div className="line"></div>
             <Menu/>
             <div className="line"></div>

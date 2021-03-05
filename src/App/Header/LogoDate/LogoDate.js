@@ -1,11 +1,13 @@
 import React from 'react'
 
-import './logo.css'
+import './logoDate.css'
 
-const Logo = () => {
+import Logo from '../../../Components/Logo/Logo'
+
+const LogoDate = () => {
     return (
             <div className="logo">
-                <a href="/"><img src="/images/Logo.png" alt=""/></a>
+                <Logo/>
                 <div className="logo-date">{getCurrentDate()}</div>
             </div>
     )
@@ -86,4 +88,4 @@ function getCurrentDate(){
     return `${day}, ${month} ${date}, ${year}`
     }
 
-export default Logo
+export default LogoDate

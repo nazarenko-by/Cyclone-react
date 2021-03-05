@@ -5,11 +5,12 @@ import './footerMenu.css'
 import Navigation from '../../../Components/Navigation/Navigation'
 import Search from '../../../Components/Search/Search'
 import FollowUs from '../../../Components/FollowUs/FollowUs'
+import Logo from '../../../Components/Logo/Logo'
 
 const FooterMenu = () => {
     return(
         <div className="footer-menu">
-            <a href="/"><img src="/images/Logo.png" alt=""/></a>
+            <Logo/>
             <Navigation/>
             <Search/>
             <FollowUs/>
