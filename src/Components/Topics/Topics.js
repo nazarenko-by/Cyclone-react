@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 
 import './topics.css'
 import loadMoreImg from "./load-more.png"
-import topicList from './hotTopic'
+
 
 
 import TopicList from './TopicList/TopicList'
 import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
 
-const Topics = ({topicTag,TopicListItems}) => {
+const Topics = ({topicTag,TopicListItems, length}) => {
     const topicsCount = 8
-    const length =topicList.length;
     const [startList, setStartList] = useState(0);
     const [endList, setEndList] = useState(topicsCount);
     const [currentPage, setCurrentPage] = useState(1);

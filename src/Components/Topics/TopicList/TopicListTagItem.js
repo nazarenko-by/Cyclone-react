@@ -5,8 +5,6 @@ import hotTopic from '../hotTopic'
 
 import TopicListItem from './TopicListItem/TopicListItem'
 
-let count = 0;
-
 const TopicListAllItem = ({
     startList,
     endList,
