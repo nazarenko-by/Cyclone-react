@@ -8,9 +8,9 @@ import topicList from './hotTopic'
 import TopicList from './TopicList/TopicList'
 import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
 
-const Topics = () => {
+const Topics = ({topicTag,TopicListItems}) => {
     const topicsCount = 8
-    const length = topicList.length
+    const length =topicList.length;
     const [startList, setStartList] = useState(0);
     const [endList, setEndList] = useState(topicsCount);
     const [currentPage, setCurrentPage] = useState(1);
@@ -21,6 +21,8 @@ const Topics = () => {
             <TopicList
                 startList = {startList}
                 endList = {endList}
+                topicTag = {topicTag}
+                TopicListItems = {TopicListItems}
             />
             <div className="load-more unselectable">
                 <img src= {loadMoreImg} alt=""/>

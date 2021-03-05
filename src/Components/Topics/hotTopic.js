@@ -67,7 +67,7 @@ const hotTopic = [
     {
         id: 9,
         image: './images/HotTopics/hot-topics-title-8.png',
-        tag: ["Fashion"],
+        tag: ["Design"],
         title:<>10 Best Museum<br/>Shops to visit</>,
         text:<>Even the most esteemed art institutions can have disappointing museum shops, stocked with posters and logo-emblazoned totes and refrigerator magnets. But the exit through the gift shop can also be a true delight.</>,
         autor:'By Adam Nagourney',
