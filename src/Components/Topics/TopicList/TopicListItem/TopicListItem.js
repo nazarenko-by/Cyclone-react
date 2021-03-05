@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import './hotTopicListItem.css'
+import './topicListItem.css'
 
-import Tag from "../../../../Components/Tag/Tag"
-import CommentShareButton from '../../../../Components/CommentShareButton/CommentShareButton'
+import Tag from "../../../Tag/Tag"
+import CommentShareButton from '../../../CommentShareButton/CommentShareButton'
 
-const HotTopicListItem = ({
+const TopicListItem = ({
     image,
     tag,
     title,
@@ -27,7 +27,7 @@ const HotTopicListItem = ({
     )
 }
 
-HotTopicListItem.propTypes = {
+TopicListItem.propTypes = {
     image: PropTypes.string,
     tag: PropTypes.array,
      title: PropTypes.object.isRequired,
@@ -35,8 +35,8 @@ HotTopicListItem.propTypes = {
      autor: PropTypes.string,
 }
 
-HotTopicListItem.defaultProps = {
+TopicListItem.defaultProps = {
     image: "/images/default.png"
 }
 
-export default HotTopicListItem
+export default TopicListItem

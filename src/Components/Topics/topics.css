@@ -1,4 +1,4 @@
-.hot-topics {
+.topics {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 30px;
@@ -6,11 +6,11 @@
   grid-template-areas: ". big-title ."". topics-list ."". load-more ."". more-topics-pages ."". line .";
 }
 
-.hot-topics .big-title {
+.topics .big-title {
   margin-top: 30px;
 }
 
-.hot-topics .line {
+.topics .line {
   margin: 0 0 30px;
 }
 
@@ -82,7 +82,7 @@
 }
 
 @media (min-width: 1024px) {
-  .hot-topics line {
+  .topics line {
     margin: 20px 0 50px;
   }
 
@@ -92,7 +92,7 @@
 }
 
 @media (min-width: 1200px) {
-  .hot-topics line {
+  .topics line {
     margin: 50px 0 70px;
   }
 

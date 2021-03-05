@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import StackGrid from "react-stack-grid";
 
-import './hotTopicList.css'
+import './topicList.css'
 import hotTopic from '../hotTopic'
 
-import HotTopicListItem from './HotTopicListItem/HotTopicListItem'
+import TopicListItem from './TopicListItem/TopicListItem'
 
 
-class HotTopicList extends Component {
+class TopicList extends Component {
     state = {
         windowWidth:window.innerWidth,
     }
@@ -40,7 +40,7 @@ class HotTopicList extends Component {
             >
                 
                 {hotTopic.slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
-                    <HotTopicListItem 
+                    <TopicListItem 
                     key = {id}
                     image = {image}
                     tag = {tag}
@@ -55,4 +55,4 @@ class HotTopicList extends Component {
 }
 
 
-export default HotTopicList
+export default TopicList
