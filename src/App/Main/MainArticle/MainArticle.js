@@ -2,8 +2,8 @@ import React from 'react'
 
 import './mainArticle.css'
 
-import CommentShareButton from "../../CommentShareButton/CommentShareButton"
-import Tag from '../../Tag/Tag'
+import CommentShareButton from "../../../Components/CommentShareButton/CommentShareButton"
+import Tag from '../../../Components/Tag/Tag'
 
 const MainArticle = () => {
     return(

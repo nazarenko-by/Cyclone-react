@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './hotTopicListItem.css'
 
-import Tag from "../../../Tag/Tag"
-import CommentShareButton from '../../../CommentShareButton/CommentShareButton'
+import Tag from "../../../../Components/Tag/Tag"
+import CommentShareButton from '../../../../Components/CommentShareButton/CommentShareButton'
 
 const HotTopicListItem = ({
     image,

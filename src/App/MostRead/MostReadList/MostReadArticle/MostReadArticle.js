@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './mostReadArticle.css'
 
-import CommentShareButton from '../../../CommentShareButton/CommentShareButton'
-import Tag from '../../../Tag/Tag'
+import CommentShareButton from '../../../../Components/CommentShareButton/CommentShareButton'
+import Tag from '../../../../Components/Tag/Tag'
 
 const MostReadArticle = ({
     tag,

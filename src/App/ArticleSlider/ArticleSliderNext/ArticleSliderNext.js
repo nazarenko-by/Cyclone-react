@@ -2,7 +2,7 @@ import React from 'react'
 
 import './articleSliderNext.css'
 import arrowImg from '../../../images/arrow-article-slider.png'
-import Tag from "../../Tag/Tag"
+import Tag from "../../../Components/Tag/Tag"
 
 const ArticleSliderNext = ({
     number,

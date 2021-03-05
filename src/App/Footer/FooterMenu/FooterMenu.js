@@ -2,9 +2,9 @@ import React from 'react'
 
 import './footerMenu.css'
 
-import Navigation from '../../Header/Menu/Navigation/Navigation'
-import Search from '../../Header/Menu/Search/Search'
-import FollowUs from '../../Header/Menu/FollowUs/FollowUs'
+import Navigation from '../../../Components/Navigation/Navigation'
+import Search from '../../../Components/Search/Search'
+import FollowUs from '../../../Components/FollowUs/FollowUs'
 
 const FooterMenu = () => {
     return(

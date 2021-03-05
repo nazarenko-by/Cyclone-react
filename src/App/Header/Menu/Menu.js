@@ -2,9 +2,9 @@ import React from 'react'
 
 import './menu.css'
 
-import Navigation from './Navigation/Navigation'
-import Search from './Search/Search'
-import FollowUs from './FollowUs/FollowUs'
+import Navigation from '../../../Components/Navigation/Navigation'
+import Search from '../../../Components/Search/Search'
+import FollowUs from '../../../Components/FollowUs/FollowUs'
 
 
 const Menu = () => {
