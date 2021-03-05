@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './navigation.css'
 
 import MobileNavigation from './MobileNavigation/MobileNavigation'
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component{
     state = {
@@ -22,13 +23,13 @@ class Navigation extends Component{
         return (
             <>
                 <ul className={`navigation ${this.state.className}`}>
-                    <li><a href="/">Main</a></li>
-                    <li><a href="/">Design</a></li>
-                    <li><a href="/">LiveStyle</a></li>
-                    <li><a href="/">Travel</a></li>
-                    <li><a href="/">Art</a></li>
-                    <li><a href="/">Fashion</a></li>
-                    <li><a href="/">Contacts</a></li>
+                    <li><Link to="/">Main</Link></li>
+                    <li><Link to="/design">Design</Link></li>
+                    <li><Link to="/liveStyle">LiveStyle</Link></li>
+                    <li><Link to="/travel">Travel</Link></li>
+                    <li><Link to="/art">Art</Link></li>
+                    <li><Link to="/fashion">Fashion</Link></li>
+                    <li><Link to="/contacts">Contacts</Link></li>
                 </ul>
                 {creatMobMenu? <MobileNavigation
                 className = {this.state.className}
