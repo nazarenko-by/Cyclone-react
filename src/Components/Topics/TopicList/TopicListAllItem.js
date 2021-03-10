@@ -18,7 +18,7 @@ const TopicListAllItem = ({
             gutterHeight = {30}
             monitorImagesLoaded = {true}
             >
-            {topics.filter(hotTopic =>hotTopic.category === category || hotTopic.category === 3).slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
+            {topics.filter(hotTopic =>hotTopic.category === category || hotTopic.category === 0).slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
                 <TopicListItem 
                 key = {id}
                 image = {image}

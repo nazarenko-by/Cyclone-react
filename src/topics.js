@@ -1,7 +1,9 @@
 // Category: 
+// 0 - All
 // 1 - Hot Topics
 // 2 - Article Slider
-// 3 - All
+// 3 - Main
+
 
 const topics = [
     {
@@ -109,6 +111,15 @@ const topics = [
         image: '/images/article-img-4.png',
         category: 2
     },
+    {
+        id: 13,
+        tag: ["Fashion", "Art"],
+        title: <>The fascination <span className="italic"><span className="yellow-text text-line">with Alchemy</span> in Art</span></>,
+        text: <>Alchemy as a protoscientific and philosophical method influenced artists to create works that can be categorized as alchemy art. However, this tradition is not generally accepted in art historical classifications, and often <span className="italic text-line">alchemical elements</span> in art are subscribed under different, stylistically and historically guided categorizations. <br/><br/> However, being as it is, it cannot be denied that alchemy had a significant influence on art and artists over the centuries, and can be traced in works from ancient Egypt, European Middle ages through Renaissance and contemporary art, to traditions of Asia and Far East.</>,  
+        image: '/images/main.png',
+        category: 3
+    },
+
 ]
 
 export default topics
