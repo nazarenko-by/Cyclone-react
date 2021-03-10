@@ -1,7 +1,7 @@
 import React from 'react'
 import StackGrid from "react-stack-grid";
 
-import hotTopic from '../hotTopic'
+import topics from '../../../topics'
 
 import TopicListItem from './TopicListItem/TopicListItem'
 
@@ -17,7 +17,7 @@ const TopicListAllItem = ({
             gutterHeight = {30}
             monitorImagesLoaded = {true}
             >
-            {hotTopic.slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
+            {topics.slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
                 <TopicListItem 
                 key = {id}
                 image = {image}

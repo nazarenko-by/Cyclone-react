@@ -2,7 +2,7 @@ import React from 'react'
 
 import Topics from '../../Components/Topics/Topics'
 
-import topicList from '../../Components/Topics/hotTopic'
+import topicList from '../../topics'
 
 const HotTopics = () => {
     

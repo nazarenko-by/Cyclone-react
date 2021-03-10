@@ -1,4 +1,4 @@
-const hotTopic = [
+const topics = [
     {
         id: 1,
         image: './images/HotTopics/hot-topics-title-1.png',
@@ -74,4 +74,4 @@ const hotTopic = [
     }
 ]
 
-export default hotTopic
+export default topics

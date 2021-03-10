@@ -2,7 +2,7 @@ import React from 'react'
 
 import Topics from '../../Components/Topics/Topics'
 import TopicListTagItem from '../../Components/Topics/TopicList/TopicListTagItem'
-import topicList from '../../Components/Topics/hotTopic'
+import topicList from '../../topics'
 
 const LiveStylePage = () => {
     return(
