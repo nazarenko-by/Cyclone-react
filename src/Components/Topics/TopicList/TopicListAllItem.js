@@ -8,7 +8,8 @@ import TopicListItem from './TopicListItem/TopicListItem'
 const TopicListAllItem = ({
     startList,
     endList,
-    windowWidth
+    windowWidth,
+    category
 }) => {
     return (
         <StackGrid className="topics-list"
@@ -17,7 +18,7 @@ const TopicListAllItem = ({
             gutterHeight = {30}
             monitorImagesLoaded = {true}
             >
-            {topics.slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
+            {topics.filter(hotTopic =>hotTopic.category === category || hotTopic.category === 3).slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
                 <TopicListItem 
                 key = {id}
                 image = {image}

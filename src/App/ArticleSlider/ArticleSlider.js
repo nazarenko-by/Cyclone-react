@@ -9,7 +9,9 @@ import ArticleSliderPrev from './ArticleSliderPrev/ArticleSliderPrev'
 import ArticleSliderNext from './ArticleSliderNext/ArticleSliderNext'
 import ArticleSliderItem from './ArticleSliderItem/ArticleSliderItem';
 
-import articleData from './articleData'
+import topics from '../../topics'
+
+const articleData = topics.filter(topics => topics.category === 2 || topics.category === 3)
 
 SwiperCore.use([Navigation, Autoplay ]);
 

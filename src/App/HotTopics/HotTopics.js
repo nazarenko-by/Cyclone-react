@@ -9,10 +9,20 @@ const HotTopics = () => {
     return (
         <div className="topics">
             <div className="big-title">Hot <span className="text-line">Topics</span></div>
-            <Topics length = {topicList.length}/>
+            <Topics
+                length = {topicListLength()}
+                category = {1}
+            />
         </div>
     )
             
+}
+
+const topicListLength = () => {
+    let  count = 0;
+
+    topicList.filter(topicList =>topicList.category === 1? count++:{})
+    return count
 }
 
 export default HotTopics
