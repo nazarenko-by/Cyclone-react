@@ -17,6 +17,7 @@ import LiveStylePage from './LiveStylePage/LiveStylePage'
 import TravelPage from './TravelPage/TravelPage'
 import ArtPage from './ArtPage/ArtPage'
 import FashionPage from './FashionPage/FashionPage'
+import FullTopic from './FullTopic/FullTopic'
 
 const App = () => {
     return(
@@ -32,6 +33,7 @@ const App = () => {
             <Route path = "/travel" component = {TravelPage}/>
             <Route path = "/art" component = {ArtPage}/>
             <Route path = "/fashion" component = {FashionPage}/>
+            <Route path = "/fullTopic" component= {FullTopic}/>
             <Subscribe/>
             <Footer/>
         </>
