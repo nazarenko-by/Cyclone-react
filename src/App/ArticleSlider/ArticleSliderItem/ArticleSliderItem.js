@@ -5,6 +5,7 @@ import './articleSliderItem.css'
 
 import Tag from "../../../Components/Tag/Tag"
 import CommentShareButton from "../../../Components/CommentShareButton/CommentShareButton"
+import ReadMore from '../../../Components/ReadMore/ReadMore';
 
 const ArticleSliderItem = ({
     slideNumber,
@@ -25,7 +26,10 @@ const ArticleSliderItem = ({
             <CommentShareButton/>
             <div className="title "><span className="title-line">{title}</span></div>
             <div className="text">{text}</div>      
-            <a href="/" className="read-more">Read More</a>             
+            <ReadMore 
+                className = "read-more"
+                text = "Read More"
+            />           
         </div>
     )
 }

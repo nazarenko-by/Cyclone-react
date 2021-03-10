@@ -6,6 +6,7 @@ import CommentShareButton from "../../../Components/CommentShareButton/CommentSh
 import Tag from '../../../Components/Tag/Tag'
 
 import topics from '../../../topics'
+import ReadMore from '../../../Components/ReadMore/ReadMore'
 
 const mainTopic = topics.filter(topics => topics.category === 3)
 
@@ -19,7 +20,10 @@ const MainArticle = () => {
             <CommentShareButton/>
             <div className="big-title">{mainTopic[0].title}</div>
             <div className="text">{mainTopic[0].text}</div>
-            <a href="/" className="read-more">Read More</a>
+            <ReadMore 
+                className = "read-more"
+                text = "Read More"
+            />
         </div>
     )
 }

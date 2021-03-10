@@ -49,3 +49,8 @@ input:focus, button:focus{
 button{
 	background: none;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

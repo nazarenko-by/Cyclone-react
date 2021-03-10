@@ -5,6 +5,7 @@ import './topicListItem.css'
 
 import Tag from "../../../Tag/Tag"
 import CommentShareButton from '../../../CommentShareButton/CommentShareButton'
+import ReadMore from '../../../ReadMore/ReadMore';
 
 const TopicListItem = ({
     image,
@@ -20,7 +21,10 @@ const TopicListItem = ({
                 tag = {tag}
             />
             <CommentShareButton/>
-            <div className="title">{title}</div>
+            <ReadMore 
+                className = "title"
+                text = {title}
+            />
             <div className="text">{text}</div>
             <div className="topic-autor">{autor}</div>
         </div>
