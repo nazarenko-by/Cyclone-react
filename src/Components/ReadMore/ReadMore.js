@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ReadMore = ({id, className, text, setReadMoreTopicId}) => {
     return (
-        <Link to = "/fullTopic" className = {className} onClick ={() => setReadMoreTopicId(id)}>{text}</Link>
+        <Link to = "/fullTopicPage" className = {className} onClick ={() => setReadMoreTopicId(id)}>{text}</Link>
     )
 }
 

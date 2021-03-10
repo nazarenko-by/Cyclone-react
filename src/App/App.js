@@ -17,7 +17,7 @@ import LiveStylePage from './LiveStylePage/LiveStylePage'
 import TravelPage from './TravelPage/TravelPage'
 import ArtPage from './ArtPage/ArtPage'
 import FashionPage from './FashionPage/FashionPage'
-import FullTopic from './FullTopic/FullTopic'
+import FullTopicPage from './FullTopicPage/FullTopicPage'
 
 const App = () => {
 
@@ -68,8 +68,8 @@ const App = () => {
                     setReadMoreTopicId = {setReadMoreTopicId}
                 />
             )}/>
-            <Route path = "/fullTopic" render = {() => (
-                <FullTopic 
+            <Route path = "/fullTopicPage" render = {() => (
+                <FullTopicPage 
                     id = {readMoreTopicId}
                 />)
             }/>
