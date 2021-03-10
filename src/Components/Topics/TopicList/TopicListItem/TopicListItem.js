@@ -8,11 +8,13 @@ import CommentShareButton from '../../../CommentShareButton/CommentShareButton'
 import ReadMore from '../../../ReadMore/ReadMore';
 
 const TopicListItem = ({
+    id,
     image,
     tag,
     title,
     text,
     autor,
+    setReadMoreTopicId
 }) => {
     return (
         <div className="topic">
@@ -22,8 +24,10 @@ const TopicListItem = ({
             />
             <CommentShareButton/>
             <ReadMore 
+                id = {id}
                 className = "title"
                 text = {title}
+                setReadMoreTopicId = {setReadMoreTopicId}
             />
             <div className="text">{text}</div>
             <div className="topic-autor">{autor}</div>

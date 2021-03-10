@@ -10,6 +10,7 @@ const TopicListAllItem = ({
     endList,
     windowWidth,
     topicTag,
+    setReadMoreTopicId
 }) => {
     return (
         <StackGrid className="topics-list"
@@ -21,11 +22,13 @@ const TopicListAllItem = ({
             {topics.filter(hotTopic =>hotTopic.tag.filter(tag => tag === topicTag).length).slice(startList,endList).map(({id, image, tag, title, text, autor}) => (
                 <TopicListItem 
                 key = {id}
+                id = {id}
                 image = {image}
                 tag = {tag}
                 title = {title}
                 text = {text}
                 autor = {autor}
+                setReadMoreTopicId = {setReadMoreTopicId}
                 />
             ))}
         </StackGrid>

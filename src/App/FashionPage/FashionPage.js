@@ -4,7 +4,7 @@ import Topics from '../../Components/Topics/Topics'
 import TopicListTagItem from '../../Components/Topics/TopicList/TopicListTagItem'
 import topicList from '../../topics'
 
-const FashionPage = () => {
+const FashionPage = ({setReadMoreTopicId}) => {
     return(
         <div className="topics">
             <div className="big-title">Fashion</div>
@@ -12,6 +12,7 @@ const FashionPage = () => {
                 topicTag = {"Fashion"}
                 TopicListItems = {TopicListTagItem}
                 length = {topicListLength()}
+                setReadMoreTopicId = {setReadMoreTopicId}
             />
         </div>
     )

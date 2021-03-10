@@ -4,7 +4,7 @@ import Topics from '../../Components/Topics/Topics'
 
 import topicList from '../../topics'
 
-const HotTopics = () => {
+const HotTopics = ({setReadMoreTopicId}) => {
     
     return (
         <div className="topics">
@@ -12,6 +12,7 @@ const HotTopics = () => {
             <Topics
                 length = {topicListLength()}
                 category = {1}
+                setReadMoreTopicId = {setReadMoreTopicId}
             />
         </div>
     )

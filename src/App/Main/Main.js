@@ -24,9 +24,14 @@ class Main extends Component {
     }
 
     render(){
+        const {
+            setReadMoreTopicId
+        } = this.props
         return (
             <main className="main">
-                <MainArticle/>
+                <MainArticle
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
                 <img src={this.state.fullImage} alt="" className="full-sound-player-img"/>
                 <Swiper className="sound-slider"
                     loop={true}

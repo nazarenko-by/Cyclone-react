@@ -8,11 +8,13 @@ import CommentShareButton from "../../../Components/CommentShareButton/CommentSh
 import ReadMore from '../../../Components/ReadMore/ReadMore';
 
 const ArticleSliderItem = ({
+    id,
     slideNumber,
     tag,
     title,
     text,
     image,
+    setReadMoreTopicId
 }) => {
     return(
         <div className="article-slide">
@@ -27,8 +29,10 @@ const ArticleSliderItem = ({
             <div className="title "><span className="title-line">{title}</span></div>
             <div className="text">{text}</div>      
             <ReadMore 
+                id = {id}
                 className = "read-more"
                 text = "Read More"
+                setReadMoreTopicId = {setReadMoreTopicId}
             />           
         </div>
     )

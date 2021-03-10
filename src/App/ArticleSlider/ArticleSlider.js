@@ -88,6 +88,9 @@ class ArticleSlider extends Component {
     }
 
     render() {
+        const {
+            setReadMoreTopicId
+        } = this.props
         return (
             <div className="article-slider">
                 <ArticleSliderPrev
@@ -124,11 +127,13 @@ class ArticleSlider extends Component {
                         },index) => (                            
                             <SwiperSlide key = {id}>
                                 <ArticleSliderItem
+                                    id = {id}
                                     tag = {tag}
                                     slideNumber = {this.slideNumber(index + 1)}
                                     title = {title}
                                     text = {text}
-                                    image = {image}/>
+                                    image = {image}
+                                    setReadMoreTopicId = {setReadMoreTopicId}/>
                             </SwiperSlide>
                             
                         ))

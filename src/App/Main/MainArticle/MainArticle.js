@@ -8,21 +8,23 @@ import Tag from '../../../Components/Tag/Tag'
 import topics from '../../../topics'
 import ReadMore from '../../../Components/ReadMore/ReadMore'
 
-const mainTopic = topics.filter(topics => topics.category === 3)
+const mainTopic = topics.filter(topics => topics.category === 3)[0]
 
-const MainArticle = () => {
+const MainArticle = ({setReadMoreTopicId}) => {
     return(
         <div className="main-article">
             <div className="paginator unselectable"><span>01</span> <span>05</span></div>
             <Tag className = "italic"
-                tag = {mainTopic[0].tag}
+                tag = {mainTopic.tag}
             />
             <CommentShareButton/>
-            <div className="big-title">{mainTopic[0].title}</div>
-            <div className="text">{mainTopic[0].text}</div>
+            <div className="big-title">{mainTopic.title}</div>
+            <div className="text">{mainTopic.text}</div>
             <ReadMore 
+                id = {mainTopic.id}
                 className = "read-more"
                 text = "Read More"
+                setReadMoreTopicId = {setReadMoreTopicId}
             />
         </div>
     )

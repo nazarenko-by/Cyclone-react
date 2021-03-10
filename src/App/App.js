@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import '../common/style/reset.css'
 import '../common/style/base.css'
@@ -20,20 +20,59 @@ import FashionPage from './FashionPage/FashionPage'
 import FullTopic from './FullTopic/FullTopic'
 
 const App = () => {
+
+    const [readMoreTopicId, setReadMoreTopicId] =  useState(5);
+
     return(
         <>
             <Header/>
             <Route path = "/" exact component = {Slider}/>
-            <Route path = "/" exact component = {ArticleSlider}/>
-            <Route path = "/" exact component = {Main}/>
-            <Route path = "/" exact component = {HotTopics}/>
+            <Route path = "/" exact render = {() => (
+                <ArticleSlider 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/" exact render = {() => (
+                <Main 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/" exact render = {() => (
+                <HotTopics 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
             <Route path = "/" exact component = {MostRead}/>
-            <Route path = "/design" component = {DesignPage}/>
-            <Route path = "/liveStyle" component = {LiveStylePage}/>
-            <Route path = "/travel" component = {TravelPage}/>
-            <Route path = "/art" component = {ArtPage}/>
-            <Route path = "/fashion" component = {FashionPage}/>
-            <Route path = "/fullTopic" component= {FullTopic}/>
+            <Route path = "/design" render = {() => (
+                <DesignPage 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/liveStyle" render = {() => (
+                <LiveStylePage 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/travel" render = {() => (
+                <TravelPage 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/art"  render = {() => (
+                <ArtPage 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/fashion" render = {() => (
+                <FashionPage 
+                    setReadMoreTopicId = {setReadMoreTopicId}
+                />
+            )}/>
+            <Route path = "/fullTopic" render = {() => (
+                <FullTopic 
+                    id = {readMoreTopicId}
+                />)
+            }/>
             <Subscribe/>
             <Footer/>
         </>

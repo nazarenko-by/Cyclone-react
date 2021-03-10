@@ -125,6 +125,7 @@ button{
   color: #2a2928;
   font-family: "Proza Libre", sans-serif;
   font-size: 14px;
+  text-decoration: underline;
 }
 
 .arrow-next-button:hover img,
