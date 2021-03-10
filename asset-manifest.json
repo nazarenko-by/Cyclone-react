@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Cyclone-react/static/css/main.edeaf20a.chunk.css",
-    "main.js": "/Cyclone-react/static/js/main.0dfbcd9a.chunk.js",
-    "main.js.map": "/Cyclone-react/static/js/main.0dfbcd9a.chunk.js.map",
+    "main.js": "/Cyclone-react/static/js/main.439dd9de.chunk.js",
+    "main.js.map": "/Cyclone-react/static/js/main.439dd9de.chunk.js.map",
     "runtime-main.js": "/Cyclone-react/static/js/runtime-main.3b6750a4.js",
     "runtime-main.js.map": "/Cyclone-react/static/js/runtime-main.3b6750a4.js.map",
     "static/css/2.231643fd.chunk.css": "/Cyclone-react/static/css/2.231643fd.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.231643fd.chunk.css",
     "static/js/2.33709941.chunk.js",
     "static/css/main.edeaf20a.chunk.css",
-    "static/js/main.0dfbcd9a.chunk.js"
+    "static/js/main.439dd9de.chunk.js"
   ]
 }
