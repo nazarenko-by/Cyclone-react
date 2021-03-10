@@ -30,9 +30,9 @@ const TopicListItem = ({
 TopicListItem.propTypes = {
     image: PropTypes.string,
     tag: PropTypes.array,
-     title: PropTypes.object.isRequired,
-     text: PropTypes.object.isRequired,
-     autor: PropTypes.string,
+    title:PropTypes.oneOfType([ PropTypes.object, PropTypes.string]).isRequired,
+    text: PropTypes.oneOfType([ PropTypes.object, PropTypes.string]).isRequired,
+    autor: PropTypes.string,
 }
 
 TopicListItem.defaultProps = {
