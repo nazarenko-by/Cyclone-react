@@ -1,7 +1,7 @@
 .topic {
     display: grid;
     gap: 10px 0;
-    grid-template-areas: "topic-image topic-image topic-image" "tag comment-share-button comment-share-button" "title title title""text text text" "topic-autor topic-autor .";
+    grid-template-areas: "topic-image topic-image topic-image" "tag comment-share-button comment-share-button" "title title title" "this-text this-text this-text" "topic-autor topic-autor .";
 }
 
 .topic-image {
@@ -12,13 +12,6 @@
 
 .topic .comment-share-button {
     justify-self: end;
-}
-
-.topic-autor {
-    grid-area: topic-autor;
-    color: #918e8b;
-    font-size: 16px;
-    font-style: italic;
 }
 
 @media (max-width: 767px) {

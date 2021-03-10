@@ -1,0 +1,27 @@
+.full-topic-page{
+    padding: 25px;
+    display: grid;
+    grid-template-areas: "big-title big-title" "tag comment-share-button" "full-topic-image full-topic-image" "this-text this-text" "topic-autor .";
+    gap: 15px;
+}
+
+.comment-share-button{
+    flex-direction: row;
+    justify-self: end;
+}
+
+.big-title{
+    grid-area: big-title;
+    text-align: center;
+}
+
+.text {
+    grid-area: this-text;
+}
+
+.full-topic-image{
+    width: 100%;
+    grid-area: full-topic-image;
+    max-width: 450px;
+    justify-self: center;
+}

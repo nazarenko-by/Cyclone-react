@@ -91,7 +91,7 @@ button{
 }
 
 .tag {
-  grid-area: "tag";
+  grid-area: tag;
 }
 
 .tag a {
@@ -141,6 +141,13 @@ button{
   grid-area: arrow-next-button;
 }
 
+.topic-autor {
+  grid-area: topic-autor;
+  color: #918e8b;
+  font-size: 16px;
+  font-style: italic;
+}
+
 @media (max-width: 767px) {
   .main-article .big-title {
     text-align: center;
@@ -172,6 +179,7 @@ button{
   }
 
   .text {
+    grid-area: this-text;
     font-family: "Proza Libre", sans-serif;
     font-size: 14px;
     grid-area: text;

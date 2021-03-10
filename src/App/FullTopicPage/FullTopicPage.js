@@ -2,9 +2,9 @@ import React from 'react'
 import CommentShareButton from '../../Components/CommentShareButton/CommentShareButton'
 import Tag from '../../Components/Tag/Tag'
 
+import './fullTopicPage.css'
+
 import topics from '../../topics'
-
-
 
 const FullTopic = ({id}) => {
 const fullTopic = topics.filter(topics => topics.id === id)[0]    
