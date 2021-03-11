@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import StringToReact from 'string-to-react'
 
 import './topicListItem.css'
 
@@ -29,7 +30,7 @@ const TopicListItem = ({
                 text = {title}
                 setReadMoreTopicId = {setReadMoreTopicId}
             />
-            <div className="text">{text}</div>
+            <div className="text">{text.indexOf(`<div>`) === 0 ? StringToReact(text.match(/[(\w*|\-|+|<|>|/|"|=)\s|\s(,|:|;)]*[.|?|!]/)+"</div>"): text.match(/[(\w*|\-|+)\s|\s(,|:|;)]*[.|?|!]/)}</div>
             <div className="topic-autor">{autor}</div>
         </div>
     )
@@ -39,7 +40,7 @@ TopicListItem.propTypes = {
     image: PropTypes.string,
     tag: PropTypes.array,
     title:PropTypes.oneOfType([ PropTypes.object, PropTypes.string]).isRequired,
-    text: PropTypes.oneOfType([ PropTypes.object, PropTypes.string]).isRequired,
+    text: PropTypes.string.isRequired,
     autor: PropTypes.string,
 }
 
