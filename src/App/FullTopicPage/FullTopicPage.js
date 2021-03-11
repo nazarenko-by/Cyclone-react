@@ -1,4 +1,6 @@
 import React from 'react'
+import StringToReact from 'string-to-react'
+
 import CommentShareButton from '../../Components/CommentShareButton/CommentShareButton'
 import Tag from '../../Components/Tag/Tag'
 
@@ -15,7 +17,7 @@ const fullTopic = topics.filter(topics => topics.id === id)[0]
                 tag = {fullTopic.tag}
             />
             <CommentShareButton />
-            <div className="text">{fullTopic.text}</div>
+            <div className="text">{fullTopic.text.indexOf(`<div>`) === 0 ? StringToReact(fullTopic.text): fullTopic.text}</div>
             <img src={fullTopic.image} alt="" className="full-topic-image"/>
             <div className="autor">{fullTopic.autor}</div>
         </div>
