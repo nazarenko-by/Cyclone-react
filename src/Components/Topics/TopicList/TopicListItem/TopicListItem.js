@@ -15,7 +15,6 @@ const TopicListItem = ({
     title,
     text,
     autor,
-    setReadMoreTopicId
 }) => {
     return (
         <div className="topic">
@@ -28,7 +27,6 @@ const TopicListItem = ({
                 id = {id}
                 className = "title"
                 text = {title}
-                setReadMoreTopicId = {setReadMoreTopicId}
             />
             <div className="text">{text.indexOf(`<div>`) === 0 ? StringToReact(text.match(/[(\w*|\-|+|<|>|/|"|=)\s|\s(,|:|;)]*[.|?|!]/)+"</div>"): text.match(/[(\w*|\-|+)\s|\s(,|:|;)]*[.|?|!]/)}</div>
             <div className="topic-autor">{autor}</div>

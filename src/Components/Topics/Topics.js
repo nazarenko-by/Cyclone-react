@@ -8,7 +8,7 @@ import loadMoreImg from "./load-more.png"
 import TopicList from './TopicList/TopicList'
 import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
 
-const Topics = ({topicTag,TopicListItems, length, category = 3, setReadMoreTopicId,}) => {
+const Topics = ({topicTag,TopicListItems, length, category = 3, }) => {
     const topicsCount = 8
     const [startList, setStartList] = useState(0);
     const [endList, setEndList] = useState(topicsCount);
@@ -23,7 +23,6 @@ const Topics = ({topicTag,TopicListItems, length, category = 3, setReadMoreTopic
                 topicTag = {topicTag}
                 TopicListItems = {TopicListItems}
                 category = {category}
-                setReadMoreTopicId = {setReadMoreTopicId}
             />
             <div className="load-more unselectable">
                 <img src= {loadMoreImg} alt=""/>

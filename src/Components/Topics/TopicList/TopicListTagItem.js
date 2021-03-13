@@ -10,7 +10,6 @@ const TopicListAllItem = ({
     endList,
     windowWidth,
     topicTag,
-    setReadMoreTopicId
 }) => {
     return (
         <StackGrid className="topics-list"
@@ -28,7 +27,6 @@ const TopicListAllItem = ({
                 title = {title}
                 text = {text}
                 autor = {autor}
-                setReadMoreTopicId = {setReadMoreTopicId}
                 />
             ))}
         </StackGrid>

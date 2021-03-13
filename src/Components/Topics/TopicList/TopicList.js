@@ -31,7 +31,6 @@ class TopicList extends Component {
             TopicListItems = TopicListAllItem,
             topicTag,
             category,
-            setReadMoreTopicId,
         } = this.props
         return ( 
                 <TopicListItems 
@@ -40,7 +39,6 @@ class TopicList extends Component {
                 windowWidth = {this.state.windowWidth}
                 topicTag = {topicTag}
                 category = {category}
-                setReadMoreTopicId = {setReadMoreTopicId}
                 />
         )
     }

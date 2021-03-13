@@ -8,8 +8,9 @@ import './fullTopicPage.css'
 
 import topics from '../../topics'
 
-const FullTopic = ({id}) => {
-const fullTopic = topics.filter(topics => topics.id === id)[0]    
+const FullTopic = ({match}) => {
+    const id = +match.params.id
+    const fullTopic = topics.filter(topics => topics.id === id)[0]    
     return (
         <div className="full-topic-page">
             <div className="big-title">{fullTopic.title}</div>
