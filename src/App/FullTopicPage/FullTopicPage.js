@@ -10,7 +10,8 @@ import topics from '../../topics'
 
 const FullTopic = ({match}) => {
     const id = +match.params.id
-    const fullTopic = topics.filter(topics => topics.id === id)[0]    
+    const fullTopic = topics.filter(topics => topics.id === id)[0]  
+    console.log(fullTopic.image)  
     return (
         <div className="full-topic-page">
             <div className="big-title">{fullTopic.title}</div>

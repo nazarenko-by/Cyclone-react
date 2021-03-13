@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import '../common/style/reset.css'
 import '../common/style/base.css'
