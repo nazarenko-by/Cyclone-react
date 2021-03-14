@@ -21,7 +21,7 @@ const FullTopic = ({match}) => {
             <CommentShareButton />
             <div className="text">{fullTopic.text.indexOf(`<div>`) === 0 ? StringToReact(fullTopic.text): fullTopic.text}</div>
             <img src={fullTopic.image} alt="" className="full-topic-image"/>
-            <div className="autor">{fullTopic.autor}</div>
+            <div className="topic-autor">{fullTopic.autor}</div>
         </div>
     )
 }

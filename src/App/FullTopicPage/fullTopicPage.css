@@ -1,16 +1,20 @@
 .full-topic-page{
     padding: 25px;
     display: grid;
-    grid-template-areas: "big-title big-title" "tag comment-share-button" "full-topic-image full-topic-image" "this-text this-text" "topic-autor .";
+    grid-template-areas: "big-title big-title" "full-topic-image full-topic-image" "tag comment-share-button" "this-text this-text" "topic-autor .";
     gap: 15px;
 }
 
-.comment-share-button{
+.full-topic-page .comment-share-button{
     flex-direction: row;
     justify-self: end;
 }
 
-.big-title{
+.full-topic-page .tag{
+    align-self: center;
+}
+
+.full-topic-page .big-title{
     grid-area: big-title;
     text-align: center;
 }
@@ -24,4 +28,36 @@
     grid-area: full-topic-image;
     max-width: 450px;
     justify-self: center;
+}
+
+.full-topic-page .title-line::after{
+    top: 23px;
+}
+
+@media(min-width:768px){
+
+    .full-topic-page{
+       
+        grid-template-columns: auto minmax(auto, 225px) minmax(auto, 225px) auto;
+        grid-template-areas: " big-title big-title big-title  big-title" ". full-topic-image full-topic-image ." " . tag comment-share-button ." ". this-text this-text ." ". topic-autor . .";
+    }
+
+    .full-topic-page .title-line::after{
+        top: 53px;
+    }
+}
+
+@media(min-width:1024px){
+    .full-topic-image{
+        margin: 50px 0 20px;
+    }
+
+    .full-topic-page .text {
+        margin: 20px 0;
+    }
+}
+@media(min-width:1200px){
+    .full-topic-page .title-line::after{
+        top: 73px;
+    }
 }
