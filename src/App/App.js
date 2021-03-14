@@ -18,6 +18,7 @@ import TravelPage from './TravelPage/TravelPage'
 import ArtPage from './ArtPage/ArtPage'
 import FashionPage from './FashionPage/FashionPage'
 import FullTopicPage from './FullTopicPage/FullTopicPage'
+import Contacts from './Contacts/Contacts'
 
 const App = () => {
     return(
@@ -33,7 +34,8 @@ const App = () => {
             <Route path = "/travel" component = {TravelPage}/>
             <Route path = "/art"  component = {ArtPage}/>
             <Route path = "/fashion" component = {FashionPage}/>
-            <Route path = "/fullTopicPage/:id" component = {FullTopicPage}/>
+            <Route path = "/fullTopic/:id" component = {FullTopicPage}/>
+            <Route path = "/contacts" component = {Contacts}/>
             <Subscribe/>
             <Footer/>
         </>
