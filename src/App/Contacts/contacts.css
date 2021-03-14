@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.contacts-page .text div{
+    margin-bottom: 15px;
+}
+
 .map{
     grid-area: map;
     width: 100%;
@@ -24,10 +28,22 @@
 @media(min-width:768px){
     .contacts-page{
         grid-template-areas: ". big-title ." ". map ." ". title ." ". this-text ." ;
-        grid-template-columns: auto minmax(auto, 450px) auto;;
+        grid-template-columns: auto minmax(auto, 450px) auto;
     }
 
     .map iframe{
-        height: 600px;
+        height: 450px;
+    }
+}
+
+@media(min-width:1024px){
+    .contacts-page{
+        grid-template-areas: "big-title big-title" "map title" "map this-text " ;
+        grid-template-columns:minmax(auto, 450px) auto;
+        grid-template-rows: auto minmax(auto, 50px) auto;
+    }
+
+    .contacts-page .text{
+        text-align: left;
     }
 }

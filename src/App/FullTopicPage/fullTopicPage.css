@@ -50,10 +50,21 @@
 @media(min-width:1024px){
     .full-topic-image{
         margin: 50px 0 20px;
+        align-self: center;
     }
 
+    .full-topic-page{ 
+        grid-template-columns: minmax(auto, 225px) minmax(auto, 225px) auto;
+        grid-template-areas: " big-title big-title big-title" "full-topic-image full-topic-image this-text" "tag comment-share-button topic-autor";
+    }
+
+
     .full-topic-page .text {
-        margin: 20px 0;
+        margin: 50px 0 20px;
+    }
+
+    .full-topic-page .topic-autor{
+        justify-self: end;
     }
 }
 @media(min-width:1200px){
