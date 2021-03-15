@@ -44,11 +44,15 @@ const ModalWidow = ({id, openCloseModal, setOpenCloseModal}) => {
         <div className="modal-window" 
               style={openCloseModal}
         >
-            <div className="comment-area">
+            <div className="comment-area" style={{maxHeight:setMaxHeightCommentArea(id)+"px"}}>
                 <div className="close-modal"
                     onClick={()=>setOpenCloseModal({visibility: "hidden", opacity:"0"})}
                 >x</div>
-                <div className="comments">
+                <div className="comments" 
+                    style={{maxHeight:setMaxHeightTextera(id)==="7"?
+                    setMaxHeightCommentsBig(id)+"px":
+                    setMaxHeightCommentsSmall(id)+"px"}}
+                >
                     {comments.map(({name, text}, index) => (
                         <div key={index} className="comment">{name}: {text}</div>
                     ))}
@@ -62,7 +66,7 @@ const ModalWidow = ({id, openCloseModal, setOpenCloseModal}) => {
                     />
                     <textarea 
                         cols="30" 
-                        rows="10"
+                        rows={setMaxHeightTextera(id)}
                         value={newСomments.text}
                         onChange={handleTextChange}
                         placeholder="Your comment"
@@ -78,5 +82,27 @@ const getReviews = (id) => {
     let comments = reviews.filter(reviews => reviews.id === id)[0] || {review:[]}
     return comments.review
 }
+
+const setMaxHeightCommentArea = (id) => {
+    const parentElementHeight = document.getElementById(id)? document.getElementById(id).offsetHeight:0
+    return parentElementHeight/100*85
+}
+
+const setMaxHeightCommentsBig = (id) => {
+    const parentElementHeight = document.getElementById(id)? document.getElementById(id).offsetHeight:0
+    return parentElementHeight/100*85-280
+}
+
+const setMaxHeightTextera = (id) => {
+    const parentElementHeight = document.getElementById(id)? document.getElementById(id).offsetHeight:0
+    return parentElementHeight-280<0? "1" : "7"
+}
+
+const setMaxHeightCommentsSmall = (id) => {
+    const parentElementHeight = document.getElementById(id)? document.getElementById(id).offsetHeight:0
+    return parentElementHeight/100*85-170
+}
+
+
 
 export default ModalWidow

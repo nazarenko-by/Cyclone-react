@@ -11,6 +11,7 @@ const MostReadList = () => {
             {article.map(({id, tag, title, autor}) => (
                  <MostReadArticle
                  key = {id}
+                 id={id}
                  tag = {tag}
                  title = {title}
                  autor = {autor}

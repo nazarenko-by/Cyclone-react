@@ -11,13 +11,14 @@ import ReadMore from '../../../Components/ReadMore/ReadMore'
 const mainTopic = topics.filter(topics => topics.category === 3)[0]
 
 const MainArticle = ({setReadMoreTopicId}) => {
+    let  elementId = "topic-"+mainTopic.id
     return(
-        <div className="main-article">
+        <div className="main-article" id={elementId}>
             <div className="paginator unselectable"><span>01</span> <span>05</span></div>
             <Tag className = "italic"
                 tag = {mainTopic.tag}
             />
-            <CommentShareButton id = {mainTopic.id}/>
+            <CommentShareButton id = {elementId}/>
             <div className="big-title">{mainTopic.title}</div>
             <div className="text">{mainTopic.text}</div>
             <ReadMore 

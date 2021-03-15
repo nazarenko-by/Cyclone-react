@@ -7,13 +7,15 @@ import CommentShareButton from '../../../../Components/CommentShareButton/Commen
 import Tag from '../../../../Components/Tag/Tag'
 
 const MostReadArticle = ({
+    id,
     tag,
     title,
     autor,
 }) => {
+    let  elementId = "MostReadTopic-"+id
     return(
-        <div className="article">
-            <CommentShareButton id = {0}/>
+        <div className="article" id={elementId}>
+            <CommentShareButton id = {elementId}/>
             <div className="article-data">
                 <Tag
                 tag = {tag}/>

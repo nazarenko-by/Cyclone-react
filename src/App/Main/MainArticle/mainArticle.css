@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: auto auto minmax(auto, 1fr) auto;
     grid-template-rows: auto auto auto auto;
+    position: relative;
 }
 
 .main-article .tag {

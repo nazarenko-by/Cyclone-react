@@ -16,8 +16,9 @@ const ArticleSliderItem = ({
     image,
     setReadMoreTopicId
 }) => {
+    let  elementId = "topic-"+id
     return(
-        <div className="article-slide">
+        <div className="article-slide" id={elementId}>
             <img src={image} alt="" className="article-slide-img unselectable"/>
             <div className="article-slide-data">
                 <div className="article-slide-number">{slideNumber}</div>
@@ -25,7 +26,7 @@ const ArticleSliderItem = ({
                 tag = {tag}
                 />
             </div>
-            <CommentShareButton id = {id}/>
+            <CommentShareButton id = {elementId}/>
             <div className="title "><span className="title-line">{title}</span></div>
             <div className="text">{text}</div>      
             <ReadMore 
