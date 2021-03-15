@@ -4,8 +4,10 @@ import reviews from './reviews'
 
 import './modalWindow.css'
 
-const ModalWidow = ({id}) => {
-    const [comments, setComments] = useState(getReviews(id))
+const ModalWidow = ({id, openCloseModal, setOpenCloseModal}) => {
+    const str = ""+id
+    const commentId = str.match(/(?<=\w*-)\d*/)?+str.match(/(?<=\w*-)\d*/)[0]:0;
+    const [comments, setComments] = useState(getReviews(commentId))
     const [newСomments, setNewСomments] = useState({
         name:"",
         text:"",
@@ -39,11 +41,13 @@ const ModalWidow = ({id}) => {
 
 
     return (
-        <div className="modal-window"
-            // style={{visibility: "hidden", opacity:"0"}}
+        <div className="modal-window" 
+              style={openCloseModal}
         >
             <div className="comment-area">
-                <div className="close-modal">x</div>
+                <div className="close-modal"
+                    onClick={()=>setOpenCloseModal({visibility: "hidden", opacity:"0"})}
+                >x</div>
                 <div className="comments">
                     {comments.map(({name, text}, index) => (
                         <div key={index} className="comment">{name}: {text}</div>

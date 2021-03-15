@@ -16,13 +16,16 @@ const TopicListItem = ({
     text,
     autor,
 }) => {
+    let  elementId = "topic-"+id
     return (
-        <div className="topic">
+        <div className="topic" id={elementId}>
             <img src={image} alt="" className="topic-image"/>
             <Tag 
                 tag = {tag}
             />
-            <CommentShareButton id={id}/>
+            <CommentShareButton 
+                id={elementId} 
+            />
             <ReadMore 
                 id = {id}
                 className = "title"
