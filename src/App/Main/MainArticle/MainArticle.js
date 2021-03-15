@@ -17,7 +17,7 @@ const MainArticle = ({setReadMoreTopicId}) => {
             <Tag className = "italic"
                 tag = {mainTopic.tag}
             />
-            <CommentShareButton/>
+            <CommentShareButton id = {mainTopic.id}/>
             <div className="big-title">{mainTopic.title}</div>
             <div className="text">{mainTopic.text}</div>
             <ReadMore 

@@ -13,7 +13,7 @@ const MostReadArticle = ({
 }) => {
     return(
         <div className="article">
-            <CommentShareButton/>
+            <CommentShareButton id = {0}/>
             <div className="article-data">
                 <Tag
                 tag = {tag}/>

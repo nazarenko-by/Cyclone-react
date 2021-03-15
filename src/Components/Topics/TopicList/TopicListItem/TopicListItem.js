@@ -22,7 +22,7 @@ const TopicListItem = ({
             <Tag 
                 tag = {tag}
             />
-            <CommentShareButton/>
+            <CommentShareButton id={id}/>
             <ReadMore 
                 id = {id}
                 className = "title"

@@ -25,7 +25,7 @@ const ArticleSliderItem = ({
                 tag = {tag}
                 />
             </div>
-            <CommentShareButton/>
+            <CommentShareButton id = {id}/>
             <div className="title "><span className="title-line">{title}</span></div>
             <div className="text">{text}</div>      
             <ReadMore 
