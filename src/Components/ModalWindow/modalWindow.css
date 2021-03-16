@@ -12,7 +12,6 @@
     background-color: #f2eae6;
     position: absolute;
     width: 85%;
-    /* max-height: 85%; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -99,9 +98,9 @@
 }
 
 @media(min-width:768px){
-    /* .comment-area{
-        width: 500px;
-    } */
+    .comment-area{
+        max-width: 500px;
+    } 
     .comments{
         margin-bottom: 10px;
     }
@@ -112,8 +111,8 @@
 }
 
 @media(min-width:1024px){
-    /* .comment-area{
-        width: 600px;
-    } */
+    .comment-area{
+        max-width: 600px;
+    }
 }
 

@@ -4,7 +4,7 @@ import reviews from './reviews'
 
 import './modalWindow.css'
 
-const ModalWidow = ({id, openCloseModal, setOpenCloseModal}) => {
+const ModalWidow = ({id, openCloseModal, setOpenCloseModal,modalPositiom="absolute"}) => {
     const str = ""+id
     const commentId = str.match(/(?<=\w*-)\d*/)?+str.match(/(?<=\w*-)\d*/)[0]:0;
     const [comments, setComments] = useState(getReviews(commentId))
@@ -42,7 +42,7 @@ const ModalWidow = ({id, openCloseModal, setOpenCloseModal}) => {
 
     return (
         <div className="modal-window" 
-              style={openCloseModal}
+              style={{...openCloseModal,position:modalPositiom}}
         >
             <div className="comment-area" style={{maxHeight:setMaxHeightCommentArea(id)+"px"}}>
                 <div className="close-modal"

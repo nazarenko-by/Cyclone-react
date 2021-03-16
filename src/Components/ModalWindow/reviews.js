@@ -1,11 +1,11 @@
 const reviews = [
     {
         id:1,
-        review:[{name: "James",text:"Hellow"}, {name:"Tom",text:"Word"}]
+        review:[{name: "James",text:"Hello"}, {name:"Tom",text:"Word"}]
     },
     {
         id:2,
-        review:[{name: "Tim",text:"Hellow"}, {name:"Tom",text:"Word"}]
+        review:[{name: "Tim",text:"Hello"}, {name:"Tom",text:"Word"}]
     }
 ]
 
