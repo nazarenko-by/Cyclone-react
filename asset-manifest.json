@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Cyclone-react/static/css/main.fa0e72cb.chunk.css",
+    "main.css": "/Cyclone-react/static/css/main.47e4dbc2.chunk.css",
     "main.js": "/Cyclone-react/static/js/main.95688053.chunk.js",
     "main.js.map": "/Cyclone-react/static/js/main.95688053.chunk.js.map",
     "runtime-main.js": "/Cyclone-react/static/js/runtime-main.3b6750a4.js",
@@ -10,7 +10,7 @@
     "static/js/2.b4e2236a.chunk.js.map": "/Cyclone-react/static/js/2.b4e2236a.chunk.js.map",
     "index.html": "/Cyclone-react/index.html",
     "static/css/2.231643fd.chunk.css.map": "/Cyclone-react/static/css/2.231643fd.chunk.css.map",
-    "static/css/main.fa0e72cb.chunk.css.map": "/Cyclone-react/static/css/main.fa0e72cb.chunk.css.map",
+    "static/css/main.47e4dbc2.chunk.css.map": "/Cyclone-react/static/css/main.47e4dbc2.chunk.css.map",
     "static/js/2.b4e2236a.chunk.js.LICENSE.txt": "/Cyclone-react/static/js/2.b4e2236a.chunk.js.LICENSE.txt",
     "static/media/navigation.css": "/Cyclone-react/static/media/header-bg.c31fc1d0.png",
     "static/media/slider.css": "/Cyclone-react/static/media/slider-bg.9b05380b.png"
@@ -19,7 +19,7 @@
     "static/js/runtime-main.3b6750a4.js",
     "static/css/2.231643fd.chunk.css",
     "static/js/2.b4e2236a.chunk.js",
-    "static/css/main.fa0e72cb.chunk.css",
+    "static/css/main.47e4dbc2.chunk.css",
     "static/js/main.95688053.chunk.js"
   ]
 }
