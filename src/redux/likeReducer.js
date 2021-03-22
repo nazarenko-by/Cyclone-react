@@ -1,4 +1,4 @@
-export const likeReducer = (state, action) => {
+export const likeReducer = (state={}, action) => {
     switch (action.type) {
       case "LIKE":
         return {
