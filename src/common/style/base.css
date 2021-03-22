@@ -103,13 +103,12 @@ button{
 
 .comment-share-button {
   display: flex;
-  gap: 15px;
+  gap: 5px;
   align-items: flex-start;
   grid-area: comment-share-button;
 }
 
-.comment:hover img,
-.share:hover img {
+.comment-share-button button:hover img {
   filter: blur(0.6px);
   background: #000;
   border-radius: 50%;

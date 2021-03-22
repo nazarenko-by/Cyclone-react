@@ -16,6 +16,7 @@
     grid-column: 4/5;
     grid-row: 1/2;
     align-self: end;
+    flex-direction: row;
 }
 
 .main-article .big-title {
