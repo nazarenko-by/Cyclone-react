@@ -10,7 +10,7 @@ const CommentShareButton = ({id,modalPositiom}) =>{
     const [openCloseModal, setOpenCloseModal] = useState({visibility: "hidden", opacity:"0"})
     const str = ""+id
     const likeId = +str.match(/(?<=\w*-)\d*/)?+str.match(/(?<=\w*-)\d*/)[0]:0;
-    const isLiked = useSelector(state=>state[likeId])
+    const isLiked = useSelector(state=>state.topicLikeState[likeId])
     const dispatch = useDispatch()
     
     return(

@@ -19,8 +19,8 @@ const MainArticle = ({setReadMoreTopicId}) => {
                 tag = {mainTopic.tag}
             />
             <CommentShareButton id = {elementId}/>
-            <div className="big-title">{mainTopic.title}</div>
-            <div className="text">{mainTopic.text}</div>
+            <div className="big-title" dangerouslySetInnerHTML={{__html:mainTopic.title}}></div>
+            <div className="text" dangerouslySetInnerHTML={{__html:mainTopic.text}}></div>
             <ReadMore 
                 id = {mainTopic.id}
                 className = "read-more"

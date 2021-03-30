@@ -13,8 +13,10 @@ const FullTopic = ({match}) => {
     const fullTopic = topics.filter(topics => topics.id === id)[0]  
     let  elementId = "topic-"+id
     return (
+        <>
+        {window.scrollTo(0,0)}
         <div className="full-topic-page" id={elementId}>
-            <div className="big-title">{fullTopic.title}</div>
+            <div className="big-title" dangerouslySetInnerHTML={{__html:fullTopic.title}}></div>
             <Tag 
                 tag = {fullTopic.tag}
             />
@@ -23,6 +25,8 @@ const FullTopic = ({match}) => {
             <img src={fullTopic.image} alt="" className="full-topic-image"/>
             <div className="topic-autor">{fullTopic.autor}</div>
         </div>
+            
+        </>
     )
 }
 

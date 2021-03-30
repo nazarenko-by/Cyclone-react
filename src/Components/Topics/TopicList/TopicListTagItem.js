@@ -1,11 +1,10 @@
 import React from 'react'
 import StackGrid from "react-stack-grid";
 
-import topics from '../../../topics'
-
 import TopicListItem from './TopicListItem/TopicListItem'
 
 const TopicListAllItem = ({
+    topics,
     startList,
     endList,
     windowWidth,

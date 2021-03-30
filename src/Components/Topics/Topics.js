@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
 import './topics.css'
-import loadMoreImg from "./load-more.png"
-
-
 
 import TopicList from './TopicList/TopicList'
 import MoreTopicsPages from './MoreTopicsPages/MoreTopicsPages'
@@ -25,7 +22,6 @@ const Topics = ({topicTag,TopicListItems, length, category = 3, }) => {
                 category = {category}
             />
             <div className="load-more unselectable">
-                <img src= {loadMoreImg} alt=""/>
                 <button 
                     onClick = {() => loadMore(length, topicsCount, endList, setEndList, setCurrentPage, currentPage)}
                 >Load More Topics</button>
