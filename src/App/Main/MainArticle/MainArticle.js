@@ -5,14 +5,15 @@ import './mainArticle.css'
 import CommentShareButton from "../../../Components/CommentShareButton/CommentShareButton"
 import Tag from '../../../Components/Tag/Tag'
 
-import topics from '../../../topics'
 import ReadMore from '../../../Components/ReadMore/ReadMore'
+import { useSelector } from 'react-redux';
 
-const mainTopic = topics.filter(topics => topics.category === 3)[0]
 
 const MainArticle = ({setReadMoreTopicId}) => {
+    const topics = useSelector(state=>state.repository.topics)
+    const mainTopic = topics.value.filter(topics => topics.category === 3)[0]
     let  elementId = "topic-"+mainTopic.id
-    return(
+    return (
         <div className="main-article" id={elementId}>
             <div className="paginator unselectable"><span>01</span> <span>05</span></div>
             <Tag className = "italic"
@@ -28,7 +29,8 @@ const MainArticle = ({setReadMoreTopicId}) => {
                 setReadMoreTopicId = {setReadMoreTopicId}
             />
         </div>
-    )
+    );
 }
+   
 
 export default MainArticle

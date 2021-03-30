@@ -36,6 +36,16 @@
     margin-top: 100px;
 }
 
+.load-main {
+    grid-area: main-article;
+    position: relative;
+}
+.load-main.load-more-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
 .paginator {
     writing-mode: vertical-lr;
     grid-column: 1/2;

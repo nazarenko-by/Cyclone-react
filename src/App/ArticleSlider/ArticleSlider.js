@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Navigation, Autoplay } from 'swiper/core';
+import { connect } from 'react-redux';
 
 import './articleSlider.css'
 import 'swiper/swiper-bundle.css';
@@ -9,9 +10,7 @@ import ArticleSliderPrev from './ArticleSliderPrev/ArticleSliderPrev'
 import ArticleSliderNext from './ArticleSliderNext/ArticleSliderNext'
 import ArticleSliderItem from './ArticleSliderItem/ArticleSliderItem';
 
-import topics from '../../topics'
 
-const articleData = topics.filter(topics => topics.category === 2 || topics.category === 0)
 
 SwiperCore.use([Navigation, Autoplay ]);
 
@@ -24,6 +23,7 @@ class ArticleSlider extends Component {
         prevTitle:'',
         nextTag:[],
         prevTag:[],
+        articleData: this.props.topics.filter(topics => topics.category === 2 || topics.category === 0)
     }
 
     updateWidth ()  {
@@ -31,6 +31,8 @@ class ArticleSlider extends Component {
             windowWidth:window.innerWidth
         })
     }
+
+   
 
     componentDidMount() {
         window.addEventListener('resize',() => this.updateWidth());
@@ -72,10 +74,10 @@ class ArticleSlider extends Component {
 
         }
 
-        nextTitle = articleData[+nextNumber - 1].title
-        prevTitle = articleData[+prevNumber - 1].title
-        nextTag = articleData[+nextNumber - 1].tag
-        prevTag = articleData[+prevNumber - 1].tag
+        nextTitle = this.state.articleData[+nextNumber - 1].title
+        prevTitle = this.state.articleData[+prevNumber - 1].title
+        nextTag = this.state.articleData[+nextNumber - 1].tag
+        prevTag = this.state.articleData[+prevNumber - 1].tag
 
         this.setState({
             nextNumber:nextNumber,
@@ -89,7 +91,8 @@ class ArticleSlider extends Component {
 
     render() {
         const {
-            setReadMoreTopicId
+            setReadMoreTopicId,
+            topics
         } = this.props
         return (
             <div className="article-slider">
@@ -118,7 +121,7 @@ class ArticleSlider extends Component {
                     onSlideChange={(swiper) => {this.getNextPrevData(swiper.realIndex + 1, swiper.slides.length - 2)}}
                 >                
                     {
-                        articleData.map(({
+                        this.state.articleData.map(({
                             id,
                             tag,
                             title,
@@ -144,4 +147,11 @@ class ArticleSlider extends Component {
     }
 }
 
-export default ArticleSlider
+const mapState = (state) => ({
+    topics:state.repository.topics.value
+
+})
+
+
+export default connect(
+    mapState) (ArticleSlider)

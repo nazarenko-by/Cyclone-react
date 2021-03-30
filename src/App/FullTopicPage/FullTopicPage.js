@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import StringToReact from 'string-to-react'
 
 import CommentShareButton from '../../Components/CommentShareButton/CommentShareButton'
@@ -6,9 +7,9 @@ import Tag from '../../Components/Tag/Tag'
 
 import './fullTopicPage.css'
 
-import topics from '../../topics'
 
 const FullTopic = ({match}) => {
+    const topics = useSelector(state=>state.repository.topics.value)
     const id = +match.params.id
     const fullTopic = topics.filter(topics => topics.id === id)[0]  
     let  elementId = "topic-"+id
