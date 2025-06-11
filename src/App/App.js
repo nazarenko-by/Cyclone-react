@@ -26,7 +26,7 @@ const fetchConfig = [
       resource:  'topics' ,
       method: 'get',
       request: {
-        url: "https://run.mocky.io/v3/dc2229a0-2f76-40e6-8bd6-94827749a95d"
+        url: "/data/topics.json"
       }
     }
   ];
