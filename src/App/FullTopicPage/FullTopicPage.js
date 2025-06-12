@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import StringToReact from 'string-to-react'
 
-import CommentShareButton from '../../Components/CommentShareButton/CommentShareButton'
-import Tag from '../../Components/Tag/Tag'
+import CommentShareButton from '../../components/CommentShareButton/CommentShareButton'
+import Tag from '../../components/Tag/Tag'
 
 import './fullTopicPage.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Topics from '../../Components/Topics/Topics'
-import TopicListTagItem from '../../Components/Topics/TopicList/TopicListTagItem'
+import Topics from '../../components/Topics/Topics'
+import TopicListTagItem from '../../components/Topics/TopicList/TopicListTagItem'
 import { useSelector } from 'react-redux'
 
 const TravelPage = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import Topics from '../../Components/Topics/Topics'
+import Topics from '../../components/Topics/Topics'
 
 const HotTopics = () => {
     const topics = useSelector(state=>state.repository.topics)

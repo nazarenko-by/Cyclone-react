@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import './articleSliderItem.css'
 
-import Tag from "../../../Components/Tag/Tag"
-import CommentShareButton from "../../../Components/CommentShareButton/CommentShareButton"
-import ReadMore from '../../../Components/ReadMore/ReadMore';
+import Tag from "../../../components/Tag/Tag"
+import CommentShareButton from "../../../components/CommentShareButton/CommentShareButton"
+import ReadMore from '../../../components/ReadMore/ReadMore';
 
 const ArticleSliderItem = ({
     id,

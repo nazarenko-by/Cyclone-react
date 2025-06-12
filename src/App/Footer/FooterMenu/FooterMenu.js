@@ -2,10 +2,10 @@ import React from 'react'
 
 import './footerMenu.css'
 
-import Navigation from '../../../Components/Navigation/Navigation'
-import Search from '../../../Components/Search/Search'
-import FollowUs from '../../../Components/FollowUs/FollowUs'
-import Logo from '../../../Components/Logo/Logo'
+import Navigation from '../../../components/Navigation/Navigation'
+import Search from '../../../components/Search/Search'
+import FollowUs from '../../../components/FollowUs/FollowUs'
+import Logo from '../../../components/Logo/Logo'
 
 const FooterMenu = () => {
     return(

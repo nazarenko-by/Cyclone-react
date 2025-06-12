@@ -2,7 +2,7 @@ import React from 'react'
 
 import './logoDate.css'
 
-import Logo from '../../../Components/Logo/Logo'
+import Logo from '../../../components/Logo/Logo'
 
 const LogoDate = () => {
     return (

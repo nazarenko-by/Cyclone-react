@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import Topics from '../../Components/Topics/Topics'
-import TopicListTagItem from '../../Components/Topics/TopicList/TopicListTagItem'
+import Topics from '../../components/Topics/Topics'
+import TopicListTagItem from '../../components/Topics/TopicList/TopicListTagItem'
 
 const DesignPage = () => {
     const topics = useSelector(state=>state.repository.topics)
