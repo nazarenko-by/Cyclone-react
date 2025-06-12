@@ -1,11 +1,4 @@
-// Category: 
-// 0 - All
-// 1 - Hot Topics
-// 2 - Article Slider
-// 3 - Main
-
-
-const topics = [
+[
     {
         "id": 1,
         "image": "/images/HotTopics/hot-topics-title-1.png",
@@ -119,7 +112,4 @@ const topics = [
         "image": "/images/main.png",
         "category": 3
     }
-
 ]
-
-export default topics
