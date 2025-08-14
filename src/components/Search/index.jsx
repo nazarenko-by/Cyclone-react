@@ -23,7 +23,7 @@ const Search = () => {
 	}
 
 	return (
-		<label className={clsx("search", { open: open })}>
+		<label className={clsx("search", "p-1", { open: open })}>
 			<button className="search-button" onClick={onButtonClick} aria-label="Search">
 				<svg viewBox="0 0 17.7 17.7">
 					<path

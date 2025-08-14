@@ -7,9 +7,9 @@ import "@/styles/header.scss"
 const Header = () => {
 	return (
 		<header className="header">
-			<Logo date={true} />
+			<Logo className={"py-5"} date={true} />
 			<div className="line"></div>
-			<Menu />
+			<Menu className={"py-5"} />
 			<div className="line"></div>
 		</header>
 	)

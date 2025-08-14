@@ -5,10 +5,11 @@ import Link from "next/link"
 // import image from '/images/Logo.png'
 
 import { getCurrentDate } from "@/helpers"
+import clsx from "clsx"
 
-const LogoDate = ({ date }) => {
+const LogoDate = ({ className, date }) => {
 	return (
-		<div className="logo">
+		<div className={clsx("logo-date-container", className)}>
 			<div className="logo-image">
 				<Link href="/" className="logo-link">
 					<Image fill sizes="100%, 100%" src={"/images/Logo.png"} alt="Cyclone Logo" />

@@ -1,10 +1,16 @@
+@use 'src/styles/variables' as *;
+
+.navigation-wrapper .navigation-btn {
+    display: none;
+}
+
 .navigation {
     ul {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        gap: 40px;
+        gap: $space-5;
         background-color: #dedad9;
         background-image: radial-gradient(#bebebe32 0.2px, #dedad928 0.75px);
         background-size: 3px 3px;
@@ -12,15 +18,18 @@
 }
 
 @media (max-width: 767px) {
+    .navigation-wrapper .navigation-btn {
+        display: block;
+    }
     .navigation {
         ul {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            padding: 30px 0;
+            // gap: $space-5;
+            padding: $space-5 0;
             position: absolute;
             z-index: 100;
-            top: 174px;
+            top: 100%;
         }
         &:not(.open) ul {
             right: 100%;

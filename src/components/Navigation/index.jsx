@@ -20,6 +20,7 @@ const navItems = [
 
 const Navigation = ({ mobileMenu }) => {
 	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<div className={clsx("navigation-wrapper", { "mobile-menu": mobileMenu })}>
 			<nav className={clsx("navigation", { open: isOpen })}>

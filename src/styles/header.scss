@@ -14,12 +14,11 @@
 }
 
 // Logo styles
-.logo {
+.logo-date-container {
     grid-column: 2;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 30px 0;
     align-items: center;
 }
 .logo-image {
@@ -41,8 +40,7 @@
 }
 
 // menu styles
-.menu {
-    padding: 30px 0;
+.menu-container {
     grid-column: 2;
     display: flex;
     align-items: center;
@@ -55,11 +53,20 @@
             border-bottom: 2px solid #2a2928;
         }
     }
+    .follow-us-container {
+        display: flex;
+    }
 }
 
 @media(max-width: 767px){
-    .menu{
+    .menu-container {
         flex-direction: row-reverse;
+    }
+}
+
+@media (max-width: 1023px) {
+    .menu-container .follow-us-container {
+        display: none;
     }
 }
 

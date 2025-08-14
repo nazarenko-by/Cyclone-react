@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import ResizeObserver from "resize-observer-polyfill"
 
 const useResizeObserver = (ref, square = false) => {
-	const [dimensions, setDimensions] = useState(null)
+	const [dimensions, setDimensions] = useState({})
 	useEffect(() => {
 		const observeTarget = ref.current
 		const resizeObserver = new ResizeObserver((entries) => {
