@@ -6,4 +6,14 @@
 .follow-us-list {
     display: flex;
     gap: 20px;
+    &> li {
+        height: fit-content;
+    }
+}
+.follow-us-link {
+    display: block;
+    line-height: 0;
+    height: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
 }

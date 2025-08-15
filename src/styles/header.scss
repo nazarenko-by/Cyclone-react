@@ -53,12 +53,9 @@
             border-bottom: 2px solid #2a2928;
         }
     }
-    .follow-us-container {
-        display: flex;
-    }
 }
 
-@media(max-width: 767px){
+@media (max-width: 767px){
     .menu-container {
         flex-direction: row-reverse;
     }
