@@ -16,4 +16,11 @@
     height: fit-content;
     height: -moz-fit-content;
     height: -webkit-fit-content;
+    height: -ms-fit-content;
+    img {
+        transition: filter 0.2s ease-in-out;
+    }
+    &:hover img {
+        filter: invert(0.4);
+    }
 }
