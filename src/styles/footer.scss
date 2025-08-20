@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 30px;
+    align-items: center;
+    position: relative;
+    .line {
+        grid-column: 1 / 4
+    }
+    background-color: #f2eae6;
+    background-image: radial-gradient(#bebebe32 0.2px, #dedad928 0.75px);
+    background-size: 3px 3px;
+    .menu-container {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    @media (max-width: 1239px){
+        .menu-container .navigation-wrapper {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 738px) {
+        .menu-container .follow-us-container {
+            display: none;
+        }
+    }
+    @media (max-width: 439px) {
+        .menu-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
+
+.footer-menu,
+.footer-rights {
+    grid-column: 2;
+}

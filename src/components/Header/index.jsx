@@ -6,10 +6,10 @@ import "@/styles/header.scss"
 
 const Header = () => {
 	return (
-		<header className="header">
+		<header className="header-container">
 			<Logo className={"py-5"} date={true} />
 			<div className="line"></div>
-			<Menu className={"py-5"} />
+			<Menu className={"py-5"} type={"header"} />
 			<div className="line"></div>
 		</header>
 	)

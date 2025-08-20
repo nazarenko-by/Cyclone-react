@@ -8,19 +8,40 @@ import Search from "@/components/Search"
 import FollowUs from "@/components/FollowUs"
 import clsx from "clsx"
 
-const Menu = ({ className }) => {
+const hiddenWidth = (type) => {
+	switch (type) {
+		case "header":
+			return {
+				navigation: { mobile: 850, hide: null },
+				followUs: { hide: 1040 },
+			}
+		case "footer":
+			return {
+				navigation: { mobile: null, hide: 1240 },
+				followUs: { hide: 768 },
+			}
+		default:
+			return 0
+	}
+}
+
+const Menu = ({ type, className, children }) => {
+	const { navigation, followUs } = hiddenWidth(type)
 	const windowWidth = useWindowWidth()
 	const [isMobile, setIsMobile] = useState(false)
 	const [isFollowUsVisible, setIsFollowUsVisible] = useState(true)
+	const [isNavigationVisible, setIsNavigationVisible] = useState(true)
 
 	useEffect(() => {
-		setIsMobile(windowWidth < 768)
-		setIsFollowUsVisible(windowWidth > 1023)
+		navigation.mobile && setIsMobile(windowWidth < navigation.mobile)
+		navigation.hide && setIsNavigationVisible(windowWidth > navigation.hide)
+		followUs.hide && setIsFollowUsVisible(windowWidth > followUs.hide)
 	}, [windowWidth])
 
 	return (
 		<div className={clsx("menu-container", className)}>
-			<Navigation mobileMenu={isMobile} />
+			{children}
+			{isNavigationVisible && <Navigation mobileMenu={isMobile} />}
 			<Search />
 			{isFollowUsVisible && <FollowUs />}
 		</div>

@@ -1,5 +1,6 @@
 import { Providers } from "@/store/Providers"
 import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 import localFont from "next/font/local"
 import "@/styles/reset.css"
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
 				<Providers>
 					<Header />
 					<main>{children}</main>
+					<Footer />
 				</Providers>
 			</body>
 		</html>

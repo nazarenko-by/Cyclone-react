@@ -6,6 +6,8 @@
     display: flex;
     transition: background-color .3s;
     align-items: center;
+    min-width: 240px;
+    justify-content: center;
     &.open {
         background-color: #efefef;
     }

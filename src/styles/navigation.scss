@@ -11,13 +11,10 @@
         justify-content: space-between;
         width: 100%;
         gap: $space-5;
-        background-color: #dedad9;
-        background-image: radial-gradient(#bebebe32 0.2px, #dedad928 0.75px);
-        background-size: 3px 3px;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 849px) {
     .navigation-wrapper .navigation-btn {
         display: block;
     }
