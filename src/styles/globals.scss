@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+* {
+  box-sizing: border-box;
+}
+
 .line {
     grid-area: line;
     height: 1px;
@@ -79,4 +83,9 @@ p { font-size: $fs-base }
   margin-inline: auto;
   padding-inline: $space-4;
 } */
-
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
