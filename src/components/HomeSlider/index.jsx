@@ -4,10 +4,16 @@ import React, { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay, Virtual } from "swiper/modules"
 import clsx from "clsx"
+import { Cormorant_Garamond } from "next/font/google"
 
 import { EVENTS } from "@/helpers/events"
 
 import "@/styles/slider.scss"
+
+const cormorant = Cormorant_Garamond({
+	weight: "700",
+	subsets: ["latin"],
+})
 
 const HomeSlider = () => {
 	const [prevIndex, setPrevIndex] = useState(EVENTS.length)
@@ -15,9 +21,6 @@ const HomeSlider = () => {
 
 	return (
 		<div className="home-slider-container">
-			<div className="slider-number-prev unselectable">{prevIndex}</div>
-			<SlideButton className={"slide-button-prev"} text={prevIndex} />
-
 			<Swiper
 				className="home-slider"
 				modules={[Navigation, Autoplay, Virtual]}
@@ -32,8 +35,8 @@ const HomeSlider = () => {
 				//     stopOnLastSlide: true
 				// }}
 				navigation={{
-					nextEl: ".slide-button-next",
-					prevEl: ".slide-button-prev",
+					nextEl: ".slider-button-next",
+					prevEl: ".slider-button-prev",
 				}}
 				onRealIndexChange={(swiper) => {
 					const activeSlide = swiper.realIndex + 1
@@ -53,17 +56,22 @@ const HomeSlider = () => {
 				))}
 			</Swiper>
 
-			<SlideButton className={"slide-button-next"} text={nextIndex} />
-			<div className="slider-number-next unselectable">{nextIndex}</div>
+			<SlideButton type={"prev"} text={prevIndex.toString().padStart(2, 0)} />
+			<SlideButton type={"next"} text={nextIndex.toString().padStart(2, 0)} />
 		</div>
 	)
 }
 
-const SlideButton = ({ className, text }) => {
+const SlideButton = ({ className, text, type }) => {
 	return (
-		<div className={clsx(className, "slide-button", "unselectable")} /*onClick={onClick}*/>
-			{text.toString().padStart(2, 0)}
-		</div>
+		<>
+			<div className={clsx(className, "slider-button unselectable", `slider-button-${type}`)}>{text}</div>
+			<div
+				className={clsx(className, "slider-number unselectable", `slider-number-${type}`, cormorant.className)}
+			>
+				{text}
+			</div>
+		</>
 	)
 }
 

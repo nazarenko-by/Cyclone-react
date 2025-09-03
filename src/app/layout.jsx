@@ -1,13 +1,15 @@
+import { Proza_Libre } from "next/font/google"
+
 import { Providers } from "@/store/Providers"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
-import localFont from "next/font/local"
 import "@/styles/reset.css"
 import "@/styles/globals.scss"
 
-const prozaLibre = localFont({
-	src: "../styles/fonts/ProzaLibre-Regular.ttf",
+const prozaLibre = Proza_Libre({
+	weight: ["400", "700"],
+	subsets: ["latin"],
 })
 
 export const metadata = {
