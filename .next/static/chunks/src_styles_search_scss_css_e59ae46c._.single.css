@@ -1,0 +1,59 @@
+/* [project]/src/styles/search.scss.css [app-client] (css) */
+.search {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  min-width: 240px;
+  transition: background-color .3s;
+  display: flex;
+  position: relative;
+}
+
+.search.open {
+  background-color: #efefef;
+}
+
+.search-input {
+  vertical-align: middle;
+  tranform-origin: center right;
+  background: none;
+  border: 0;
+  outline: 0;
+  width: 0;
+  max-width: 200px;
+  padding: 0;
+  line-height: 1;
+  transition: width .3s;
+  display: inline-block;
+}
+
+.open .search-input {
+  width: 300px;
+}
+
+.search-button {
+  color: #5d5a9f;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  outline: 0;
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
+  padding: 4px;
+  transition: color .3s;
+  left: 19px;
+}
+
+.search-button:hover, .open .search-button {
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .menu-container .search {
+    flex-direction: row-reverse;
+  }
+}
+
+/*# sourceMappingURL=src_styles_search_scss_css_e59ae46c._.single.css.map*/

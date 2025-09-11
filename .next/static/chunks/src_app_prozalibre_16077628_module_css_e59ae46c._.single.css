@@ -1,0 +1,21 @@
+/* [project]/src/app/prozalibre_16077628.module.css [app-client] (css) */
+@font-face {
+  font-family: prozaLibre;
+  src: url("../media/ProzaLibre_Regular-s.p.1d64ed00.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: prozaLibre Fallback;
+  src: local(Arial);
+  ascent-override: 89.72%;
+  descent-override: 35.96%;
+  line-gap-override: 0.0%;
+  size-adjust: 108.63%;
+}
+
+.prozalibre_16077628-module__ccqg6W__className {
+  font-family: prozaLibre, prozaLibre Fallback;
+}
+
+/*# sourceMappingURL=src_app_prozalibre_16077628_module_css_e59ae46c._.single.css.map*/
