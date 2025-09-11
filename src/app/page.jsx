@@ -1,4 +1,4 @@
-import HomeSlider from "@/components/HomeSlider"
+import EventsSlider from "@/components/EventsSlider"
 
 import "swiper/css"
 import "swiper/css/pagination"
@@ -7,7 +7,7 @@ import "swiper/css/navigation"
 export default function Home() {
 	return (
 		<div className="container">
-			<HomeSlider />
+			<EventsSlider />
 		</div>
 	)
 }

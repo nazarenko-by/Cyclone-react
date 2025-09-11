@@ -6,8 +6,9 @@ import { Navigation, Autoplay } from "swiper/modules"
 import { Cormorant_Garamond } from "next/font/google"
 import clsx from "clsx"
 
-import Slide from "@/components/HomeSlider/Slide"
+import Slide from "@/components/EventsSlider/Slide"
 
+import { useDeviceType } from "@/hooks/useDeviceType"
 import { EVENTS } from "@/helpers/events"
 
 import "@/styles/slider.scss"
@@ -17,29 +18,31 @@ const cormorant = Cormorant_Garamond({
 	subsets: ["latin"],
 })
 
-const HomeSlider = () => {
+const EventsSlider = () => {
 	const [prevIndex, setPrevIndex] = useState(EVENTS.length)
 	const [nextIndex, setNextIndex] = useState(2)
 	const [activeIndex, setActiveIndex] = useState(1)
 
+	const deviceType = useDeviceType()
+
 	return (
-		<div className="home-slider-container">
+		<div className="home-slider-container" key={deviceType}>
 			<div className={clsx("slider-item-number text-lg unselectable", cormorant.className)}>
 				{activeIndex.toString().padStart(2, 0)}
 			</div>
 			<Swiper
 				className="home-slider"
 				modules={[Navigation, Autoplay]}
+				allowTouchMove={deviceType !== "desktop"}
 				spaceBetween={30}
 				speed={1800}
 				centeredSlides={true}
 				loop={true}
-				// autoplay={{
-				//     delay: 4000,
-				//     pauseOnMouseEnter: true,
-				//     waitForTransition: true,
-				//     stopOnLastSlide: true
-				// }}
+				autoplay={{
+					delay: 4000,
+					pauseOnMouseEnter: true,
+					waitForTransition: true,
+				}}
 				navigation={{
 					nextEl: ".slider-button-next",
 					prevEl: ".slider-button-prev",
@@ -87,4 +90,4 @@ const SlideButton = ({ className, text, type }) => {
 	)
 }
 
-export default HomeSlider
+export default EventsSlider
