@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/styles/Users/bohdan_nazarenko/Projects/Cyclone-react/src/styles/followUs.scss"],"sourcesContent":[".follow-us-container {\n    display: flex;\n    align-items: center;\n    gap: 20px;\n}\n.follow-us-list {\n    display: flex;\n    gap: 20px;\n    &> li {\n        height: fit-content;\n    }\n}\n.follow-us-link {\n    display: block;\n    line-height: 0;\n    height: fit-content;\n    height: -moz-fit-content;\n    height: -webkit-fit-content;\n    height: -ms-fit-content;\n    img {\n        transition: filter 0.2s ease-in-out;\n    }\n    &:hover img {\n        filter: invert(0.4);\n    }\n}"],"names":[],"mappings":"AAAA;;;;;;AAKA;;;;;AAGI;;;;;AAIJ;;;;;;;AAOI;;;;AAGA"}}]
-}

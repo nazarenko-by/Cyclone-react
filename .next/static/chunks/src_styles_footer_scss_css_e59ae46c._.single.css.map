@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/styles/Users/bohdan_nazarenko/Projects/Cyclone-react/src/styles/footer.scss"],"sourcesContent":["@use 'variables' as *;\n\n.footer-container {\n    display: grid;\n    grid-template-columns: auto 1fr auto;\n    gap: 0 30px;\n    align-items: center;\n    position: relative;\n    .line {\n        grid-column: 1 / 4\n    }\n    background-color: #f2eae6;\n    background-image: radial-gradient(#bebebe32 0.2px, #dedad928 0.75px);\n    background-size: 3px 3px;\n    .menu-container {\n        width: 100%;\n        flex-wrap: wrap;\n    }\n    @media (max-width: 1239px){\n        .menu-container .navigation-wrapper {\n            display: none;\n        }\n    }\n    \n    @media (max-width: 738px) {\n        .menu-container .follow-us-container {\n            display: none;\n        }\n    }\n    @media (max-width: 439px) {\n        .menu-container {\n            flex-direction: column;\n            align-items: center;\n            gap: 10px;\n        }\n    }\n}\n\n.footer-menu,\n.footer-rights {\n    grid-column: 2;\n}"],"names":[],"mappings":"AAEA;;;;;;;;;;;AAMI;;;;AAMA;;;;;AAIA;EACI;;;;;AAKJ;EACI;;;;;AAIJ;EACI;;;;;;;AAQR"}}]
-}
