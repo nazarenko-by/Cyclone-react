@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
+import baseReducer from "@/slices/Base"
 import likeReducer from "@/slices/Like"
 
 // Middleware to log errors during action dispatch
@@ -19,6 +20,7 @@ const errorLogger = (store) => (next) => (action) => {
 export const createStore = () =>
 	configureStore({
 		reducer: {
+			base: baseReducer,
 			like: likeReducer,
 		},
 		middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(errorLogger),

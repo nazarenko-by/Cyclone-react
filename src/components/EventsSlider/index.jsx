@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useRef, forwardRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
 import { Cormorant_Garamond } from "next/font/google"
@@ -19,20 +19,34 @@ const cormorant = Cormorant_Garamond({
 })
 
 const EventsSlider = () => {
-	const [prevIndex, setPrevIndex] = useState(EVENTS.length)
-	const [nextIndex, setNextIndex] = useState(2)
+	const navRefs = {
+		prev: useRef(null),
+		next: useRef(null),
+	}
+
 	const [activeIndex, setActiveIndex] = useState(1)
+	const [prevNextIndex, setPrevNextIndex] = useState({ prev: EVENTS.length, next: 2 })
 
 	const deviceType = useDeviceType()
 
 	return (
-		<div className="home-slider-container" key={deviceType}>
-			<div className={clsx("slider-item-number text-lg unselectable", cormorant.className)}>
+		<div className="events-slider-container" key={deviceType}>
+			<div className={clsx("events-slider-item-number text-lg unselectable", cormorant.className)}>
 				{activeIndex.toString().padStart(2, 0)}
 			</div>
+			{["prev", "next"].map((type) => (
+				<SlideButton
+					ref={navRefs[type]}
+					key={type}
+					type={type}
+					text={prevNextIndex[type].toString().padStart(2, 0)}
+				/>
+			))}
+
 			<Swiper
-				className="home-slider"
+				className="events-slider"
 				modules={[Navigation, Autoplay]}
+				slidesPerView={1}
 				allowTouchMove={deviceType !== "desktop"}
 				spaceBetween={30}
 				speed={1800}
@@ -43,27 +57,29 @@ const EventsSlider = () => {
 					pauseOnMouseEnter: true,
 					waitForTransition: true,
 				}}
-				navigation={{
-					nextEl: ".slider-button-next",
-					prevEl: ".slider-button-prev",
+				onBeforeInit={(swiper) => {
+					swiper.params.navigation.prevEl = navRefs.prev.current
+					swiper.params.navigation.nextEl = navRefs.next.current
 				}}
 				onRealIndexChange={(swiper) => {
 					const activeSlide = swiper.realIndex + 1
-					setPrevIndex(activeSlide === 1 ? EVENTS.length : activeSlide - 1)
 					setActiveIndex(activeSlide)
-					setNextIndex(activeSlide === EVENTS.length ? 1 : activeSlide + 1)
+					setPrevNextIndex({
+						prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
+						next: activeSlide === EVENTS.length ? 1 : activeSlide + 1,
+					})
 				}}
 			>
 				{EVENTS.map((event) => (
-					<SwiperSlide key={event.id} virtualIndex={event.id} className="home-slider-slide">
+					<SwiperSlide key={event.id} virtualIndex={event.id} className="events-slider-slide">
 						{({ isActive, isPrev, isNext }) => <Slide {...event} isActive={isActive || isPrev || isNext} />}
 					</SwiperSlide>
 				))}
 			</Swiper>
 
-			<SlideButton type={"prev"} text={prevIndex.toString().padStart(2, 0)} />
-			<SlideButton type={"next"} text={nextIndex.toString().padStart(2, 0)} />
-			<button className="slider-read-more unselectable" title="Read more about the event">
+			{/* <SlideButton type={"prev"} text={prevIndex.toString().padStart(2, 0)} />
+			<SlideButton type={"next"} text={nextIndex.toString().padStart(2, 0)} /> */}
+			<button className="events-slider-read-more unselectable" title="Read more about the event">
 				<svg width={"50"} height={"50"} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 					<path d="M0 8 L2 6 L12 14 L22 6 L24 8 L12 18 Z"></path>
 				</svg>
@@ -72,22 +88,26 @@ const EventsSlider = () => {
 	)
 }
 
-const SlideButton = ({ className, text, type }) => {
-	return (
-		<>
-			<div
-				className={clsx(className, "slider-button unselectable", `slider-button-${type}`)}
-				title="Change slide"
-			>
-				{text}
-			</div>
-			<div
-				className={clsx(className, "slider-number unselectable", `slider-number-${type}`, cormorant.className)}
-			>
-				{text}
-			</div>
-		</>
-	)
-}
+const SlideButton = forwardRef(({ className, text, type }, ref) => (
+	<>
+		<div
+			ref={ref}
+			className={clsx(className, "events-slider-button unselectable", `events-slider-button-${type}`)}
+			title="Change slide"
+		>
+			{text}
+		</div>
+		<div
+			className={clsx(
+				className,
+				"events-slider-number unselectable",
+				`events-slider-number-${type}`,
+				cormorant.className
+			)}
+		>
+			{text}
+		</div>
+	</>
+))
 
 export default EventsSlider

@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.8.2",
+		"axios": "^1.12.2",
 		"clsx": "^2.1.1",
 		"husky": "^9.1.7",
 		"next": "15.4.6",

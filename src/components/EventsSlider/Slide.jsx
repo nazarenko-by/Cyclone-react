@@ -19,7 +19,7 @@ const Slide = ({ title, event, eventDate, isActive }) => {
 
 	return (
 		<div className="slide-content">
-			<h1 className={clsx("big-title slider-item-title text-5xl", cormorant.className)}>{title}</h1>
+			<h1 className={clsx("big-title events-slider-item-title text-5xl", cormorant.className)}>{title}</h1>
 			<div className="events">
 				<h4 className="event-name">
 					<span className="italic">Exhibition</span> <span className="yellow-text">'{event}'</span>
