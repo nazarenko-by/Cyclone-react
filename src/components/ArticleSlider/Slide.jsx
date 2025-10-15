@@ -2,7 +2,8 @@
 
 import React from "react"
 import Image from "next/image"
-import { Cormorant_Garamond, Proza_Libre } from "next/font/google"
+import Link from "next/link"
+import { Cormorant_Garamond } from "next/font/google"
 import clsx from "clsx"
 
 const cormorant = Cormorant_Garamond({
@@ -10,13 +11,10 @@ const cormorant = Cormorant_Garamond({
 	subsets: ["latin"],
 	style: ["italic", "normal"],
 })
-const prozaLibre = Proza_Libre({
-	weight: ["400"],
-	subsets: ["latin"],
-})
 
-const Slide = ({ topic, isActive }) => {
+const Slide = ({ topic, isActive, index }) => {
 	if (!isActive) return null
+	console.log({ topic, isActive, index })
 
 	return (
 		<div className="article-slide-content">
@@ -28,9 +26,23 @@ const Slide = ({ topic, isActive }) => {
 				width={100}
 				height={100}
 			/>
-			<h1 className={clsx("big-title article-slide-item-title text-xl", cormorant.className)}>{topic.title}</h1>
-			<div className="events">
-				<h5 className={clsx("event-date", prozaLibre.className)}>{topic.date || "Date to be announced"}</h5>
+			<div className={clsx("article-slide-tags-container text-sm unselectable", cormorant.className)}>
+				{(index + 1).toString().padStart(2, 0)}
+				<span className="article-slider-tags">
+					{Array.isArray(topic?.tag) &&
+						topic.tag.map((tag, index) => (
+							<Link key={tag} href={`/${tag.toLowerCase()}`}>
+								{index + 1 === topic.tag.length ? tag : `${tag}, `}
+							</Link>
+						))}
+				</span>
+			</div>
+			<h1 className={clsx("big-title article-slide-title text-xl", cormorant.className)}>{topic.title}</h1>
+			<div className="article-slide-details text-sm text-fade-3">{topic.text}</div>
+			<div className="article-slide-read-more">
+				<Link href={`/article/${topic.id}`} className="article-slide-read-more-link text-sm">
+					Read More
+				</Link>
 			</div>
 		</div>
 	)

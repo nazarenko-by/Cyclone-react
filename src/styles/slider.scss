@@ -270,10 +270,34 @@
     .article-slide-content {
         padding: 15px;
         display: grid;
+        grid-template-rows: auto auto auto 100px;
+        grid-template-columns: auto 1fr auto;
     }
     .article-slide-image {
         object-fit: cover;
         border-radius: 50%;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .article-slide-tags-container {
+        grid-area: 1 / 2 / 2 / 3;
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+        font-style: italic;
+        .article-slider-tags {
+            cursor: pointer;
+        }
+    }
+    .article-slide-title {
+        grid-area: 2 / 1 / 3 / 4;
+        padding: 15px 0;
+    }
+    .article-slide-details {
+        grid-area: 3 / 1 / 4 / 4;
+    }
+    .article-slide-read-more {
+        grid-area: 4 / 1 / 5 / 2;
+        align-self: self-end;
     }
 }
 

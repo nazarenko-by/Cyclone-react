@@ -25,17 +25,13 @@ const ArticleSlider = () => {
 	}
 
 	const deviceType = useDeviceType()
-	const { preloader, topics } = useSelector((state) => ({
-		preloader: state.base.preloader,
-		topics: state.base.topics,
-	}))
+	const preloader = useSelector((state) => state.base.preloader)
+	const topics = useSelector((state) => state.base.topics)
 
-	// const [activeIndex, setActiveIndex] = useState(0)
 	const [prevNextTopicsIndex, setPrevNextTopics] = useState({ prev: 0, next: 0 })
 
 	useEffect(() => {
 		if (topics.length === 0) return
-		// setActiveIndex(0)
 		setPrevNextTopics({
 			prev: topics.length - 1,
 			next: 2,
@@ -67,7 +63,7 @@ const ArticleSlider = () => {
 				centeredSlides={false}
 				breakpoints={{ 768: { slidesPerView: 2 }, 480: { slidesPerView: 1 } }}
 				autoplay={{
-					// delay: 10000,
+					delay: 10000,
 					pauseOnMouseEnter: true,
 					waitForTransition: true,
 				}}
@@ -82,23 +78,20 @@ const ArticleSlider = () => {
 						prev: newPrev < 0 ? topics.length - 1 : newPrev,
 						next: newNext > topics.length - 1 ? newNext - topics.length : newNext,
 					})
-
-					// setActiveIndex(activeSlide)
 				}}
 				onBeforeInit={(swiper) => {
 					swiper.params.navigation.prevEl = navRefs.prev.current
 					swiper.params.navigation.nextEl = navRefs.next.current
 				}}
 			>
-				{topics.map((topic) => (
+				{topics.map((topic, index) => (
 					<SwiperSlide key={topic.id}>
 						{({ isActive, isPrev, isNext }) => (
-							<Slide topic={topic} isActive={isActive || isPrev || isNext} />
+							<Slide topic={topic} isActive={isActive || isPrev || isNext} index={index} />
 						)}
 					</SwiperSlide>
 				))}
 			</Swiper>
-			{/* {[ "prev", "next" ].map(type => <SlideButton ref={navRefs[type]} key={type} type={type} topic={topics[prevNextTopicsIndex[type]]} number={prevNextTopicsIndex[type] + 1 > topics.length ? 1 : prevNextTopicsIndex[type] + 1 } />)} */}
 		</div>
 	)
 }
@@ -112,7 +105,7 @@ const SlideButton = forwardRef(({ className, topic, type, number }, ref) => (
 			</svg>
 		</div>
 		<div className="article-slider-theme">{topic?.title}</div>
-		<div className="article-slider-subtitle">
+		<div className="article-slider-tags">
 			{Array.isArray(topic?.tag) &&
 				topic.tag.map((tag, index) => (
 					<Link key={tag} href={`/${tag.toLowerCase()}`}>
