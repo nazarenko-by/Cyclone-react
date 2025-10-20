@@ -55,8 +55,6 @@ const ArticleSlider = () => {
 			<Swiper
 				className="article-slides"
 				modules={[Navigation, Autoplay]}
-				// modules={[Navigation]}
-				slidesPerView={2}
 				loop={true}
 				simulateTouch={deviceType !== "desktop"}
 				speed={1500}
@@ -104,7 +102,7 @@ const SlideButton = forwardRef(({ className, topic, type, number }, ref) => (
 				<path d="M16 6L24 12L16 18Z" stroke="black" strokeWidth="1.3" fill="none" />
 			</svg>
 		</div>
-		<div className="article-slider-theme">{topic?.title}</div>
+		<div className="article-slider-theme text-fade-1">{topic?.title}</div>
 		<div className="article-slider-tags">
 			{Array.isArray(topic?.tag) &&
 				topic.tag.map((tag, index) => (

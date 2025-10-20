@@ -49,11 +49,11 @@ const EventsSlider = () => {
 				slidesPerView={1}
 				allowTouchMove={deviceType !== "desktop"}
 				spaceBetween={30}
-				speed={1800}
+				speed={1500}
 				centeredSlides={true}
 				loop={true}
 				autoplay={{
-					delay: 4000,
+					delay: 10000,
 					pauseOnMouseEnter: true,
 					waitForTransition: true,
 				}}

@@ -18,6 +18,7 @@
     }
 }
 
+.text-fade-1 { @include text-fade(1); }
 .text-fade-2 { @include text-fade(2); }
 .text-fade-3 { @include text-fade(3); }
 .text-fade-4 { @include text-fade(4); }

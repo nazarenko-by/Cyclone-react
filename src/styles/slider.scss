@@ -226,6 +226,7 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-areas: "article-prev article-slides article-next";
+    padding: 40px 0;
     .article-slides {
         grid-area: article-slides;
         width: 100%;
@@ -258,10 +259,15 @@
         &::after {
             content: "";
             position: absolute;
-            height: 70%;
+            height: 100%;
             width: 1px;
             background-color: #cfcbca;
-            top: 15%;
+            top: 0;
+        }
+        .article-slider-theme {
+            height: 200px;
+            max-height: 200px;
+            text-align: center;
         }
     }
     .article-slider-button {
@@ -305,7 +311,7 @@
     .article-slider-container {
         .article-slider-prev-container,
         .article-slider-next-container {
-            padding: 40px;
+            padding: 0 40px;
         }
     }
 }
