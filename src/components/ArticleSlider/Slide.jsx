@@ -14,7 +14,6 @@ const cormorant = Cormorant_Garamond({
 
 const Slide = ({ topic, isActive, index }) => {
 	if (!isActive) return null
-	console.log({ topic, isActive, index })
 
 	return (
 		<div className="article-slide-content">

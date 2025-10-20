@@ -254,8 +254,9 @@
         writing-mode: vertical-rl;
         display: flex;
         justify-content: space-between;
-        padding: 30px 5px;
+        padding: 0 5px;
         transform: rotate(180deg);
+        align-items: center;
         &::after {
             content: "";
             position: absolute;
@@ -267,6 +268,11 @@
         .article-slider-theme {
             height: 200px;
             max-height: 200px;
+            text-align: center;
+            max-width: min-content;
+        }
+        .article-slider-tags {
+            min-height: 85px;
             text-align: center;
         }
     }

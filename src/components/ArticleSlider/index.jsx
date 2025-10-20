@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState, useRef, forwardRef } from "react"
+import React, { useEffect, useState, useRef, forwardRef, useMemo } from "react"
 import { useSelector } from "react-redux"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
@@ -24,9 +24,11 @@ const ArticleSlider = () => {
 		next: useRef(null),
 	}
 
-	const deviceType = useDeviceType()
 	const preloader = useSelector((state) => state.base.preloader)
 	const topics = useSelector((state) => state.base.topics)
+
+	const deviceType = useDeviceType()
+	const isMobile = useMemo(() => deviceType === "mobile", [deviceType])
 
 	const [prevNextTopicsIndex, setPrevNextTopics] = useState({ prev: 0, next: 0 })
 
@@ -34,15 +36,26 @@ const ArticleSlider = () => {
 		if (topics.length === 0) return
 		setPrevNextTopics({
 			prev: topics.length - 1,
-			next: 2,
+			next: isMobile ? 1 : 2,
 		})
 	}, [topics])
 
+	useEffect(() => {
+		if (!navRefs.prev.current || !navRefs.next.current) return
+
+		const swiper = document.querySelector(".article-slides")?.swiper
+		if (!swiper) return
+
+		swiper.params.navigation.prevEl = navRefs.prev.current
+		swiper.params.navigation.nextEl = navRefs.next.current
+		swiper.navigation.init()
+		swiper.navigation.update()
+	}, [navRefs.prev.current, navRefs.next.current])
+
 	if (preloader) return <div>Loader</div>
-	console.log(topics)
 
 	return (
-		<div key={deviceType} className="article-slider-container">
+		<div className="article-slider-container">
 			{["prev", "next"].map((type) => (
 				<SlideButton
 					key={type}
@@ -56,7 +69,7 @@ const ArticleSlider = () => {
 				className="article-slides"
 				modules={[Navigation, Autoplay]}
 				loop={true}
-				simulateTouch={deviceType !== "desktop"}
+				allowTouchMove={deviceType !== "desktop"}
 				speed={1500}
 				centeredSlides={false}
 				breakpoints={{ 768: { slidesPerView: 2 }, 480: { slidesPerView: 1 } }}
@@ -68,18 +81,14 @@ const ArticleSlider = () => {
 				onRealIndexChange={(swiper) => {
 					const activeSlide = swiper.realIndex
 					if (isNaN(activeSlide)) return
-					console.log("activeSlide", activeSlide)
+					console.log("activeSlide a", activeSlide)
 
 					const newPrev = activeSlide - 1
-					const newNext = activeSlide + 2
+					const newNext = activeSlide + (isMobile ? 1 : 2)
 					setPrevNextTopics({
 						prev: newPrev < 0 ? topics.length - 1 : newPrev,
 						next: newNext > topics.length - 1 ? newNext - topics.length : newNext,
 					})
-				}}
-				onBeforeInit={(swiper) => {
-					swiper.params.navigation.prevEl = navRefs.prev.current
-					swiper.params.navigation.nextEl = navRefs.next.current
 				}}
 			>
 				{topics.map((topic, index) => (
