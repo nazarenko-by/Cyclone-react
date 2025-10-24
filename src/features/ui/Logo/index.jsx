@@ -4,7 +4,7 @@ import Link from "next/link"
 
 // import image from '/images/Logo.png'
 
-import { getCurrentDate } from "@/helpers"
+import { getCurrentDate } from "@/shared/helpers"
 import clsx from "clsx"
 
 const LogoDate = ({ className, date }) => {

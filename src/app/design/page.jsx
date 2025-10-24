@@ -1,4 +1,4 @@
-import EventsSlider from "@/components/EventsSlider"
+import EventsSlider from "@/features/events/components/EventsSlider"
 
 import "swiper/css"
 import "swiper/css/pagination"

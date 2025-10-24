@@ -6,12 +6,12 @@ import { Navigation, Autoplay } from "swiper/modules"
 import { Cormorant_Garamond } from "next/font/google"
 import clsx from "clsx"
 
-import Slide from "@/components/EventsSlider/Slide"
+import Slide from "@/features/events/components/Slide"
 
-import { useDeviceType } from "@/hooks/useDeviceType"
-import { EVENTS } from "@/helpers/events"
+import { useDeviceType } from "@/shared/hooks/useDeviceType"
+import { EVENTS } from "@/features/events/data/events"
 
-import "@/styles/slider.scss"
+import "@/styles/components/slider.scss"
 
 const cormorant = Cormorant_Garamond({
 	weight: "700",

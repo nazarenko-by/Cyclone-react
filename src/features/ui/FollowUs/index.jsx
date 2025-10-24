@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-import "@/styles/followUs.scss"
+import "@/styles/components/followUs.scss"
 
 const socialLinks = [
 	{

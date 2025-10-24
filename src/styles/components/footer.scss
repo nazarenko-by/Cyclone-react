@@ -1,4 +1,5 @@
-@use 'variables' as *;
+// @use 'variables' as *;
+@use "@/styles/variables" as *;
 
 .footer-container {
     display: grid;

@@ -1,9 +1,9 @@
 import React from "react"
 
-import Logo from "@/components/Logo"
-import Menu from "@/components/Header/Menu"
+import Logo from "@/features/ui/Logo"
+import Menu from "@/features/ui/Header/Menu"
 
-import "@/styles/footer.scss"
+import "@/styles/components/footer.scss"
 
 const Footer = () => {
 	return (

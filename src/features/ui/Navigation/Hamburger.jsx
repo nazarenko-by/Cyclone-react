@@ -1,7 +1,7 @@
 import React from "react"
 import clsx from "clsx"
 
-import "@/styles/hamburger.css"
+import "@/styles/legacy/hamburger.css"
 
 const Hamburger = ({ isOpen, setIsOpen }) => {
 	return (

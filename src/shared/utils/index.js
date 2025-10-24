@@ -1,4 +1,4 @@
-import { ApiService } from "@/models/ApiService"
+import { ApiService } from "@/shared/lib/ApiService"
 
 const urls = {
 	topics: "https://raw.githubusercontent.com/nazarenko-by/Cyclone-react/data/topics.json",

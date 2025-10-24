@@ -6,9 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
 import { Cormorant_Garamond } from "next/font/google"
 
-import { useDeviceType } from "@/hooks/useDeviceType"
+import { useDeviceType } from "@/shared/hooks/useDeviceType"
 
-import Slide from "@/components/ArticleSlider/Slide"
+import Slide from "@/features/articles/components/Slide"
 import clsx from "clsx"
 import Link from "next/link"
 

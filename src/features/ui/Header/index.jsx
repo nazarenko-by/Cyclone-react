@@ -1,8 +1,8 @@
 import React from "react"
-import Logo from "@/components/Logo"
-import Menu from "@/components/Header/Menu"
+import Logo from "@/features/ui/Logo"
+import Menu from "@/features/ui/Header/Menu"
 
-import "@/styles/header.scss"
+import "@/styles/components/header.scss"
 
 const Header = () => {
 	return (

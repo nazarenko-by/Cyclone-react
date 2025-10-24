@@ -1,8 +1,8 @@
 import { Proza_Libre } from "next/font/google"
 
 import { Providers } from "@/store/Providers"
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
+import Header from "@/features/ui/Header"
+import Footer from "@/features/ui/Footer"
 
 import "@/styles/reset.css"
 import "@/styles/globals.scss"

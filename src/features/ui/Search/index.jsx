@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 
-import "@/styles/search.scss"
+import "@/styles/components/search.scss"
 import clsx from "clsx"
 
 const Search = () => {

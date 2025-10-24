@@ -1,4 +1,4 @@
-import { getTopics } from "@/models"
+import { getTopics } from "@/shared/utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {

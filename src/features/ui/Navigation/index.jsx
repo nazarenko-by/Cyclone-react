@@ -4,9 +4,9 @@ import React, { useState } from "react"
 import Link from "next/link"
 import clsx from "clsx"
 
-import Hamburger from "@/components/Navigation/Hamburger"
+import Hamburger from "@/features/ui/Navigation/Hamburger"
 
-import "@/styles/navigation.scss"
+import "@/styles/components/navigation.scss"
 
 const navItems = [
 	{ name: "Main", path: "/" },

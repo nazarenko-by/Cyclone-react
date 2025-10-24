@@ -1,11 +1,11 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import Navigation from "@/components/Navigation"
+import Navigation from "@/features/ui/Navigation"
 
-import useWindowWidth from "@/hooks/useWindowWidth"
-import Search from "@/components/Search"
-import FollowUs from "@/components/FollowUs"
+import useWindowWidth from "@/shared/hooks/useWindowWidth"
+import Search from "@/features/ui/Search"
+import FollowUs from "@/features/ui/FollowUs"
 import clsx from "clsx"
 
 const hiddenWidth = (type) => {

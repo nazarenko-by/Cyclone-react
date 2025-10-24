@@ -3,10 +3,10 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 
-import { fetchTopics } from "@/slices/Base"
+import { fetchTopics } from "@/store/baseSlice"
 
-import EventsSlider from "@/components/EventsSlider"
-import ArticleSlider from "@/components/ArticleSlider"
+import EventsSlider from "@/features/events/components/EventsSlider"
+import ArticleSlider from "@/features/articles/components/ArticleSlider"
 
 import "swiper/css"
 import "swiper/css/pagination"
