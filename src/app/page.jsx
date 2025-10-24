@@ -11,6 +11,7 @@ import ArticleSlider from "@/features/articles/components/ArticleSlider"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
+import MainSection from "@/features/main/components/MainSection"
 
 export default function Home() {
 	const dispatch = useDispatch()
@@ -23,6 +24,7 @@ export default function Home() {
 		<div className="container">
 			<EventsSlider />
 			<ArticleSlider />
+			<MainSection />
 		</div>
 	)
 }

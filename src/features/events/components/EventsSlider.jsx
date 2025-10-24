@@ -43,58 +43,60 @@ const EventsSlider = () => {
 	}, [navRefs.prev.current, navRefs.next.current])
 
 	return (
-		<div className="events-slider-container">
-			<div className={clsx("events-slider-item-number text-lg unselectable", cormorant.className)}>
-				{activeIndex.toString().padStart(2, 0)}
-			</div>
-			{["prev", "next"].map((type) => (
-				<SlideButton
-					ref={navRefs[type]}
-					key={type}
-					type={type}
-					text={prevNextIndex[type].toString().padStart(2, 0)}
-				/>
-			))}
-
-			<Swiper
-				className="events-slider"
-				modules={[Navigation, Autoplay]}
-				slidesPerView={1}
-				allowTouchMove={deviceType !== "desktop"}
-				spaceBetween={30}
-				speed={1500}
-				centeredSlides={false}
-				loop={true}
-				autoplay={{
-					delay: 10000,
-					pauseOnMouseEnter: true,
-					waitForTransition: true,
-				}}
-				onRealIndexChange={(swiper) => {
-					const activeSlide = swiper.realIndex
-					console.log("activeSlide", activeSlide)
-
-					setActiveIndex(activeSlide)
-					setPrevNextIndex({
-						prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
-						next: activeSlide === EVENTS.length ? 1 : activeSlide + 1,
-					})
-				}}
-			>
-				{EVENTS.map((event) => (
-					<SwiperSlide key={event.id} virtualIndex={event.id} className="events-slider-slide">
-						{({ isActive, isPrev, isNext }) => (
-							<Slide {...event} isActive={isActive || isPrev || isNext} isMobile={isMobile} />
-						)}
-					</SwiperSlide>
+		<section className="events-slider-section">
+			<div className="events-slider-container">
+				<div className={clsx("events-slider-item-number text-lg unselectable", cormorant.className)}>
+					{activeIndex.toString().padStart(2, 0)}
+				</div>
+				{["prev", "next"].map((type) => (
+					<SlideButton
+						ref={navRefs[type]}
+						key={type}
+						type={type}
+						text={prevNextIndex[type].toString().padStart(2, 0)}
+					/>
 				))}
-			</Swiper>
-			<button className="events-slider-read-more unselectable" title="Read more about the event">
-				<svg width={"50"} height={"50"} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M0 8 L2 6 L12 14 L22 6 L24 8 L12 18 Z"></path>
-				</svg>
-			</button>
-		</div>
+
+				<Swiper
+					className="events-slider"
+					modules={[Navigation, Autoplay]}
+					slidesPerView={1}
+					allowTouchMove={deviceType !== "desktop"}
+					spaceBetween={30}
+					speed={1500}
+					centeredSlides={false}
+					loop={true}
+					autoplay={{
+						delay: 10000,
+						pauseOnMouseEnter: true,
+						waitForTransition: true,
+					}}
+					onRealIndexChange={(swiper) => {
+						const activeSlide = swiper.realIndex
+						console.log("activeSlide", activeSlide)
+
+						setActiveIndex(activeSlide)
+						setPrevNextIndex({
+							prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
+							next: activeSlide === EVENTS.length ? 1 : activeSlide + 1,
+						})
+					}}
+				>
+					{EVENTS.map((event) => (
+						<SwiperSlide key={event.id} virtualIndex={event.id} className="events-slider-slide">
+							{({ isActive, isPrev, isNext }) => (
+								<Slide {...event} isActive={isActive || isPrev || isNext} isMobile={isMobile} />
+							)}
+						</SwiperSlide>
+					))}
+				</Swiper>
+				<button className="events-slider-read-more unselectable" title="Read more about the event">
+					<svg width={"50"} height={"50"} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+						<path d="M0 8 L2 6 L12 14 L22 6 L24 8 L12 18 Z"></path>
+					</svg>
+				</button>
+			</div>
+		</section>
 	)
 }
 

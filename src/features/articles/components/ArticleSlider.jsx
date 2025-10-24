@@ -55,51 +55,53 @@ const ArticleSlider = () => {
 	if (preloader) return <div>Loader</div>
 
 	return (
-		<div className="article-slider-container">
-			{["prev", "next"].map((type) => (
-				<SlideButton
-					key={type}
-					ref={navRefs[type]}
-					type={type}
-					topic={topics[prevNextTopicsIndex[type]]}
-					number={prevNextTopicsIndex[type] + 1 > topics.length ? 1 : prevNextTopicsIndex[type] + 1}
-				/>
-			))}
-			<Swiper
-				className="article-slides"
-				modules={[Navigation, Autoplay]}
-				loop={true}
-				allowTouchMove={deviceType !== "desktop"}
-				speed={1500}
-				centeredSlides={false}
-				breakpoints={{ 768: { slidesPerView: 2 }, 480: { slidesPerView: 1 } }}
-				autoplay={{
-					delay: 10000,
-					pauseOnMouseEnter: true,
-					waitForTransition: true,
-				}}
-				onRealIndexChange={(swiper) => {
-					const activeSlide = swiper.realIndex
-					if (isNaN(activeSlide)) return
-					console.log("activeSlide a", activeSlide)
-
-					const newPrev = activeSlide - 1
-					const newNext = activeSlide + (isMobile ? 1 : 2)
-					setPrevNextTopics({
-						prev: newPrev < 0 ? topics.length - 1 : newPrev,
-						next: newNext > topics.length - 1 ? newNext - topics.length : newNext,
-					})
-				}}
-			>
-				{topics.map((topic, index) => (
-					<SwiperSlide key={topic.id}>
-						{({ isActive, isPrev, isNext }) => (
-							<Slide topic={topic} isActive={isActive || isPrev || isNext} index={index} />
-						)}
-					</SwiperSlide>
+		<section className="article-slider-section">
+			<div className="article-slider-container">
+				{["prev", "next"].map((type) => (
+					<SlideButton
+						key={type}
+						ref={navRefs[type]}
+						type={type}
+						topic={topics[prevNextTopicsIndex[type]]}
+						number={prevNextTopicsIndex[type] + 1 > topics.length ? 1 : prevNextTopicsIndex[type] + 1}
+					/>
 				))}
-			</Swiper>
-		</div>
+				<Swiper
+					className="article-slides"
+					modules={[Navigation, Autoplay]}
+					loop={true}
+					allowTouchMove={deviceType !== "desktop"}
+					speed={1500}
+					centeredSlides={false}
+					breakpoints={{ 768: { slidesPerView: 2 }, 480: { slidesPerView: 1 } }}
+					autoplay={{
+						delay: 10000,
+						pauseOnMouseEnter: true,
+						waitForTransition: true,
+					}}
+					onRealIndexChange={(swiper) => {
+						const activeSlide = swiper.realIndex
+						if (isNaN(activeSlide)) return
+						console.log("activeSlide a", activeSlide)
+
+						const newPrev = activeSlide - 1
+						const newNext = activeSlide + (isMobile ? 1 : 2)
+						setPrevNextTopics({
+							prev: newPrev < 0 ? topics.length - 1 : newPrev,
+							next: newNext > topics.length - 1 ? newNext - topics.length : newNext,
+						})
+					}}
+				>
+					{topics.map((topic, index) => (
+						<SwiperSlide key={topic.id}>
+							{({ isActive, isPrev, isNext }) => (
+								<Slide topic={topic} isActive={isActive || isPrev || isNext} index={index} />
+							)}
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+		</section>
 	)
 }
 

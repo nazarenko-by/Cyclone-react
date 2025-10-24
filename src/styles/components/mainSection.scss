@@ -1,0 +1,60 @@
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    background: #f6f0eb;
+    padding: 2rem;
+  
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  .main-article {
+    &__tags {
+      font-style: italic;
+      color: gray;
+    }
+  
+    &__title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+  
+    &__text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  
+    &__link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: underline;
+      color: black;
+    }
+  }
+  
+  .main-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    &__image img {
+      width: 100%;
+      height: auto;
+    }
+  
+    &__controls {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  
+    &__info {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  
