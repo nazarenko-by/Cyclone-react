@@ -1,60 +1,104 @@
-.main-section {
+.main-section-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sound-slider {
+    width: 100%;
+}
+
+.full-sound-player-img {
+    grid-area: full-sound-player-img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 600px;
+}
+
+@media (min-width: 768px) {
+    .main-section-container {
+        flex-wrap: nowrap;
+    }
+}
+
+// Main Article
+.main-article {
+    background: #f2eae6;
+    display: grid;
+    grid-template-columns: auto auto minmax(auto, 1fr) auto;
+    grid-template-rows: auto auto auto auto;
+    position: relative;
+}
+
+.main-article .tag {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.main-article .comment-share-button {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    align-self: end;
+    flex-direction: row;
+}
+
+.main-article .big-title {
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+.main-article .text {
+    grid-column: 2/5;
+    grid-row: 3/4;
+    margin-top: 55px;
+}
+
+.main-article .read-more {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    margin-top: 100px;
+}
+
+.load-main {
+    grid-area: main-article;
+    position: relative;
+}
+.load-main.load-more-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+.paginator {
+    writing-mode: vertical-lr;
+    grid-column: 1/2;
+    grid-row: 3/5;
+    padding: 30px 5px;
+    transform: rotate(180deg);
     display: flex;
     justify-content: space-between;
-    background: #f6f0eb;
-    padding: 2rem;
-  
-    &__content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+}
+
+@media (max-width: 767px) {
+    .main-article {
+        padding: 20px 5px 20px 0;
     }
-  }
-  
-  .main-article {
-    &__tags {
-      font-style: italic;
-      color: gray;
+
+    .main-article .big-title {
+        text-align: center;
     }
-  
-    &__title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 3rem;
-      margin: 1rem 0;
+
+    .main-article .text {
+        text-align: center;
     }
-  
-    &__text {
-      font-size: 1rem;
-      line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .main-article {
+        padding: 100px 40px 100px 0;
     }
-  
-    &__link {
-      display: inline-block;
-      margin-top: 1rem;
-      text-decoration: underline;
-      color: black;
+
+    .paginator {
+        padding: 40px;
     }
-  }
-  
-  .main-slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    &__image img {
-      width: 100%;
-      height: auto;
-    }
-  
-    &__controls {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-  
-    &__info {
-      text-align: center;
-      margin-top: 1rem;
-    }
-  }
-  
+}

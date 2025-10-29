@@ -1,18 +1,9 @@
 "use client"
 
 import React from "react"
-import { Cormorant_Garamond, Proza_Libre } from "next/font/google"
 import clsx from "clsx"
 
-const cormorant = Cormorant_Garamond({
-	weight: ["500", "700"],
-	subsets: ["latin"],
-	style: ["italic", "normal"],
-})
-const prozaLibre = Proza_Libre({
-	weight: ["400"],
-	subsets: ["latin"],
-})
+import { cormorantBold, prozaLibre } from "@/shared/helpers/fonts"
 
 const Slide = ({ title, event, eventDate, isActive, isMobile }) => {
 	if (!isActive) return null
@@ -22,7 +13,7 @@ const Slide = ({ title, event, eventDate, isActive, isMobile }) => {
 			<h1
 				className={clsx(
 					"big-title events-slider-item-title",
-					cormorant.className,
+					cormorantBold.className,
 					{ "text-5xl": !isMobile },
 					{ "text-3xl": isMobile }
 				)}
@@ -33,9 +24,9 @@ const Slide = ({ title, event, eventDate, isActive, isMobile }) => {
 				<h4
 					className={clsx(
 						"event-name",
-						{ "text-3xl": !isMobile },
-						{ "text-xl": isMobile },
-						prozaLibre.className
+						prozaLibre.className,
+						{ "text-2xl": !isMobile },
+						{ "text-xl": isMobile }
 					)}
 				>
 					<span className="italic">Exhibition</span> <span className="yellow-text">'{event}'</span>
@@ -44,7 +35,7 @@ const Slide = ({ title, event, eventDate, isActive, isMobile }) => {
 					className={clsx(
 						"event-date",
 						prozaLibre.className,
-						{ "text-2xl": !isMobile },
+						{ "text-xl": !isMobile },
 						{ "text-md": isMobile }
 					)}
 				>

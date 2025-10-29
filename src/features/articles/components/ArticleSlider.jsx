@@ -2,21 +2,16 @@
 
 import React, { useEffect, useState, useRef, forwardRef, useMemo } from "react"
 import { useSelector } from "react-redux"
+import Link from "next/link"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
-import { Cormorant_Garamond } from "next/font/google"
 
 import { useDeviceType } from "@/shared/hooks/useDeviceType"
 
 import Slide from "@/features/articles/components/Slide"
 import clsx from "clsx"
-import Link from "next/link"
 
-const cormorant = Cormorant_Garamond({
-	weight: "700",
-	style: ["italic"],
-	subsets: ["latin"],
-})
+import { cormorantBoldItalic } from "@/shared/helpers/fonts"
 
 const ArticleSlider = () => {
 	const navRefs = {
@@ -82,7 +77,6 @@ const ArticleSlider = () => {
 					onRealIndexChange={(swiper) => {
 						const activeSlide = swiper.realIndex
 						if (isNaN(activeSlide)) return
-						console.log("activeSlide a", activeSlide)
 
 						const newPrev = activeSlide - 1
 						const newNext = activeSlide + (isMobile ? 1 : 2)
@@ -106,7 +100,13 @@ const ArticleSlider = () => {
 }
 
 const SlideButton = forwardRef(({ className, topic, type, number }, ref) => (
-	<div className={clsx(`article-slider-${type}-container text-sm unselectable`, className, cormorant.className)}>
+	<div
+		className={clsx(
+			`article-slider-${type}-container text-sm unselectable`,
+			className,
+			cormorantBoldItalic.className
+		)}
+	>
 		<div id={`article-slider-button-${type}`} className="article-slider-button" ref={ref}>
 			<svg width="26" height="24" viewBox="0 0 26 24" fill="none">
 				<path d="M2 12H18" stroke="black" strokeWidth="1.3" strokeLinecap="round" />

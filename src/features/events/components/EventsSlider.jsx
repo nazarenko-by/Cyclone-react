@@ -3,7 +3,6 @@
 import React, { useState, useRef, useEffect, useMemo, forwardRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
-import { Cormorant_Garamond } from "next/font/google"
 import clsx from "clsx"
 
 import Slide from "@/features/events/components/Slide"
@@ -11,12 +10,9 @@ import Slide from "@/features/events/components/Slide"
 import { useDeviceType } from "@/shared/hooks/useDeviceType"
 import { EVENTS } from "@/features/events/data/events"
 
-import "@/styles/components/slider.scss"
+import { cormorantBold } from "@/shared/helpers/fonts"
 
-const cormorant = Cormorant_Garamond({
-	weight: "700",
-	subsets: ["latin"],
-})
+import "@/styles/components/slider.scss"
 
 const EventsSlider = () => {
 	const navRefs = {
@@ -45,7 +41,7 @@ const EventsSlider = () => {
 	return (
 		<section className="events-slider-section">
 			<div className="events-slider-container">
-				<div className={clsx("events-slider-item-number text-lg unselectable", cormorant.className)}>
+				<div className={clsx("events-slider-item-number text-lg unselectable", cormorantBold.className)}>
 					{activeIndex.toString().padStart(2, 0)}
 				</div>
 				{["prev", "next"].map((type) => (
@@ -73,8 +69,6 @@ const EventsSlider = () => {
 					}}
 					onRealIndexChange={(swiper) => {
 						const activeSlide = swiper.realIndex
-						console.log("activeSlide", activeSlide)
-
 						setActiveIndex(activeSlide)
 						setPrevNextIndex({
 							prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
@@ -114,7 +108,7 @@ const SlideButton = forwardRef(({ className, text, type }, ref) => (
 				className,
 				"events-slider-number unselectable",
 				`events-slider-number-${type}`,
-				cormorant.className
+				cormorantBold.className
 			)}
 		>
 			{text}
