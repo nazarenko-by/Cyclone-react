@@ -15,6 +15,11 @@ export const cormorantBold = Cormorant_Garamond({
 	subsets: ["latin"],
 })
 
+export const cormorantThin = Cormorant_Garamond({
+	weight: "400",
+	subsets: ["latin"],
+})
+
 export const cormorantItalic = Cormorant_Garamond({
 	weight: ["600"],
 	subsets: ["latin"],
