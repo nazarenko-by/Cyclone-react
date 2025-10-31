@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import baseReducer from "@/store/baseSlice"
-import likeReducer from "@/store/likeSlice"
+import socialReducer from "@/store/socialSlice"
 
 // Middleware to log errors during action dispatch
 const errorLogger = (store) => (next) => (action) => {
@@ -21,7 +21,7 @@ export const createStore = () =>
 	configureStore({
 		reducer: {
 			base: baseReducer,
-			like: likeReducer,
+			social: socialReducer,
 		},
 		middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(errorLogger),
 		devTools: process.env.NODE_ENV !== "production",

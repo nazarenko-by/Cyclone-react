@@ -5,17 +5,17 @@ const initialState = {
 	dislikes: [],
 }
 
-const likeSlice = createSlice({
-	name: "like",
+const socialSlice = createSlice({
+	name: "social",
 	initialState,
 	reducers: {
-		addLike(state, action) {
+		setLikeValue(state, action) {
 			const { id } = action.payload
-			state.likes.push(id)
-		},
-		removeLike(state, action) {
-			const { id } = action.payload
-			state.likes = state.likes.filter((likeId) => likeId !== id)
+			if (state.likes.includes(id)) {
+				state.likes = state.likes.filter((likeId) => likeId !== id)
+			} else {
+				state.likes.push(id)
+			}
 		},
 		addDislike(state, action) {
 			const { id } = action.payload
@@ -28,5 +28,5 @@ const likeSlice = createSlice({
 	},
 })
 
-export const { addLike, removeLike, addDislike, removeDislike } = likeSlice.actions
-export default likeSlice.reducer
+export const { setLikeValue, addDislike, removeDislike } = socialSlice.actions
+export default socialSlice.reducer

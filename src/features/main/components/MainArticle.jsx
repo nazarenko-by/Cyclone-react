@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 import Tags from "@/features/ui/Tags"
 import ReadMore from "@/features/ui/ReadMore"
-import CommentShareButtons from "@/features/ui/CommentShareButtons"
+import SocialActions from "@/features/ui/SocialActions"
 
 import { cormorantBoldItalic, cormorantBold, cormorantThin } from "@/shared/helpers/fonts"
 import clsx from "clsx"
@@ -22,7 +22,7 @@ const MainArticle = () => {
 				<span>{mainTopic.id.toString().padStart(2, 0)}</span>
 			</div>
 			<Tags className={clsx("main-article-tags", cormorantBoldItalic.className)} tags={mainTopic.tag} />
-			<CommentShareButtons id={mainTopic.id} />
+			<SocialActions id={mainTopic.id} />
 			<div className={clsx("big-title text-5xl", cormorantBold.className)}>{mainTopic.title}</div>
 			<div className="text">{mainTopic.text}</div>
 			<ReadMore id={mainTopic.id} className="read-more" text="Read More" />

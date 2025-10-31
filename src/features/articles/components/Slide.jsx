@@ -8,6 +8,7 @@ import Tags from "@/features/ui/Tags"
 import ReadMore from "@/features/ui/ReadMore"
 
 import { cormorantBoldItalic, cormorantItalic } from "@/shared/helpers/fonts"
+import SocialActions from "@/features/ui/SocialActions"
 
 const Slide = ({ topic, isActive, index }) => {
 	if (!isActive) return null
@@ -25,7 +26,10 @@ const Slide = ({ topic, isActive, index }) => {
 				{(index + 1).toString().padStart(2, 0)}
 				<Tags tags={topic.tag} className="article-slide-tags" />
 			</div>
-			<h1 className={clsx("big-title article-slide-title text-xl", cormorantItalic.className)}>{topic.title}</h1>
+			<SocialActions id={topic.id} />
+			<h1 className={clsx("big-title article-slide-title text-xl", cormorantItalic.className)}>
+				<span className="title-line">{topic.title}</span>
+			</h1>
 			<div className="article-slide-details text-sm text-fade-3">{topic.text}</div>
 			<div className="article-slide-read-more">
 				<ReadMore id={topic.id} className="article-slide-read-more-link text-sm" text="Read More" />
