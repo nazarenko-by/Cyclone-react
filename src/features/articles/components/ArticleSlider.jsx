@@ -12,6 +12,7 @@ import Slide from "@/features/articles/components/Slide"
 import clsx from "clsx"
 
 import { cormorantBoldItalic } from "@/shared/helpers/fonts"
+import ArrowButton from "@/features/ui/ArrowButton"
 
 const ArticleSlider = () => {
 	const navRefs = {
@@ -107,12 +108,7 @@ const SlideButton = forwardRef(({ className, topic, type, number }, ref) => (
 			cormorantBoldItalic.className
 		)}
 	>
-		<div id={`article-slider-button-${type}`} className="article-slider-button" ref={ref}>
-			<svg width="26" height="24" viewBox="0 0 26 24" fill="none">
-				<path d="M2 12H18" stroke="black" strokeWidth="1.3" strokeLinecap="round" />
-				<path d="M16 6L24 12L16 18Z" stroke="black" strokeWidth="1.3" fill="none" />
-			</svg>
-		</div>
+		<ArrowButton type={type} className="article-slider-button" ref={ref} id={`article-slider-button-${type}`} />
 		<div className="article-slider-theme text-fade-1">{topic?.title}</div>
 		<div className="article-slider-tags">
 			{Array.isArray(topic?.tag) &&

@@ -247,6 +247,11 @@
             transform: rotate(180deg);
         }
     }
+    .article-slider-prev-container {
+        .article-slider-button {
+            transform: unset;
+        }
+    }
     .article-slider-prev-container,
     .article-slider-next-container {
         position: relative;
@@ -274,9 +279,6 @@
             min-height: 85px;
             text-align: center;
         }
-    }
-    .article-slider-button {
-        cursor: pointer;
     }
     .article-slide-content {
         padding: 15px 25px;

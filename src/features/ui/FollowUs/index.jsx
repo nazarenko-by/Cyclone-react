@@ -25,7 +25,7 @@ const socialLinks = [
 const FollowUs = () => {
 	return (
 		<div className="follow-us-container">
-			<p>Follow Us</p>
+			<p className="unselectable">Follow Us</p>
 			<ul className="follow-us-list">
 				{socialLinks.map((link) => (
 					<li key={link.name}>

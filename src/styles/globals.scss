@@ -1,5 +1,5 @@
 @use 'variables' as *;
-@use "text";
+@use 'text' as *;
 
 * {
   box-sizing: border-box;
@@ -205,6 +205,18 @@ button {
 }
 .load-more-img {
   animation: spin 5s linear 0s infinite;
+}
+
+.arrow-button {
+  cursor: pointer;
+  line-height: 0;
+  width: fit-content;
+  &:hover svg path {
+    stroke: #918e8b;
+  }
+  &.arrow-button-prev {
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes spin {
