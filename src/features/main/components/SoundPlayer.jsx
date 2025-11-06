@@ -75,7 +75,23 @@ const SoundPlayer = () => {
 	return (
 		<div className="sound-player unselectable">
 			<div className="sound-player-full-img">
-				<Image fill style={{ objectFit: "cover" }} src={currentSound.image} alt={currentSound.soundName} />
+				<div className="carousel-track">
+					{SOUND.map((sound, index) => (
+						<div
+							key={sound.id}
+							className="carousel-slide"
+							style={{ transform: `translateX(-${current * 100}%)` }}
+						>
+							<Image
+								fill
+								style={{ objectFit: "cover" }}
+								src={sound.image}
+								alt={sound.soundName}
+								priority={index === 0}
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 			<div className="sound-player-audio-controls">
 				<div className="sound-player-control" style={{ backgroundImage: `url(${currentSound.image})` }}>
