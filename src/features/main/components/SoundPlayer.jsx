@@ -2,11 +2,13 @@
 
 import React, { useState, useRef, useEffect, useMemo } from "react"
 import Image from "next/image"
+import clsx from "clsx"
 
 import ArrowButton from "@/features/ui/ArrowButton"
 
 import { getTimeText } from "@/features/main/helper"
 import { SOUND } from "@/features/main/helper/sound"
+import { cormorantBold, cormorant } from "@/shared/helpers/fonts"
 
 const SoundPlayer = () => {
 	const audioRef = useRef(null)
@@ -117,13 +119,15 @@ const SoundPlayer = () => {
 					</button>
 				</div>
 
-				<p className="sound-player-number text-sm">{String(currentSound.id).padStart(2, "0")}</p>
-				<h3 className="sound-player-name text-md">{currentSound.soundName}</h3>
-				<p className="sound-player-author text-sm">{currentSound.author}</p>
+				<p className={clsx("sound-player-number text-sm", cormorantBold.className)}>
+					{String(currentSound.id).padStart(2, "0")}
+				</p>
+				<h6 className="sound-player-name text-sm">{currentSound.soundName}</h6>
+				<h6 className={clsx("sound-player-author", cormorant.className)}>{currentSound.author}</h6>
 				<div className="sound-player-audio-progress" onClick={handleTimelineClick}>
 					<div className="elapsed" style={{ width: `${progress}%` }} />
 				</div>
-				<div className="sound-player-time text-sm">
+				<div className={clsx("sound-player-time text-sm", cormorant.className)}>
 					{getTimeText(currentTime)} / {getTimeText(duration)}
 				</div>
 				<ArrowButton type="next" onClick={handlePrev} />

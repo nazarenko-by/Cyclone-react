@@ -113,9 +113,9 @@
 }
 
 .sound-player-control {
-    grid-area: 1 / 1 / 4 / 2;
-    width: 50px;
-    height: 50px;
+    grid-area: 1 / 1 / 5 / 2;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -126,14 +126,18 @@
 
 .sound-player-number {
     grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
 }
 
 .sound-player-name {
     grid-area: 2 / 2 / 3 / 3;
+    align-self: end;
+    text-transform: uppercase;
 }
 
 .sound-player-author {
     grid-area: 3 / 2 / 4 / 3;
+    color: #918e8b;
 }
 
 .sound-player-time {
@@ -174,16 +178,37 @@
     grid-area: 3 / 3 / 4 / 4;
     align-self: self-start;
 }
+.arrow-button-next,
+.arrow-button-prev {
+    &>svg>path {
+        stroke: #918e8b;
+    }
+    &:hover {
+        &>svg>path {
+            stroke: #000000;
+        }
+    }
+}
 
 @media (max-width: 767px) {
     .main-article {
         padding: 20px 5px 20px 0;
         .big-title {
+            grid-area: 2 / 1 / 3 / 5;
             text-align: center;
         }
         .text {
             text-align: center;
         }
+    }
+    .sound-player {
+        width: 100%;
+    }
+    .sound-player-full-img{
+        height: calc(100vh - 95px);
+    }
+    .sound-player-control {
+        align-self: center;
     }
 }
 

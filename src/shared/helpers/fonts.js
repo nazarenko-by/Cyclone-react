@@ -10,6 +10,11 @@ export const prozaLibreBold = Proza_Libre({
 	subsets: ["latin"],
 })
 
+export const cormorant = Cormorant_Garamond({
+	weight: "500",
+	subsets: ["latin"],
+})
+
 export const cormorantBold = Cormorant_Garamond({
 	weight: "700",
 	subsets: ["latin"],
