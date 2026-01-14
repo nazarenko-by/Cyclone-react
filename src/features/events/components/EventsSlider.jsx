@@ -67,11 +67,11 @@ const EventsSlider = () => {
 						pauseOnMouseEnter: true,
 						waitForTransition: true,
 					}}
-					onRealIndexChange={(swiper) => {
-						const activeSlide = swiper.realIndex
+					onActiveIndexChange={(swiper) => {
+						const activeSlide = swiper.activeIndex
 						setActiveIndex(activeSlide)
 						setPrevNextIndex({
-							prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
+							prev: activeSlide === 0 ? EVENTS.length : activeSlide,
 							next: activeSlide === EVENTS.length ? 1 : activeSlide + 1,
 						})
 					}}

@@ -1,6 +1,6 @@
 @use '../variables' as *;
 
-.main-section-container {
+.main-container {
     display: flex;
     flex-wrap: wrap;
 }
@@ -18,7 +18,7 @@
 }
 
 @media (min-width: 768px) {
-    .main-section-container {
+    .main-container {
         flex-wrap: nowrap;
     }
 }

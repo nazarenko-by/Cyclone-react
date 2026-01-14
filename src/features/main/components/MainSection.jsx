@@ -9,7 +9,7 @@ import "@/styles/components/mainSection.scss"
 const MainSection = () => {
 	return (
 		<section className="main-section">
-			<div className="main-section-container">
+			<div className="main-container">
 				<MainArticle />
 				<SoundPlayer />
 			</div>
