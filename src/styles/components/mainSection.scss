@@ -122,6 +122,13 @@
     align-items: center;
     line-height: 0;
     background-size: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+    }
 }
 
 .sound-player-number {

@@ -21,7 +21,7 @@ const MainArticle = () => {
 				<span>{mainTopic.category.toString().padStart(2, 0)}</span>{" "}
 				<span>{mainTopic.id.toString().padStart(2, 0)}</span>
 			</div>
-			<Tags className={clsx("main-article-tags", cormorantBoldItalic.className)} tags={mainTopic.tag} />
+			<Tags className={clsx("main-article-tags", cormorantBoldItalic.className)} tags={mainTopic.tags} />
 			<SocialActions id={mainTopic.id} />
 			<div className={clsx("big-title text-5xl", cormorantBold.className)}>{mainTopic.title}</div>
 			<div className="text">{mainTopic.text}</div>

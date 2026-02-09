@@ -68,10 +68,11 @@ const EventsSlider = () => {
 						waitForTransition: true,
 					}}
 					onActiveIndexChange={(swiper) => {
-						const activeSlide = swiper.activeIndex
+						const activeSlide = Math.min(swiper.activeIndex, swiper.realIndex) + 1
+
 						setActiveIndex(activeSlide)
 						setPrevNextIndex({
-							prev: activeSlide === 0 ? EVENTS.length : activeSlide,
+							prev: activeSlide === 1 ? EVENTS.length : activeSlide - 1,
 							next: activeSlide === EVENTS.length ? 1 : activeSlide + 1,
 						})
 					}}

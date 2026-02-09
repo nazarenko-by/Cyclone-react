@@ -111,10 +111,10 @@ const SlideButton = forwardRef(({ className, topic, type, number }, ref) => (
 		<ArrowButton type={type} className="article-slider-button" ref={ref} id={`article-slider-button-${type}`} />
 		<div className="article-slider-theme text-fade-1">{topic?.title}</div>
 		<div className="article-slider-tags">
-			{Array.isArray(topic?.tag) &&
-				topic.tag.map((tag, index) => (
+			{Array.isArray(topic?.tags) &&
+				topic.tags.map((tag, index) => (
 					<Link key={tag} href={`/${tag.toLowerCase()}`}>
-						{index + 1 === topic.tag.length ? tag : `${tag}, `}
+						{index + 1 === topic.tags.length ? tag : `${tag}, `}
 					</Link>
 				))}
 		</div>

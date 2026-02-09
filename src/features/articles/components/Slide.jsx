@@ -24,7 +24,7 @@ const Slide = ({ topic, isActive, index }) => {
 			/>
 			<div className={clsx("article-slide-tags-container text-sm unselectable", cormorantBoldItalic.className)}>
 				{(index + 1).toString().padStart(2, 0)}
-				<Tags tags={topic.tag} className="article-slide-tags" />
+				<Tags tags={topic.tags} className="article-slide-tags" />
 			</div>
 			<SocialActions id={topic.id} />
 			<h1 className={clsx("big-title article-slide-title text-xl", cormorantItalic.className)}>
