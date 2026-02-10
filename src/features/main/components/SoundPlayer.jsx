@@ -90,6 +90,7 @@ const SoundPlayer = () => {
 								src={sound.image}
 								alt={sound.soundName}
 								priority={index === 0}
+								sizes="100%, 100%"
 							/>
 						</div>
 					))}

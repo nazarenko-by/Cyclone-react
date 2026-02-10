@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -12,6 +14,7 @@ const HotTopic = ({ topic }) => {
 		<div className="hot-topic-item">
 			<Image
 				src={`/images/topics/${topic.image}`}
+				sizes="100%, 100%"
 				alt={topic.title}
 				className="hot-topic-image"
 				loading="lazy"
