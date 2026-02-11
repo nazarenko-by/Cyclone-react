@@ -7,6 +7,7 @@ import clsx from "clsx"
 import { useDeviceType } from "@/shared/hooks/useDeviceType"
 
 import HotTopic from "@/features/hotTopics/components/HotTopic"
+import LoadMoreButton from "@/features/ui/LoadMoreButton"
 
 import { cormorantBold } from "@/shared/helpers/fonts"
 import "@/styles/components/hotTopics.scss"
@@ -14,6 +15,7 @@ import "@/styles/components/hotTopics.scss"
 const HotTopics = () => {
 	const topics = useSelector((state) => state.base.topics)
 	const [topicsCount, setTopicsCount] = useState(6)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const [columnsCount, setColumnsCount] = useState(3)
 	const device = useDeviceType()
@@ -50,6 +52,15 @@ const HotTopics = () => {
 		[topics, columnsCount, topicsCount]
 	)
 
+	// Simulate loading more topics
+	const handleLoadMore = () => {
+		setIsLoading(true)
+		setTimeout(() => {
+			setTopicsCount(topicsCount + 6)
+			setIsLoading(false)
+		}, 800)
+	}
+
 	return (
 		<section className="hot-topics-section">
 			<h2 className={clsx("hot-topics-title text-5xl", cormorantBold.className)}>Hot Topics</h2>
@@ -62,11 +73,7 @@ const HotTopics = () => {
 					</div>
 				))}
 			</div>
-			{topicsCount < topics.length && (
-				<button className="load-more-button" onClick={() => setTopicsCount(topicsCount + 6)}>
-					Load More
-				</button>
-			)}
+			{topicsCount < topics.length && <LoadMoreButton onClick={handleLoadMore} isLoading={isLoading} />}
 		</section>
 	)
 }
