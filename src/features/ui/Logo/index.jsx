@@ -2,8 +2,6 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-// import image from '/images/Logo.png'
-
 import { getCurrentDate } from "@/shared/helpers"
 import clsx from "clsx"
 
@@ -12,7 +10,7 @@ const LogoDate = ({ className, date }) => {
 		<div className={clsx("logo-date-container", className)}>
 			<div className="logo-image">
 				<Link href="/" className="logo-link">
-					<Image fill sizes="100%, 100%" src={"/images/Logo.png"} alt="Cyclone Logo" />
+					<Image fill sizes="100%, 100%" src={"/images/Logo.svg"} alt="Cyclone Logo" />
 				</Link>
 			</div>
 			{date && <div className="logo-date text-sm">{getCurrentDate()}</div>}
