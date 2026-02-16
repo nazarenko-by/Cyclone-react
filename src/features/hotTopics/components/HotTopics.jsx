@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react"
 import { useSelector } from "react-redux"
 import clsx from "clsx"
 
-import { useDeviceType } from "@/shared/hooks/useDeviceType"
+import useResizeObserver from "@/shared/hooks/useResizeObserver"
 
 import HotTopic from "@/features/hotTopics/components/HotTopic"
 import LoadMoreButton from "@/features/ui/LoadMoreButton"
@@ -13,24 +13,25 @@ import { cormorantBold } from "@/shared/helpers/fonts"
 import "@/styles/components/hotTopics.scss"
 
 const HotTopics = () => {
+	const wrapperRef = useRef(null)
 	const topics = useSelector((state) => state.base.topics)
 	const [topicsCount, setTopicsCount] = useState(6)
 	const [isLoading, setIsLoading] = useState(false)
 
 	const [columnsCount, setColumnsCount] = useState(3)
-	const device = useDeviceType()
+	const { width } = useResizeObserver(wrapperRef)
 
 	const columnHeights = useRef([])
 
 	useEffect(() => {
-		if (device === "desktop") {
+		if (width >= 1024) {
 			setColumnsCount(3)
-		} else if (device === "tablet") {
+		} else if (width >= 768) {
 			setColumnsCount(2)
 		} else {
 			setColumnsCount(1)
 		}
-	}, [device])
+	}, [width])
 
 	useEffect(() => {
 		columnHeights.current = new Array(columnsCount).fill(0)
@@ -62,9 +63,9 @@ const HotTopics = () => {
 	}
 
 	return (
-		<section className="hot-topics-section">
+		<section className="hot-topics-section px-5" ref={wrapperRef}>
 			<h2 className={clsx("hot-topics-title text-5xl", cormorantBold.className)}>Hot Topics</h2>
-			<div className="hot-topics-content px-5">
+			<div className="hot-topics-content">
 				{columns.map((column, colIndex) => (
 					<div className="hot-topics-column" key={colIndex}>
 						{column.map((topic) => (
@@ -74,6 +75,7 @@ const HotTopics = () => {
 				))}
 			</div>
 			{topicsCount < topics.length && <LoadMoreButton onClick={handleLoadMore} isLoading={isLoading} />}
+			<div className="line m-5"></div>
 		</section>
 	)
 }

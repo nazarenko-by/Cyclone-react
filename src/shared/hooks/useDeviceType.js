@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 
-export const useDeviceType = () => {
+const useDeviceType = () => {
 	const [device, setDevice] = useState("unknown")
 
 	useEffect(() => {
@@ -18,3 +18,5 @@ export const useDeviceType = () => {
 
 	return device
 }
+
+export default useDeviceType

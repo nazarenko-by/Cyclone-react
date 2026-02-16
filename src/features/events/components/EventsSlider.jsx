@@ -7,7 +7,7 @@ import clsx from "clsx"
 
 import Slide from "@/features/events/components/Slide"
 
-import { useDeviceType } from "@/shared/hooks/useDeviceType"
+import useDeviceType from "@/shared/hooks/useDeviceType"
 import { EVENTS } from "@/features/events/data/events"
 
 import { cormorantBold } from "@/shared/helpers/fonts"

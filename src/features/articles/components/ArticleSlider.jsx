@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Autoplay } from "swiper/modules"
 
-import { useDeviceType } from "@/shared/hooks/useDeviceType"
+import useDeviceType from "@/shared/hooks/useDeviceType"
 
 import Slide from "@/features/articles/components/Slide"
 import clsx from "clsx"

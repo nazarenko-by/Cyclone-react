@@ -5,14 +5,11 @@ import { useDispatch } from "react-redux"
 
 import { fetchTopics } from "@/store/baseSlice"
 
-// import EventsSlider from "@/features/events/components/EventsSlider"
-// import ArticleSlider from "@/features/articles/components/ArticleSlider"
-// import MainSection from "@/features/main/components/MainSection"
-// import HotTopics from "@/features/hotTopics/components/HotTopics"
 const EventsSlider = lazy(() => import("@/features/events/components/EventsSlider"))
 const ArticleSlider = lazy(() => import("@/features/articles/components/ArticleSlider"))
 const MainSection = lazy(() => import("@/features/main/components/MainSection"))
 const HotTopics = lazy(() => import("@/features/hotTopics/components/HotTopics"))
+const MostRead = lazy(() => import("@/features/mostRead/components/MostRead"))
 
 import "swiper/css"
 import "swiper/css/pagination"
@@ -31,6 +28,7 @@ export default function Home() {
 			<ArticleSlider />
 			<MainSection />
 			<HotTopics />
+			<MostRead />
 		</div>
 	)
 }
