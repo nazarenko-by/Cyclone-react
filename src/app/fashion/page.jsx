@@ -10,7 +10,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-export default function DesignPage() {
+export default function FashionPage() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
@@ -19,7 +19,7 @@ export default function DesignPage() {
 
 	return (
 		<div className="container">
-			<CategoryPage category="Design" title="Design" />
+			<CategoryPage category="Fashion" title="Fashion" />
 		</div>
 	)
 }

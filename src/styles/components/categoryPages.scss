@@ -1,0 +1,50 @@
+.no-topics {
+    text-align: center;
+    padding: 80px 20px;
+    color: #918e8b;
+    
+    p {
+        margin-bottom: 20px;
+    }
+    
+    .back-link {
+        color: #2a2928;
+        text-decoration: underline;
+        font-family: "Proza Libre", sans-serif;
+        
+        &:hover {
+            color: #918e8b;
+        }
+    }
+}
+
+.hot-topic-item {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 767px) {
+    .no-topics {
+        padding: 60px 20px;
+        
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .no-topics {
+        padding: 100px 40px;
+    }
+}

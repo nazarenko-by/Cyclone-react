@@ -8,7 +8,7 @@ import { Navigation, Autoplay } from "swiper/modules"
 
 import useDeviceType from "@/shared/hooks/useDeviceType"
 
-import Slide from "@/features/articles/components/Slide"
+import Slide from "@/features/articlesSlider/components/Slide"
 import clsx from "clsx"
 
 import { cormorantBoldItalic } from "@/shared/helpers/fonts"

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux"
 import { fetchTopics } from "@/store/baseSlice"
 
 const EventsSlider = lazy(() => import("@/features/events/components/EventsSlider"))
-const ArticleSlider = lazy(() => import("@/features/articles/components/ArticleSlider"))
+const ArticleSlider = lazy(() => import("@/features/articlesSlider/components/ArticleSlider"))
 const MainSection = lazy(() => import("@/features/main/components/MainSection"))
 const HotTopics = lazy(() => import("@/features/hotTopics/components/HotTopics"))
 const MostRead = lazy(() => import("@/features/mostRead/components/MostRead"))

@@ -11,7 +11,7 @@ import "@/styles/components/navigation.scss"
 const navItems = [
 	{ name: "Main", path: "/" },
 	{ name: "Design", path: "/design" },
-	{ name: "LiveStyle", path: "/liveStyle" },
+	{ name: "LiveStyle", path: "/livestyle" },
 	{ name: "Travel", path: "/travel" },
 	{ name: "Art", path: "/art" },
 	{ name: "Fashion", path: "/fashion" },
