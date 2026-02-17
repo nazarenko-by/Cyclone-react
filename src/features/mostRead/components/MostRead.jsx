@@ -24,7 +24,7 @@ const MostRead = () => {
 					<MostReadArticle key={article.id} article={article} />
 				))}
 			</div>
-			<div className="line m-5"></div>
+			<div className="line mt-5"></div>
 		</section>
 	)
 }

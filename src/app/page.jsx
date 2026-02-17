@@ -10,6 +10,7 @@ const ArticleSlider = lazy(() => import("@/features/articles/components/ArticleS
 const MainSection = lazy(() => import("@/features/main/components/MainSection"))
 const HotTopics = lazy(() => import("@/features/hotTopics/components/HotTopics"))
 const MostRead = lazy(() => import("@/features/mostRead/components/MostRead"))
+const Subscribe = lazy(() => import("@/features/subscribe/components/Subscribe"))
 
 import "swiper/css"
 import "swiper/css/pagination"
@@ -29,6 +30,7 @@ export default function Home() {
 			<MainSection />
 			<HotTopics />
 			<MostRead />
+			<Subscribe />
 		</div>
 	)
 }
