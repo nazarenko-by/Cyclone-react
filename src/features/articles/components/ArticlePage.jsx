@@ -68,12 +68,6 @@ export default function ArticlePage({ params }) {
 						<SocialActions id={article.id} />
 					</div>
 
-					{article.author && (
-						<div className={clsx("article-author text-base", cormorantItalic.className)}>
-							{article.author}
-						</div>
-					)}
-
 					{article.date && (
 						<time className={clsx("article-date text-sm", prozaLibre.className)}>
 							{new Date(article.date).toLocaleDateString("en-US", {
@@ -103,6 +97,10 @@ export default function ArticlePage({ params }) {
 				<div className={clsx("article-content", prozaLibre.className)}>
 					<div className="article-text" dangerouslySetInnerHTML={{ __html: article.text }} />
 				</div>
+
+				{article.author && (
+					<div className={clsx("article-author text-base", cormorantItalic.className)}>{article.author}</div>
+				)}
 
 				{/* Footer */}
 				<footer className="article-footer">
@@ -150,8 +148,6 @@ export default function ArticlePage({ params }) {
 						</div>
 					</aside>
 				)}
-
-				<div className="line m-5"></div>
 			</article>
 		</div>
 	)
