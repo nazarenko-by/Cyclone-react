@@ -43,7 +43,7 @@ const Menu = ({ type, className, children }) => {
 			{children}
 			{isNavigationVisible && <Navigation mobileMenu={isMobile} />}
 			<Search />
-			{isFollowUsVisible && <FollowUs />}
+			{isFollowUsVisible && <FollowUs icons={true} title={"Follow us"} />}
 		</div>
 	)
 }

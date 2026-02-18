@@ -22,15 +22,15 @@ const socialLinks = [
 	},
 ]
 
-const FollowUs = () => {
+const FollowUs = ({ title, icons }) => {
 	return (
 		<div className="follow-us-container">
-			<p className="unselectable">Follow Us</p>
+			{title && <p className="unselectable">{title}</p>}
 			<ul className="follow-us-list">
 				{socialLinks.map((link) => (
 					<li key={link.name}>
 						<Link className="follow-us-link" href={link.url} target="_blank" rel="noopener noreferrer">
-							<Image src={link.icon} alt={link.name} width={20} height={20} />
+							{icons ? <Image src={link.icon} alt={link.name} width={20} height={20} /> : link.name}
 						</Link>
 					</li>
 				))}
