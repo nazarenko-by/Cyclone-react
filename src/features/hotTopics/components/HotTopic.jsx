@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 import SocialActions from "@/features/ui/SocialActions"
 import Tags from "@/features/ui/Tags"
@@ -10,6 +11,12 @@ import Tags from "@/features/ui/Tags"
 import { cormorantBold, cormorantItalic } from "@/shared/helpers/fonts"
 
 const HotTopic = ({ topic }) => {
+	const router = useRouter()
+	const handleTagClick = (e, id) => {
+		e.preventDefault()
+		e.stopPropagation()
+		router.push(`/article/${id}`)
+	}
 	return (
 		<div className="hot-topic-item">
 			<Image
@@ -20,6 +27,7 @@ const HotTopic = ({ topic }) => {
 				loading="lazy"
 				style={{ objectFit: "cover" }}
 				fill
+				onClick={(e) => handleTagClick(e, topic.id)}
 			/>
 			<Tags tags={topic.tags} className={cormorantBold.className} />
 			<SocialActions id={topic.id} />

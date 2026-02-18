@@ -150,10 +150,18 @@ button {
   grid-area: tag;
 }
 
-.tag a {
+span.tag  {
+  display: inline-block;
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  margin-left: 3px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .comment-share-button {
@@ -176,8 +184,14 @@ button {
 }
 
 .read-more {
+  display: inline-block;
   color: #2a2928;
   text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .arrow-next-button:hover img,

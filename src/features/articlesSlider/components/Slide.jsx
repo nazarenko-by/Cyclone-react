@@ -32,7 +32,7 @@ const Slide = ({ topic, isActive, index }) => {
 			</h1>
 			<div className="article-slide-details text-sm text-fade-3">{topic.text}</div>
 			<div className="article-slide-read-more">
-				<ReadMore id={topic.id} className="article-slide-read-more-link text-sm" text="Read More" />
+				<ReadMore id={topic.id} className="article-slide-read-more-link read-more text-sm" text="Read More" />
 			</div>
 		</div>
 	)

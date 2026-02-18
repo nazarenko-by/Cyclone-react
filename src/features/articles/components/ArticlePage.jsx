@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from "react"
+import React, { useEffect, use } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { notFound } from "next/navigation"
 import Image from "next/image"
@@ -17,7 +17,7 @@ import "@/styles/components/articlePage.scss"
 export default function ArticlePage({ params }) {
 	const dispatch = useDispatch()
 	const topics = useSelector((state) => state.base.topics)
-	const articleId = parseInt(params.id)
+	const articleId = parseInt(use(params).id)
 
 	useEffect(() => {
 		if (topics.length === 0) {

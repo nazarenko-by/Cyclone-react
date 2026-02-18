@@ -1,15 +1,22 @@
 import React from "react"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 import clsx from "clsx"
 
 const Tags = ({ tags, className = "" }) => {
+	const router = useRouter()
+	const handleTagClick = (e, tag) => {
+		e.preventDefault()
+		e.stopPropagation()
+		router.push(`/${tag.toLowerCase()}`)
+	}
+
 	return (
 		<div className={clsx("tags-container", className)}>
 			{Array.isArray(tags) &&
 				tags.map((tag, index) => (
-					<Link key={tag} href={`/${tag.toLowerCase()}`}>
+					<span key={tag} className="tag" onClick={(e) => handleTagClick(e, tag)}>
 						{index + 1 === tags.length ? tag : `${tag}, `}
-					</Link>
+					</span>
 				))}
 		</div>
 	)
