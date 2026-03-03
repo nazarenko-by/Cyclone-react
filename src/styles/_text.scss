@@ -1,0 +1,24 @@
+@mixin text-fade($lines: 3, $bg: #f8f4f3) {
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5em;
+    max-height: calc(1.5em * #{$lines});
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: 1.5em;
+        background: linear-gradient(to right, transparent, $bg 70%);
+    }
+}
+
+.text-fade-1 { @include text-fade(1); }
+.text-fade-2 { @include text-fade(2); }
+.text-fade-3 { @include text-fade(3); }
+.text-fade-4 { @include text-fade(4); }

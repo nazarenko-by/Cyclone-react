@@ -1,0 +1,26 @@
+.follow-us-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.follow-us-list {
+    display: flex;
+    gap: 20px;
+    &> li {
+        height: fit-content;
+    }
+}
+.follow-us-link {
+    display: block;
+    line-height: 0;
+    height: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: -ms-fit-content;
+    img {
+        transition: filter 0.2s ease-in-out;
+    }
+    &:hover img {
+        filter: invert(0.4);
+    }
+}
