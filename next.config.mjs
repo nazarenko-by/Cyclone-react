@@ -4,6 +4,7 @@ const nextConfig = {
     basePath: '/Cyclone-react',
     images: {
         unoptimized: true,
+        loaderFile: './loader.js',
     },
 };
 
