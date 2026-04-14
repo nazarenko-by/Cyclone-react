@@ -1,13 +1,22 @@
 "use client"
 
-import React, { useState } from "react"
-
-import "@/styles/components/search.scss"
+import React, { useEffect, useRef, useState } from "react"
 import clsx from "clsx"
 
+import useOutsideClick from "@/shared/hooks/useOutsideClick"
+
+import "@/styles/components/search.scss"
+import { useSelector } from "react-redux"
+
 const Search = () => {
+	const topics = useSelector((state) => state.base.topics)
 	const [open, setOpen] = useState(false)
 	const [inputValue, setInputValue] = useState("")
+	const [filteredTopics, setFilteredTopics] = useState([])
+
+	const outsideRef = useOutsideClick(() => setOpen(false))
+	const inputRef = useRef(null)
+
 	const onButtonClick = () => {
 		if (!open) {
 			setOpen(true)
@@ -16,15 +25,37 @@ const Search = () => {
 			setOpen(false)
 			return
 		}
-		// Handle search logic here
 	}
+
 	const onInputChange = (e) => {
 		setInputValue(e.target.value)
 	}
 
+	useEffect(() => {
+		if (!inputValue) {
+			setFilteredTopics([])
+			return
+		}
+		const filtered = topics
+			.filter((topic) => topic.title.toLowerCase().includes(inputValue.toLowerCase()))
+			.sort((a, b) => {
+				const titleA = a.title.toLowerCase()
+				const titleB = b.title.toLowerCase()
+
+				const aStarts = titleA.startsWith(inputValue.toLowerCase())
+				const bStarts = titleB.startsWith(inputValue.toLowerCase())
+
+				if (aStarts && !bStarts) return -1
+				if (!aStarts && bStarts) return 1
+
+				return titleA.localeCompare(titleB)
+			})
+		setFilteredTopics(filtered)
+	}, [inputValue])
+
 	return (
-		<label className={clsx("search", "p-1", { open: open })}>
-			<button className="search-button" onClick={onButtonClick} aria-label="Search">
+		<label ref={outsideRef} className={clsx("search", "p-1", { open: open })}>
+			<button className="search-button" onClick={onButtonClick} title="Search" aria-label="Search">
 				<svg viewBox="0 0 17.7 17.7">
 					<path
 						fill="currentColor"
@@ -33,13 +64,25 @@ const Search = () => {
 				</svg>
 			</button>
 			<input
+				ref={inputRef}
 				type="text"
 				className="search-input"
 				name="search"
 				placeholder="Search…"
 				value={inputValue}
 				onChange={onInputChange}
+				autoComplete="off"
 			/>
+
+			{open && filteredTopics.length > 0 && (
+				<ul className="search-results">
+					{filteredTopics.map((topic) => (
+						<li key={topic.id}>
+							<a href={`/article/${topic.id}`}>{topic.title}</a>
+						</li>
+					))}
+				</ul>
+			)}
 		</label>
 	)
 }
