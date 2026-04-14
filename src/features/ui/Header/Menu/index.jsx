@@ -36,7 +36,7 @@ const Menu = ({ type, className, children }) => {
 		navigation.mobile && setIsMobile(windowWidth < navigation.mobile)
 		navigation.hide && setIsNavigationVisible(windowWidth > navigation.hide)
 		followUs.hide && setIsFollowUsVisible(windowWidth > followUs.hide)
-	}, [windowWidth])
+	}, [windowWidth, navigation.mobile, navigation.hide, followUs.hide])
 
 	return (
 		<div className={clsx("menu-container", className)}>

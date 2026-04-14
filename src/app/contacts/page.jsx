@@ -14,6 +14,6 @@ export default function ContactsPage() {
 		setTimeout(() => {
 			dispatch(setBaseState({ key: "preloader", value: false }))
 		}, 500)
-	}, [])
+	}, [dispatch])
 	return <Contacts />
 }

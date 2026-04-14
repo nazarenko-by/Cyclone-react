@@ -21,7 +21,7 @@ export default function Home() {
 
 	useEffect(() => {
 		dispatch(fetchTopics())
-	}, [])
+	}, [dispatch])
 
 	return (
 		<div className="container">

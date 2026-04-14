@@ -51,7 +51,7 @@ const Search = () => {
 				return titleA.localeCompare(titleB)
 			})
 		setFilteredTopics(filtered)
-	}, [inputValue])
+	}, [inputValue, topics])
 
 	return (
 		<label ref={outsideRef} className={clsx("search", "p-1", { open: open })}>
