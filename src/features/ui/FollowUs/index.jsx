@@ -3,22 +3,25 @@ import Link from "next/link"
 import Image from "next/image"
 
 import "@/styles/components/followUs.scss"
+import instagramImg from "@public/images/social/instagram.svg"
+import linkedinImg from "@public/images/social/linkedin.svg"
+import threadsImg from "@public/images/social/threads.svg"
 
 const socialLinks = [
 	{
 		name: "Instagram",
 		url: "https://www.instagram.com/nby.frontend/",
-		icon: "/images/social/instagram.svg",
+		icon: instagramImg,
 	},
 	{
 		name: "LinkedIn",
 		url: "https://www.linkedin.com/in/bohdan-nazarenko-by/",
-		icon: "/images/social/linkedin.svg",
+		icon: linkedinImg,
 	},
 	{
 		name: "Threads",
 		url: "https://www.threads.com/@nby.frontend",
-		icon: "/images/social/threads.svg",
+		icon: threadsImg,
 	},
 ]
 
