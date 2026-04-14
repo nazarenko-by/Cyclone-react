@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    devIndicators: false,
-    reactStrictMode: true,
+    output: 'export',
+    basePath: '/Cyclone-react',
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;
