@@ -8,8 +8,9 @@ const nextConfig = {
     output: 'export',
     basePath: '/Cyclone-react',
     images: {
-        unoptimized: true,
+        loader: 'custom',
         loaderFile: './loader.js',
+        unoptimized: true,
     },
 };
 
