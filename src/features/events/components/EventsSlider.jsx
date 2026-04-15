@@ -10,6 +10,7 @@ import Slide from "@/features/events/components/Slide"
 import useDeviceType from "@/shared/hooks/useDeviceType"
 import { EVENTS } from "@/features/events/data/events"
 
+import { assetPath } from "@/shared/helpers/assetPath"
 import { cormorantBold } from "@/shared/helpers/fonts"
 
 import "@/styles/components/slider.scss"
@@ -40,7 +41,10 @@ const EventsSlider = () => {
 
 	return (
 		<section className="events-slider-section">
-			<div className="events-slider-container">
+			<div
+				className="events-slider-container"
+				style={{ backgroundImage: `url(${assetPath("/images/slider-bg.png")})` }}
+			>
 				<div className={clsx("events-slider-item-number text-lg unselectable", cormorantBold.className)}>
 					{activeIndex.toString().padStart(2, 0)}
 				</div>

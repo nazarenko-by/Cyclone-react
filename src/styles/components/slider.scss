@@ -5,7 +5,6 @@
     height: 100vh;
     min-height: fit-content;
     position: relative;
-    background-image: url("/../images/slider-bg.png");
     background-size: cover;
     display: grid;
     grid-template-columns: auto auto minmax(auto, 1fr) auto auto;
