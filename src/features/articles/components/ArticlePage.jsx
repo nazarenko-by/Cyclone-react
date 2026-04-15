@@ -11,6 +11,7 @@ import { fetchTopics } from "@/store/baseSlice"
 import SocialActions from "@/features/ui/SocialActions"
 import Tags from "@/features/ui/Tags"
 
+import { assetPath } from "@/shared/helpers/assetPath"
 import { cormorantBold, cormorantItalic, prozaLibre } from "@/shared/helpers/fonts"
 import "@/styles/components/articlePage.scss"
 
@@ -83,7 +84,7 @@ export default function ArticlePage({ params }) {
 				{article.image && (
 					<div className="article-image-wrapper">
 						<Image
-							src={`/images/topics/${article.image}`}
+							src={assetPath(`/images/topics/${article.image}`)}
 							alt={article.title}
 							width={1200}
 							height={600}
@@ -124,7 +125,7 @@ export default function ArticlePage({ params }) {
 									{relatedArticle.image && (
 										<div className="related-article-image">
 											<Image
-												src={`/images/topics/${relatedArticle.image}`}
+												src={assetPath(`/images/topics/${relatedArticle.image}`)}
 												alt={relatedArticle.title}
 												width={400}
 												height={250}

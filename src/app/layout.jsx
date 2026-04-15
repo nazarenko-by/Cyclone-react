@@ -7,12 +7,13 @@ import { prozaLibre } from "@/shared/helpers/fonts"
 
 import "@/styles/reset.css"
 import "@/styles/globals.scss"
+import { assetPath } from "@/shared/helpers/assetPath"
 
 export const metadata = {
 	title: "Cyclone",
 	description: "Cyclone web application",
 	icons: {
-		icon: "/favicon.ico",
+		icon: assetPath("/favicon.ico"),
 	},
 }
 

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import SocialActions from "@/features/ui/SocialActions"
 import Tags from "@/features/ui/Tags"
 
+import { assetPath } from "@/shared/helpers/assetPath"
 import { cormorantBold, cormorantItalic } from "@/shared/helpers/fonts"
 
 const HotTopic = ({ topic }) => {
@@ -20,7 +21,7 @@ const HotTopic = ({ topic }) => {
 	return (
 		<div className="hot-topic-item">
 			<Image
-				src={`/images/topics/${topic.image}`}
+				src={assetPath(`/images/topics/${topic.image}`)}
 				sizes="100%, 100%"
 				alt={topic.title}
 				className="hot-topic-image"

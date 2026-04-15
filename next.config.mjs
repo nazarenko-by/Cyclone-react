@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production'
+const basePath = isProd ? '/Cyclone-react' : ''
+
 const nextConfig = {
     // dev
     // devIndicators: false,
@@ -6,12 +10,14 @@ const nextConfig = {
 
     // gh-pages
     output: 'export',
-    basePath: '/Cyclone-react',
-    images: {
-        loader: 'custom',
-        loaderFile: './loader.js',
-        unoptimized: true,
+    basePath,
+    env: {
+        NEXT_PUBLIC_BASE_PATH: basePath,
     },
+    images: {
+        unoptimized: true,
+    }
+
 };
 
 export default nextConfig;

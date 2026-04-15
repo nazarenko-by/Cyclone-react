@@ -7,7 +7,9 @@ import clsx from "clsx"
 import ArrowButton from "@/features/ui/ArrowButton"
 
 import { getTimeText } from "@/features/main/helper"
+
 import { SOUND } from "@/features/main/helper/sound"
+import { assetPath } from "@/shared/helpers/assetPath"
 import { cormorantBold, cormorant } from "@/shared/helpers/fonts"
 
 const SoundPlayer = () => {
@@ -87,7 +89,7 @@ const SoundPlayer = () => {
 							<Image
 								fill
 								style={{ objectFit: "cover" }}
-								src={sound.image}
+								src={assetPath(sound.image)}
 								alt={sound.soundName}
 								priority={index === 0}
 								sizes="100%, 100%"
@@ -97,7 +99,10 @@ const SoundPlayer = () => {
 				</div>
 			</div>
 			<div className="sound-player-audio-controls">
-				<div className="sound-player-control" style={{ backgroundImage: `url(${currentSound.image})` }}>
+				<div
+					className="sound-player-control"
+					style={{ backgroundImage: `url(${assetPath(currentSound.image)})` }}
+				>
 					<button
 						className="sound-player-play-button"
 						onClick={togglePlay}
@@ -135,8 +140,8 @@ const SoundPlayer = () => {
 				<ArrowButton type="prev" onClick={handleNext} />
 			</div>
 			<audio ref={audioRef} controls={false}>
-				<source src={currentSound.audio[0]} type="audio/mpeg" />
-				<source src={currentSound.audio[1]} type="audio/webm" />
+				<source src={assetPath(currentSound.audio[0])} type="audio/mpeg" />
+				<source src={assetPath(currentSound.audio[1])} type="audio/webm" />
 			</audio>
 		</div>
 	)

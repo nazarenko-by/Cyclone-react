@@ -21,11 +21,22 @@ export default [
     ]
   },
   {
+    files: ["*.config.js", "*.config.mjs", "next.config.mjs"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
       parserOptions: {
       ecmaFeatures: {
         jsx: true, // Enable JSX parsing

@@ -5,6 +5,7 @@ import Image from "next/image"
 import clsx from "clsx"
 import "@/styles/components/loadMoreButton.scss"
 import { prozaLibre } from "@/shared/helpers/fonts"
+import { assetPath } from "@/shared/helpers/assetPath"
 
 const LoadMoreButton = ({ onClick, isLoading = false, className }) => {
 	return (
@@ -22,7 +23,7 @@ const LoadMoreButton = ({ onClick, isLoading = false, className }) => {
 			{isLoading ? (
 				<>
 					<span className="load-more-spinner">
-						<Image src="/images/loader.svg" alt="Loading..." width={24} height={24} priority />
+						<Image src={assetPath("/images/loader.svg")} alt="Loading..." width={24} height={24} priority />
 					</span>
 					<span className="load-more-text text-sm">Loading...</span>
 				</>

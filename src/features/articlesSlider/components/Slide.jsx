@@ -7,6 +7,7 @@ import clsx from "clsx"
 import Tags from "@/features/ui/Tags"
 import ReadMore from "@/features/ui/ReadMore"
 
+import { assetPath } from "@/shared/helpers/assetPath"
 import { cormorantBoldItalic, cormorantItalic } from "@/shared/helpers/fonts"
 import SocialActions from "@/features/ui/SocialActions"
 
@@ -16,7 +17,7 @@ const Slide = ({ topic, isActive, index }) => {
 	return (
 		<div className="article-slide-content">
 			<Image
-				src={`/images/topics/${topic.image}`}
+				src={assetPath(`/images/topics/${topic.image}`)}
 				alt={topic.title}
 				className="article-slide-image unselectable"
 				width={100}
