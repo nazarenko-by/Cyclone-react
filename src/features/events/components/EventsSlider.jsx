@@ -43,7 +43,7 @@ const EventsSlider = () => {
 		<section className="events-slider-section">
 			<div
 				className="events-slider-container"
-				style={{ backgroundImage: `url(${assetPath("/images/slider-bg.png")})` }}
+				style={{ backgroundImage: `url(${assetPath("/images/slider-bg.webp")})` }}
 			>
 				<div className={clsx("events-slider-item-number text-lg unselectable", cormorantBold.className)}>
 					{activeIndex.toString().padStart(2, 0)}
